@@ -1,45 +1,848 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Collections</title><style>
-:root{
-  --bg:#060b16;--panel:#0d1528;--panel2:#111b33;--border:#23304d;
-  --gold:#d8b56a;--text:#f5f7fb;--muted:#9fb0d0;
+---
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collections - Guías L2 Guardian</title>
+
+  <style>
+    :root{
+      --bg:#060b16;
+      --panel:#0d1528;
+      --panel2:#111b33;
+      --border:#23304d;
+      --gold:#d8b56a;
+      --text:#f5f7fb;
+      --muted:#9fb0d0;
+      --green:#3ddc97;
+      --red:#ff6b6b;
+      --blue:#5ea0ff;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:radial-gradient(circle at top,#10213f 0%,#060b16 55%);
+      color:var(--text);
+    }
+	.guide-image{
+	  width:100%;
+	  margin:20px 0;
+	  border-radius:16px;
+	  border:1px solid rgba(216,181,106,.12);
+	  display:block;
+	}
+	.guide-image-small{
+	  width:70%;
+	  margin:20px auto;
+	  border-radius:16px;
+	  border:1px solid rgba(216,181,106,.12);
+	  display:block;
+	}
+	
+	.quick-start{
+  background:linear-gradient(180deg,#101a31,#0d1528);
 }
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#10213f 0%,#060b16 55%);color:var(--text)}
-.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(6,11,22,.92);border-bottom:1px solid rgba(216,181,106,.18);backdrop-filter:blur(10px)}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-.crest{width:44px;height:44px;border-radius:14px;border:1px solid rgba(216,181,106,.35);background:linear-gradient(180deg,#1b2848,#0d1528);display:grid;place-items:center;color:var(--gold);font-weight:700}
-.brand h1{margin:0;font-size:22px}.brand span{display:block;color:var(--muted);font-size:11px;letter-spacing:.22em}
-.top-actions{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end}
-.search{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid rgba(216,181,106,.18);border-radius:16px;padding:12px 16px;max-width:620px;flex:1}
-.search input{flex:1;background:transparent;border:none;outline:none;color:var(--text)}
-.langs{display:flex;gap:8px}
-.langs a{padding:10px 14px;border-radius:12px;text-decoration:none;color:white;background:#111b33;border:1px solid #23304d;font-weight:700}
-.layout{display:grid;grid-template-columns:260px 1fr;gap:24px;max-width:1440px;margin:0 auto;padding:24px}
-.sidebar{position:sticky;top:88px;align-self:start;background:rgba(13,21,40,.86);border:1px solid rgba(216,181,106,.16);border-radius:24px;padding:22px}
-.sidebar h3{margin:0 0 16px;color:var(--gold);font-size:14px;letter-spacing:.12em}
-.side-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;color:var(--text);text-decoration:none;margin-bottom:8px}
-.side-link:hover,.side-link.active{background:var(--panel2);border:1px solid rgba(216,181,106,.18)}
-.dot{width:8px;height:8px;border-radius:999px;background:var(--gold)}
-.promo{margin-top:24px;background:linear-gradient(180deg,#122244,#0d1528);border:1px solid rgba(216,181,106,.18);border-radius:20px;padding:18px;text-align:center}
-.promo h4{margin:0 0 8px;color:var(--gold)}.promo p{margin:0 0 16px;color:var(--muted);font-size:14px}
-.promo a{display:inline-block;background:linear-gradient(180deg,#d8b56a,#b99046);color:#24180a;text-decoration:none;border-radius:12px;padding:12px 16px;font-weight:700}
-.main{display:flex;flex-direction:column;gap:28px}
-.hero{border-radius:28px;border:1px solid rgba(216,181,106,.18);background:linear-gradient(90deg, rgba(6,11,22,.92) 0%, rgba(6,11,22,.55) 48%, rgba(6,11,22,.15) 100%), linear-gradient(180deg,#10213f,#060b16);min-height:300px;padding:42px;display:flex;align-items:center}
-.hero h2{margin:14px 0;font-size:54px}.hero p{color:#d8e2f6;font-size:17px;line-height:1.6}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid rgba(216,181,106,.22);background:rgba(17,27,51,.85);color:var(--text)}
-.btn.primary{background:linear-gradient(180deg,#d8b56a,#b99046);color:#24180a}
-.section-head h3{margin:0;font-size:30px}.section-head p{margin:6px 0 0;color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-.card-link{text-decoration:none;color:inherit;display:block}
-.card{background:rgba(13,21,40,.9);border:1px solid rgba(216,181,106,.16);border-radius:24px;overflow:hidden;height:100%;transition:.18s ease}
-.card:hover{transform:translateY(-6px);border-color:rgba(216,181,106,.32);box-shadow:0 18px 40px rgba(0,0,0,.45)}
-.card img{width:100%;height:190px;object-fit:cover;display:block}.card-body{padding:18px}
-.tag{display:inline-block;color:var(--gold);background:rgba(216,181,106,.1);border:1px solid rgba(216,181,106,.16);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700;margin-bottom:12px}
-.card h4{margin:0 0 10px;font-size:22px}.card p{margin:0 0 16px;color:var(--muted);line-height:1.55}
-footer{max-width:1440px;margin:20px auto 40px;padding:0 24px}.footer-box{background:rgba(13,21,40,.86);border:1px solid rgba(216,181,106,.14);border-radius:24px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-box p{margin:0;color:var(--muted)}
-.guide-content{max-width:980px;margin:0 auto;background:rgba(13,21,40,.9);border:1px solid rgba(216,181,106,.16);border-radius:24px;padding:28px}
-.guide-content img{width:100%;border-radius:18px;margin-bottom:24px}.guide-content h1{font-size:42px;margin-top:0}.guide-content p,.guide-content li{color:#d8e2f6;line-height:1.7}
-.back{display:inline-block;margin-bottom:20px;color:#d8e2f6;text-decoration:none}
-@media (max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0}.hero h2{font-size:40px}.topbar{flex-wrap:wrap}.top-actions{width:100%;justify-content:stretch}}
-</style></head><body><header class="topbar"><a class="brand" href="/es/"><div class="crest">L2</div><div><h1>L2 Guardian Guides</h1><span>REBORN • GUARDIAN • WIKI</span></div></a><div class="top-actions"><div class="search"><span>🔎</span><input placeholder="Buscar..."></div><div class="langs"><a href="/en/">🇬🇧 EN</a><a href="/es/">🇪🇸 ES</a></div></div></header><div class="guide-content"><a class="back" href="/es/">← Volver al inicio</a><img src="/images/collections.png" alt="Collections"><h1>Collections</h1><p>Contenido de ejemplo para esta guía. Sustitúyelo por tu guía final de Guardian.</p></div></body></html>
+
+.quick-head{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:24px;
+}
+
+.quick-icon{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  background:rgba(216,181,106,0.12);
+  border:1px solid rgba(216,181,106,0.22);
+  display:grid;
+  place-items:center;
+  font-size:24px;
+}
+
+.quick-head h2{
+  margin:0;
+  font-size:28px;
+}
+
+.quick-head p{
+  margin:4px 0 0;
+  color:var(--muted);
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+
+.quick-card{
+  background:var(--panel2);
+  border:1px solid rgba(216,181,106,0.14);
+  border-radius:20px;
+  padding:18px;
+}
+
+.quick-title{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.quick-value{
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+.quick-tag{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.quick-tag.high{
+  background:rgba(61,220,151,0.12);
+  color:#3ddc97;
+  border:1px solid rgba(61,220,151,0.24);
+}
+
+.quick-tag.medium{
+  background:rgba(255,193,7,0.12);
+  color:#ffc107;
+  border:1px solid rgba(255,193,7,0.24);
+}
+
+.quick-footer{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+
+.quick-tip{
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(216,181,106,0.10);
+  border-radius:16px;
+  padding:16px;
+  color:#d8e2f6;
+}
+
+.quick-tip strong{
+  display:block;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+
+	
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:18px 28px;
+      background:rgba(6,11,22,.92);
+      border-bottom:1px solid rgba(216,181,106,.18);
+      backdrop-filter:blur(10px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .crest{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid rgba(216,181,106,.35);
+      background:linear-gradient(180deg,#1b2848,#0d1528);
+      display:grid;
+      place-items:center;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:22px;
+    }
+
+    .brand span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.22em;
+    }
+
+    .container{
+      max-width:1440px;
+      margin:0 auto;
+      padding:24px;
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:24px;
+    }
+
+    .sidebar{
+      position:sticky;
+      top:92px;
+      align-self:start;
+      background:rgba(13,21,40,.86);
+      border:1px solid rgba(216,181,106,.16);
+      border-radius:24px;
+      padding:22px;
+    }
+
+    .sidebar h3{
+      margin:0 0 16px;
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:.14em;
+    }
+
+    .toc{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .toc a{
+      color:var(--text);
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition:.15s ease;
+    }
+
+    .toc a:hover{
+      background:var(--panel2);
+      border-color:rgba(216,181,106,.18);
+    }
+
+    .content{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+    }
+
+    .hero{
+      background:linear-gradient(180deg,#132447,#0d1528);
+      border:1px solid rgba(216,181,106,.18);
+      border-radius:28px;
+      overflow:hidden;
+    }
+
+    .hero img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .hero-body{
+      padding:28px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(216,181,106,.12);
+      border:1px solid rgba(216,181,106,.18);
+      color:var(--gold);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:46px;
+      line-height:1.05;
+    }
+
+    .subtitle{
+      color:#d8e2f6;
+      font-size:17px;
+      line-height:1.7;
+      margin:0;
+    }
+
+    .section{
+      background:rgba(13,21,40,.9);
+      border:1px solid rgba(216,181,106,.16);
+      border-radius:24px;
+      padding:26px;
+    }
+
+    .section h2{
+      margin-top:0;
+      font-size:30px;
+    }
+
+    .section h3{
+      margin-top:28px;
+      font-size:22px;
+    }
+
+    .section p{
+      color:#d8e2f6;
+      line-height:1.8;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .info-card{
+      background:var(--panel2);
+      border:1px solid rgba(216,181,106,.14);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .info-card .label{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:6px;
+    }
+
+    .info-card .value{
+      font-size:20px;
+      font-weight:700;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:18px;
+      overflow:hidden;
+      border-radius:16px;
+    }
+
+    thead{
+      background:#152544;
+    }
+
+    th,td{
+      padding:14px 16px;
+      border-bottom:1px solid rgba(216,181,106,.08);
+      text-align:left;
+    }
+
+    th{
+      color:var(--gold);
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.04em;
+    }
+
+    tr:last-child td{
+      border-bottom:none;
+    }
+
+    .good{color:var(--green);font-weight:700}
+    .bad{color:var(--red);font-weight:700}
+
+    .note{
+      background:rgba(94,160,255,.08);
+      border:1px solid rgba(94,160,255,.22);
+      border-radius:18px;
+      padding:18px;
+      margin-top:18px;
+    }
+
+    .warning{
+      background:rgba(255,107,107,.08);
+      border:1px solid rgba(255,107,107,.22);
+      border-radius:18px;
+      padding:18px;
+      margin-top:18px;
+    }
+
+    .steps{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .step{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      padding:18px;
+      background:var(--panel2);
+      border:1px solid rgba(216,181,106,.12);
+      border-radius:18px;
+    }
+
+    .step .num{
+      min-width:38px;
+      height:38px;
+      border-radius:12px;
+      background:#1a2948;
+      border:1px solid rgba(216,181,106,.22);
+      display:grid;
+      place-items:center;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .progress{
+      margin-top:20px;
+      display:grid;
+      gap:14px;
+    }
+
+    .progress-row{
+      display:grid;
+      grid-template-columns:90px 1fr 60px;
+      align-items:center;
+      gap:14px;
+    }
+
+    .bar{
+      height:10px;
+      border-radius:999px;
+      background:#14213c;
+      overflow:hidden;
+    }
+
+    .fill{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold),#f5d38a);
+    }
+
+    .related{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .related a{
+      text-decoration:none;
+      color:inherit;
+      background:var(--panel2);
+      border:1px solid rgba(216,181,106,.14);
+      border-radius:18px;
+      padding:18px;
+      transition:.15s ease;
+    }
+
+    .related a:hover{
+      transform:translateY(-4px);
+      border-color:rgba(216,181,106,.28);
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#d8e2f6;
+      text-decoration:none;
+      margin-bottom:8px;
+    }
+
+    @media (max-width: 980px){
+      .container{grid-template-columns:1fr}
+      .sidebar{position:relative;top:0}
+      h1{font-size:38px}
+      .hero img{height:220px}
+    }
+	
+	
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/es/">
+    <div class="crest">L2</div>
+    <div>
+      <h1>L2 Guardian Guides</h1>
+    </div>
+  </a>
+</header>
+
+<div class="container">
+
+  <aside class="sidebar">
+    <h3>EN ESTA PÁGINA</h3>
+
+    <nav class="toc">
+      <a href="#overview">Resumen</a>
+	  <a href="#how-it-works">Cómo funciona</a>
+      <a href="#categories">Categorías</a>
+      <a href="#obtaining-items">Obtener ítems</a>
+      <a href="#recommended">Colecciones recomendadas al inicio</a>
+	  <a href="#mistakes">Errores comunes</a>
+      <a href="#related">Guías relacionadas</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <a class="back" href="/es/">← Volver al inicio</a>
+
+    <section class="hero no-image">
+
+     
+
+      <div class="hero-body">
+        <div class="badge">SISTEMA GUARDIAN</div>
+
+        <h1>Collections</h1>
+
+        <p class="subtitle">
+          Las Collections son bonificaciones de estadísticas permanentes y de cuenta que se desbloquean
+          registrando sets concretos de ítems. Se aplican a todos los personajes de tu cuenta, así que el
+          tiempo invertido en completarlas nunca se pierde, aunque cambies o rehagas una clase más adelante.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="label">Tipo de sistema</div>
+            <div class="value">Permanente / Cuenta</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Mejor para</div>
+            <div class="value">Todas las clases</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Dificultad</div>
+            <div class="value">Baja / Media</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Prioridad</div>
+            <div class="value">Media-Alta</div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+	<section class="section quick-start">
+  <div class="quick-head">
+    <div class="quick-icon">⚡</div>
+    <div>
+      <h2>Inicio rápido</h2>
+      <p>Lo que debes saber antes de abrir la ventana de Collections por primera vez.</p>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+
+    <div class="quick-card">
+      <div class="quick-title">Alcance</div>
+      <div class="quick-value">Toda la cuenta</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Categorías</div>
+      <div class="quick-value">8 pestañas</div>
+      <span class="quick-tag medium">Media Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Fuente principal</div>
+      <div class="quick-value">Random Craft</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Ítems usados</div>
+      <div class="quick-value">Se consumen para siempre</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+  </div>
+
+  <div class="quick-footer">
+
+    <div class="quick-tip">
+      <strong>Los ítems se consumen</strong>
+      Una vez registrado en una colección, el ítem se elimina de tu inventario para siempre, así que confirma bien antes de meterlo.
+    </div>
+
+    <div class="quick-tip">
+      <strong>Los ítems Sealed también cuentan</strong>
+      La mayoría de ítems de colección tienen una versión Sealed obtenible por Random Craft, casi nunca hace falta comprar o farmear la versión normal.
+    </div>
+
+    <div class="quick-tip">
+      <strong>De cuenta, no por personaje</strong>
+      El progreso y las colecciones completadas se comparten con todos los personajes que crees en la misma cuenta.
+    </div>
+
+  </div>
+</section>
+
+    <section class="section" id="overview">
+      <h2>Resumen</h2>
+
+      <p>
+        Las Collections son sets de ítems concretos que, una vez registrados por completo, otorgan una
+        bonificación de estadísticas permanente. Están disponibles desde el nivel 1, y tanto su progreso
+        como sus efectos se comparten entre todos los personajes de tu cuenta, aunque no entre servidores distintos.
+      </p>
+	<img
+	  src="/images/collections.png"
+	  alt="Ventana de Collections en Lineage 2 Guardian"
+	  class="guide-image-small"/>
+      <div class="note">
+        <strong>Recomendación:</strong> Abre la ventana de Collections pronto y usa la opción de búsqueda para
+        ver si algún ítem que ya tienes se puede registrar, algunas piezas de equipo tempranas cuentan sin que te des cuenta.
+      </div>
+	 
+    </section>
+
+    <section class="section" id="how-it-works">
+      <h2>Cómo funciona</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong>Registra un ítem</strong>
+            <p>Selecciona el ítem con clic izquierdo y abre el botón de Collections desde tu inventario. Se resaltará cualquier colección que ese ítem pueda completar.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong>El ítem se consume</strong>
+            <p>Una vez añadido, el ítem se elimina de tu inventario de forma permanente. No se puede recuperar, así que asegúrate de que no lo necesitas equipado.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <strong>Usa los huecos alternativos cuando existan</strong>
+            <p>Algunas colecciones aceptan más de un ítem válido por hueco (por ejemplo un spellbook normal o su versión Sealed). Puedes combinar libremente qué versión usas en cada hueco, siempre que se cumpla el total requerido.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <strong>El efecto se aplica al instante</strong>
+            <p>En cuanto registras el último ítem necesario, la colección se completa y su bono se aplica de inmediato. Los bonos permanentes se quedan activos para siempre, los temporales muestran su caducidad en la pantalla de Collections.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="warning">
+        <strong>Algunos ítems no se pueden registrar.</strong>
+        Los ítems augmentados, encantados (salvo que se indique lo contrario), con Soul Crystal insertado, la mayoría de Sealed que no se pueden desellar y los ítems equipados no se pueden añadir a una colección.
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <h2>Categorías</h2>
+
+      <p>
+        Las colecciones se dividen en 8 pestañas. Pasa el cursor sobre cualquier categoría en el juego para ver
+        tu porcentaje de completado, y usa Favoritos para mantener arriba las colecciones en las que estás trabajando.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Enfoque</th>
+            <th>Ejemplo de colección</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Attack</strong></td>
+            <td>P./M. Atk., Skill Power, Ratio/Daño Crítico</td>
+            <td>Ambidexterity — P./M. Atk. +125</td>
+          </tr>
+          <tr>
+            <td><strong>Defense</strong></td>
+            <td>P./M. Def., reducción de daño/crítico recibido</td>
+            <td>Great Power — P./M. Def. +100</td>
+          </tr>
+          <tr>
+            <td><strong>Support</strong></td>
+            <td>Max HP/MP/CP, Velocidad de ataque/casteo, Cooldown</td>
+            <td>Music Lover I — Max MP +150</td>
+          </tr>
+          <tr>
+            <td><strong>Special</strong></td>
+            <td>Resistencias (Pull, Hold, Suppression, Imprisonment...)</td>
+            <td>Undying Body III — Hellfire Resistance +3%</td>
+          </tr>
+          <tr>
+            <td><strong>Stats</strong></td>
+            <td>STR/DEX/CON/INT/WIT/MEN en bruto</td>
+            <td>Resistance Set — STR/INT/DEX/WIT +1</td>
+          </tr>
+          <tr>
+            <td><strong>Utility</strong></td>
+            <td>Sayha's Grace, ganancia de XP/SP, huecos de inventario/almacén</td>
+            <td>Supporting Accessories I — Acquired XP/SP +2%</td>
+          </tr>
+          <tr>
+            <td><strong>Events</strong></td>
+            <td>Colecciones temporales ligadas a ofertas concretas</td>
+            <td>Growth Rune Collection II — Acquired XP/SP +2%</td>
+          </tr>
+          <tr>
+            <td><strong>Favorites</strong></td>
+            <td>No es una categoría real, es un panel para marcar cualquier colección</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="obtaining-items">
+      <h2>Obtener ítems</h2>
+
+      <p>
+        En Guardian, el Random Craft es la fuente principal de ítems para completar colecciones, es el camino
+        pensado desde el early game y no una bonificación de final de juego.
+		<br>La mayoría de ítems de colección tienen un equivalente Sealed que puede salir del Random Craft,
+		así que casi nunca hace falta farmear o comprar la versión normal.
+      </p>
+
+      <div class="note">
+        <strong>Recomendación:</strong> Guarda los ítems de bajo grado que normalmente venderías, muchos son
+        materiales válidos para Random Craft y alimentan directamente el progreso de tus colecciones.
+      </div>
+    </section>
+
+    <section class="section" id="recommended">
+      <h2>Colecciones recomendadas al inicio</h2>
+
+      <p>
+        Esta sección listará las colecciones más baratas y rentables para completar durante tus primeros días
+        en Guardian, basándose en costes reales del juego y no en teoría.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Colección</th>
+            <th>Ítems necesarios</th>
+            <th>Efecto</th>
+            <th>Por qué al inicio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="4">Pendiente de rellenar.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Nota:</strong> Esta tabla es un hueco reservado, rellénala con las colecciones que realmente
+        merezca la pena priorizar en Guardian.
+      </div>
+    </section>
+
+    <section class="section" id="mistakes">
+      <h2>Errores comunes</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Error</th>
+            <th>Impacto</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Vender ítems de bajo grado sin comprobar antes su valor en Random Craft/colecciones</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Registrar un ítem sin comprobar si lo necesitas equipado</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Ignorar las colecciones de Utility y Support por centrarse solo en Attack</td>
+            <td class="bad">Media</td>
+          </tr>
+
+          <tr>
+            <td>No usar la pestaña de Favoritos para seguir las colecciones en curso</td>
+            <td>Baja</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Mejor práctica:</strong> Antes de vender o desencantar algo, comprueba si su icono tiene la
+        marca de colección, es una forma fácil de no perder estadísticas permanentes gratis.
+      </div>
+    </section>
+
+    <section class="section" id="related">
+      <h2>Guías relacionadas</h2>
+
+      <div class="related">
+
+        <a href="/es/guides/patterns">
+          <strong>Patterns</strong>
+          <p>Bonificaciones de estadísticas permanentes a través del sistema de Dye.</p>
+        </a>
+
+        <a href="/es/guides/aden-laboratory">
+          <strong>Aden Laboratory</strong>
+          <p>Investiga a Queen Ant para conseguir un bono de estadísticas permanente.</p>
+        </a>
+
+        <a href="/es/guides/hidden-power">
+          <strong>Hidden Power</strong>
+          <p>Optimiza la progresión a largo plazo y el escalado de daño.</p>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
