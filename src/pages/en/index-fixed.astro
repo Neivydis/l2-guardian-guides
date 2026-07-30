@@ -1,0 +1,43 @@
+---
+import { ClientRouter } from 'astro:transitions';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L2 Guardian Guides</title>
+  <ClientRouter />
+  <style>
+    :root{
+      --bg:#060b16;
+      --text:#f5f7fb;
+    }
+
+    html{
+      background:#060b16;
+      color-scheme:dark;
+      overflow-y:scroll;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      background:radial-gradient(circle at top,#10213f 0%,#060b16 55%);
+      color:var(--text);
+      font-family:Arial,sans-serif;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root){
+      animation-duration:180ms;
+      background:#060b16;
+    }
+  </style>
+</head>
+<body>
+  <h1>L2 Guardian Guides</h1>
+  <p>Archivo de ejemplo con el fix del flash blanco.</p>
+</body>
+</html>

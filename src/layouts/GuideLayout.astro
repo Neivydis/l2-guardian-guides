@@ -1,0 +1,117 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+const {
+  title = 'L2 Guardian Guides',
+  lang = 'en'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+
+  <ClientRouter />
+
+  <style>
+    :root{
+      --bg:#060b16;
+      --panel:#0d1528;
+      --panel2:#111b33;
+      --border:#23304d;
+      --gold:#d8b56a;
+      --text:#f5f7fb;
+      --muted:#9fb0d0;
+    }
+
+    *{box-sizing:border-box}
+
+    html{
+      background:#060b16;
+      color-scheme:dark;
+      overflow-y:scroll;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Arial,sans-serif;
+      background:radial-gradient(circle at top,#10213f 0%,#060b16 55%);
+      color:var(--text);
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root){
+      animation-duration:180ms;
+      background:#060b16;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 28px;
+      background:rgba(6,11,22,.92);
+      border-bottom:1px solid rgba(216,181,106,.18);
+      backdrop-filter:blur(10px);
+    }
+
+    .brand{
+      text-decoration:none;
+      color:inherit;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .crest{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid rgba(216,181,106,.35);
+      background:linear-gradient(180deg,#1b2848,#0d1528);
+      display:grid;
+      place-items:center;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .content{
+      max-width:1200px;
+      margin:0 auto;
+      padding:24px;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      padding:40px 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href={lang === 'es' ? '/es/' : '/en/'}>
+      <div class="crest">L2</div>
+      <div>
+        <strong>L2 Guardian Guides</strong>
+      </div>
+    </a>
+  </header>
+
+  <main class="content">
+    <slot />
+  </main>
+
+  <footer>
+    © 2026 • L2 Guardian Guides
+  </footer>
+</body>
+</html>
