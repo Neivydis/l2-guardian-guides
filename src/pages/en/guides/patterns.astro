@@ -1,0 +1,843 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patterns - L2 Guardian Guides</title>
+
+  <style>
+    :root{
+      --bg:#060b16;
+      --panel:#0d1528;
+      --panel2:#111b33;
+      --border:#23304d;
+      --gold:#d8b56a;
+      --text:#f5f7fb;
+      --muted:#9fb0d0;
+      --green:#3ddc97;
+      --red:#ff6b6b;
+      --blue:#5ea0ff;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:radial-gradient(circle at top,#10213f 0%,#060b16 55%);
+      color:var(--text);
+    }
+	.guide-image{
+	  width:100%;
+	  margin:20px 0;
+	  border-radius:16px;
+	  border:1px solid rgba(216,181,106,.12);
+	  display:block;
+	}
+	.guide-image-small{
+	  width:70%;
+	  margin:20px auto;
+	  border-radius:16px;
+	  border:1px solid rgba(216,181,106,.12);
+	  display:block;
+	}
+	
+	.quick-start{
+  background:linear-gradient(180deg,#101a31,#0d1528);
+}
+
+.quick-head{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:24px;
+}
+
+.quick-icon{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  background:rgba(216,181,106,0.12);
+  border:1px solid rgba(216,181,106,0.22);
+  display:grid;
+  place-items:center;
+  font-size:24px;
+}
+
+.quick-head h2{
+  margin:0;
+  font-size:28px;
+}
+
+.quick-head p{
+  margin:4px 0 0;
+  color:var(--muted);
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+
+.quick-card{
+  background:var(--panel2);
+  border:1px solid rgba(216,181,106,0.14);
+  border-radius:20px;
+  padding:18px;
+}
+
+.quick-title{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.quick-value{
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+.quick-tag{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.quick-tag.high{
+  background:rgba(61,220,151,0.12);
+  color:#3ddc97;
+  border:1px solid rgba(61,220,151,0.24);
+}
+
+.quick-tag.medium{
+  background:rgba(255,193,7,0.12);
+  color:#ffc107;
+  border:1px solid rgba(255,193,7,0.24);
+}
+
+.quick-footer{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+
+.quick-tip{
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(216,181,106,0.10);
+  border-radius:16px;
+  padding:16px;
+  color:#d8e2f6;
+}
+
+.quick-tip strong{
+  display:block;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+
+	
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:18px 28px;
+      background:rgba(6,11,22,.92);
+      border-bottom:1px solid rgba(216,181,106,.18);
+      backdrop-filter:blur(10px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .crest{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid rgba(216,181,106,.35);
+      background:linear-gradient(180deg,#1b2848,#0d1528);
+      display:grid;
+      place-items:center;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:22px;
+    }
+
+    .brand span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.22em;
+    }
+
+    .container{
+      max-width:1440px;
+      margin:0 auto;
+      padding:24px;
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:24px;
+    }
+
+    .sidebar{
+      position:sticky;
+      top:92px;
+      align-self:start;
+      background:rgba(13,21,40,.86);
+      border:1px solid rgba(216,181,106,.16);
+      border-radius:24px;
+      padding:22px;
+    }
+
+    .sidebar h3{
+      margin:0 0 16px;
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:.14em;
+    }
+
+    .toc{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .toc a{
+      color:var(--text);
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition:.15s ease;
+    }
+
+    .toc a:hover{
+      background:var(--panel2);
+      border-color:rgba(216,181,106,.18);
+    }
+
+    .content{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+    }
+
+    .hero{
+      background:linear-gradient(180deg,#132447,#0d1528);
+      border:1px solid rgba(216,181,106,.18);
+      border-radius:28px;
+      overflow:hidden;
+    }
+
+    .hero img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .hero-body{
+      padding:28px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(216,181,106,.12);
+      border:1px solid rgba(216,181,106,.18);
+      color:var(--gold);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:46px;
+      line-height:1.05;
+    }
+
+    .subtitle{
+      color:#d8e2f6;
+      font-size:17px;
+      line-height:1.7;
+      margin:0;
+    }
+
+    .section{
+      background:rgba(13,21,40,.9);
+      border:1px solid rgba(216,181,106,.16);
+      border-radius:24px;
+      padding:26px;
+    }
+
+    .section h2{
+      margin-top:0;
+      font-size:30px;
+    }
+
+    .section h3{
+      margin-top:28px;
+      font-size:22px;
+    }
+
+    .section p{
+      color:#d8e2f6;
+      line-height:1.8;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .info-card{
+      background:var(--panel2);
+      border:1px solid rgba(216,181,106,.14);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .info-card .label{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:6px;
+    }
+
+    .info-card .value{
+      font-size:20px;
+      font-weight:700;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:18px;
+      overflow:hidden;
+      border-radius:16px;
+    }
+
+    thead{
+      background:#152544;
+    }
+
+    th,td{
+      padding:14px 16px;
+      border-bottom:1px solid rgba(216,181,106,.08);
+      text-align:left;
+    }
+
+    th{
+      color:var(--gold);
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.04em;
+    }
+
+    tr:last-child td{
+      border-bottom:none;
+    }
+
+    .good{color:var(--green);font-weight:700}
+    .bad{color:var(--red);font-weight:700}
+
+    .note{
+      background:rgba(94,160,255,.08);
+      border:1px solid rgba(94,160,255,.22);
+      border-radius:18px;
+      padding:18px;
+      margin-top:18px;
+    }
+
+    .warning{
+      background:rgba(255,107,107,.08);
+      border:1px solid rgba(255,107,107,.22);
+      border-radius:18px;
+      padding:18px;
+      margin-top:18px;
+    }
+
+    .steps{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .step{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      padding:18px;
+      background:var(--panel2);
+      border:1px solid rgba(216,181,106,.12);
+      border-radius:18px;
+    }
+
+    .step .num{
+      min-width:38px;
+      height:38px;
+      border-radius:12px;
+      background:#1a2948;
+      border:1px solid rgba(216,181,106,.22);
+      display:grid;
+      place-items:center;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .progress{
+      margin-top:20px;
+      display:grid;
+      gap:14px;
+    }
+
+    .progress-row{
+      display:grid;
+      grid-template-columns:90px 1fr 60px;
+      align-items:center;
+      gap:14px;
+    }
+
+    .bar{
+      height:10px;
+      border-radius:999px;
+      background:#14213c;
+      overflow:hidden;
+    }
+
+    .fill{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold),#f5d38a);
+    }
+
+    .related{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .related a{
+      text-decoration:none;
+      color:inherit;
+      background:var(--panel2);
+      border:1px solid rgba(216,181,106,.14);
+      border-radius:18px;
+      padding:18px;
+      transition:.15s ease;
+    }
+
+    .related a:hover{
+      transform:translateY(-4px);
+      border-color:rgba(216,181,106,.28);
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#d8e2f6;
+      text-decoration:none;
+      margin-bottom:8px;
+    }
+
+    @media (max-width: 980px){
+      .container{grid-template-columns:1fr}
+      .sidebar{position:relative;top:0}
+      h1{font-size:38px}
+      .hero img{height:220px}
+    }
+	
+	
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/en/">
+    <div class="crest">L2</div>
+    <div>
+      <h1>L2 Guardian Guides</h1>
+    </div>
+  </a>
+</header>
+
+<div class="container">
+
+  <aside class="sidebar">
+    <h3>ON THIS PAGE</h3>
+
+    <nav class="toc">
+      <a href="#overview">Overview</a>
+	  <a href="#obtaining-patterns">Obtaining Patterns</a>
+      <a href="#priority">Stat Priority</a>
+      <a href="#materials">Materials</a>
+      <a href="#upgrading">Upgrading</a>
+	  <a href="#multidye">Multi Dye System</a>
+      <a href="#mistakes">Common Mistakes</a>
+      <a href="#related">Related Guides</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <a class="back" href="/en/">← Back to home</a>
+
+    <section class="hero no-image">
+
+     
+
+      <div class="hero-body">
+        <div class="badge">GUARDIAN SYSTEM</div>
+
+        <h1>Patterns</h1>
+
+        <p class="subtitle">
+          Patterns are one of the most important permanent progression systems in Guardian.
+          They provide long-term stat bonuses and can significantly increase farming efficiency,
+          PvE damage and overall character performance.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="label">System Type</div>
+            <div class="value">Permanent</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Best For</div>
+            <div class="value">PvE / Farm</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Difficulty</div>
+            <div class="value">Medium</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Priority</div>
+            <div class="value">High</div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+	<section class="section quick-start">
+  <div class="quick-head">
+    <div class="quick-icon">⚡</div>
+    <div>
+      <h2>Quick Start</h2>
+      <p>Best priorities for the first days of Guardian progression.</p>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+
+    <div class="quick-card">
+      <div class="quick-title">Mage</div>
+      <div class="quick-value">WIT → INT</div>
+      <span class="quick-tag high">High Priority</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Dagger / Archer</div>
+      <div class="quick-value">DEX → STR</div>
+      <span class="quick-tag high">High Priority</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Warrior</div>
+      <div class="quick-value">STR → DEX</div>
+      <span class="quick-tag medium">Medium Priority</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Tank</div>
+      <div class="quick-value">CON → DEX</div>
+      <span class="quick-tag medium">Medium Priority</span>
+    </div>
+
+  </div>
+
+  <div class="quick-footer">
+
+    <div class="quick-tip">
+      <strong>Level 3</strong>
+      Reach the first important breakpoint (+4 stat).
+    </div>
+
+    <div class="quick-tip">
+      <strong>Multi Dye</strong>
+      Use separate presets for PvE and Olympiad.
+    </div>
+
+    <div class="quick-tip">
+      <strong>Stat Breakthrough</strong>
+      Reach your breakthrough on your main stat before focusing on the secondary.
+    </div>
+
+  </div>
+</section>
+
+    <section class="section" id="overview">
+      <h2>Overview</h2>
+
+      <p>
+        Every Pattern focuses on a specific attribute such as STR, DEX, CON, INT, WIT or MEN.
+        Upgrading a Pattern grants increasing bonuses, but the cost grows at higher levels.
+      </p>
+	<img
+	  src="/images/Character_Status.jpg"
+	  alt="Character Status in Lineage 2 Guardian"
+	  class="guide-image-small"/>
+      <div class="note">
+        <strong>Recommendation:</strong> Check the break points of your stats on  the Chracter information window on "T" and then clicking on Stat Bonus
+      </div>
+	 
+    </section>
+	
+	    <section class="section" id="obtaining-patterns">
+      <h2>Obtaining Paterns</h2>
+
+      <p>
+        Patterns can be obtained through Dye Boosters.
+		<br>You can obtain a maximum of 3 Dye Boosters daily by hunting mobs
+		<br>In order to obtain a Dye Coupon you will need 5 Dye Boosters and 5 million adena and can be obtained in the special craft window.
+		Writting the Dye itself costs 1.3 million adena.
+      </p>
+	<img
+	  src="/images/dye_coupon.jpg"
+	  alt="Dye Coupon crafting in Lineage 2 Guardian"
+	  class="guide-image-small"/>
+	  
+      <div class="note">
+        <strong>Recommendation:</strong> Focus on 1-2 core Patterns first instead of spreading resources across many low-level upgrades.
+      </div>
+    </section>
+
+    <section class="section" id="priority">
+      <h2>Stat Priority by Class</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Class Type</th>
+            <th>Primary</th>
+            <th>Secondary</th>
+            <th>Avoid Early</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Mage</strong></td>
+            <td class="good">WIT</td>
+            <td>INT</td>
+            <td class="bad">CON</td>
+          </tr>
+
+          <tr>
+            <td><strong>Dagger</strong></td>
+            <td class="good">DEX</td>
+            <td>STR</td>
+            <td class="bad">MEN</td>
+          </tr>
+
+          <tr>
+            <td><strong>Archer</strong></td>
+            <td class="good">DEX</td>
+            <td>STR</td>
+            <td class="bad">MEN</td>
+          </tr>
+
+          <tr>
+            <td><strong>Warrior</strong></td>
+            <td class="good">STR</td>
+            <td>DEX</td>
+            <td class="bad">MEN</td>
+          </tr>
+
+          <tr>
+            <td><strong>Tank</strong></td>
+            <td class="good">CON</td>
+            <td>DEX</td>
+            <td class="bad">INT</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>Do not blindly follow retail priorities.</strong>
+        Guardian is rebalanced and some classes gain more value from DEX or WIT than on official Essence.
+      </div>
+    </section>
+
+    <section class="section" id="materials">
+      <h2>Required Materials</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Used For</th>
+            
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Dye Booster</td>
+            <td>Basic upgrade</td>
+            
+          </tr>
+          <tr>
+            <td>Adena</td>
+            <td>Upgrade fee</td>
+           
+          </tr>
+          <tr>
+            <td>Lucky Catalyst</td>
+            <td>Bonus chance</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="upgrading">
+      <h2>Recommended Upgrade Path</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong>Level 1-3</strong>
+            <p>Upgrade your main Pattern immediately. The cost is low and the power gain is excellent.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong>Level 4-11</strong>
+            <p>Continue only if this Pattern is part of your long-term build.</p>
+          </div>
+        </div>
+      </div>
+	  <div class="note">
+        <strong>Recommendation:</strong> At level 3 your Pattern will give you +4 on the Stat of the Pattern itself, it won't go up to +5 until level 11.
+      </div>
+    </section>
+	
+	<section class="section" id="multidye">
+      <h2>Multi Dye System</h2>
+
+      <p>
+        You can have 2 different Patterns on each slot and you can freely swap between them while being out of combat which allows you to have different patterns sets based on the content you are completing.
+      </p>
+	<img
+	  src="/images/multidye.jpg"
+	  alt="Multi Dye Sytem in Lineage 2 Guardian"
+	  class="guide-image-small"/>
+      <div class="note">
+        <strong>Recommendation:</strong> A common usage of the multi dye system would be to have one set for pure PVE and another one for Olympiads or PvP events.
+      </div>
+	
+    </section>
+	
+	
+    <section class="section" id="mistakes">
+      <h2>Common Mistakes</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Upgrading all Patterns equally</td>
+            <td class="bad">Very High</td>
+          </tr>
+
+          <tr>
+            <td>Ignoring WIT on mages</td>
+            <td class="bad">High</td>
+          </tr>
+
+          <tr>
+            <td>Spending all adena on Patterns</td>
+            <td class="bad">High</td>
+          </tr>
+
+          <tr>
+            <td>Upgrading without a final build</td>
+            <td>Medium</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Best practice:</strong> Decide your final class role (farm, PvP, bossing) before investing heavily into high-level Patterns.
+      </div>
+    </section>
+
+    <section class="section" id="related">
+      <h2>Related Guides</h2>
+
+      <div class="related">
+
+        <a href="/en/guides/hidden-power">
+          <strong>Hidden Power</strong>
+          <p>Optimize long-term progression and damage scaling.</p>
+        </a>
+
+        <a href="/en/guides/collections">
+          <strong>Collections</strong>
+          <p>Permanent account bonuses and efficient priorities.</p>
+        </a>
+
+        <a href="/en/guides/dolls">
+          <strong>Dolls</strong>
+          <p>Choose the best dolls for your build and farming setup.</p>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>

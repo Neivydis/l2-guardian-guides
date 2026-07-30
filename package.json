@@ -1,0 +1,14 @@
+{
+  "name": "l2-guardian-guides-v5",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.1.6"
+  }
+}
