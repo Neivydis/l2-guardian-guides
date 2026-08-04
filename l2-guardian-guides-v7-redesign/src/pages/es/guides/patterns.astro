@@ -1,0 +1,327 @@
+---
+import GuideLayout from '../../../layouts/GuideLayout.astro';
+const toc=[{href:'#overview',label:'Resumen'},{href:'#obtaining-patterns',label:'Obtener Patterns'},{href:'#priority',label:'Prioridad de estadísticas'},{href:'#materials',label:'Materiales'},{href:'#upgrading',label:'Mejora'},{href:'#multidye',label:'Sistema Multi Dye'},{href:'#mistakes',label:'Errores comunes'},{href:'#related',label:'Guías relacionadas'}];
+---
+<GuideLayout title="Patterns - L2 Guardian Guides" lang="es" active="patterns" toc={toc}><div class="content"><a class="back" href="/es/">← Volver al inicio</a>
+
+    <section class="hero no-image">
+
+     
+
+      <div class="hero-body">
+        <div class="badge">SISTEMA GUARDIAN</div>
+
+        <h1>Patterns</h1>
+
+        <p class="subtitle">
+          Patterns es uno de los sistemas de progresión permanente más importantes de Guardian.
+          Proporciona bonificaciones de estadísticas a largo plazo y puede aumentar significativamente la eficiencia de farmeo,
+          el daño PvE y el rendimiento general del personaje.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="label">Tipo de sistema</div>
+            <div class="value">Permanente</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Mejor para</div>
+            <div class="value">PvE / Farmeo</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Dificultad</div>
+            <div class="value">Media</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Prioridad</div>
+            <div class="value">Alta</div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+	<section class="section quick-start">
+  <div class="quick-head">
+    <div class="quick-icon">⚡</div>
+    <div>
+      <h2>Inicio rápido</h2>
+      <p>Mejores prioridades para los primeros días de progresión en Guardian.</p>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+
+    <div class="quick-card">
+      <div class="quick-title">Mago</div>
+      <div class="quick-value">WIT → INT</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Daga / Arquero</div>
+      <div class="quick-value">DEX → STR</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Guerrero</div>
+      <div class="quick-value">STR → DEX</div>
+      <span class="quick-tag medium">Media Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Tanque</div>
+      <div class="quick-value">CON → DEX</div>
+      <span class="quick-tag medium">Media Prioridad</span>
+    </div>
+
+  </div>
+
+  <div class="quick-footer">
+
+    <div class="quick-tip">
+      <strong>Level 3</strong>
+      Alcanza el primer breakpoint importante (+4 de estadística).
+    </div>
+
+    <div class="quick-tip">
+      <strong>Multi Dye</strong>
+      Usa configuraciones separadas para PvE y Olimpiadas.
+    </div>
+
+    <div class="quick-tip">
+      <strong>Breakpoint de estadísticas</strong>
+      Alcanza el breakpoint de tu estadística principal antes de centrarte en la secundaria.
+    </div>
+
+  </div>
+</section>
+
+    <section class="section" id="overview">
+      <h2>Resumen</h2>
+
+      <p>
+        Every Pattern focuses on a specific attribute such as STR, DEX, CON, INT, WIT or MEN.
+        Mejora a Pattern grants increasing bonuses, but the cost grows at higher levels.
+      </p>
+	<img
+	  src="/images/Character_Status.jpg"
+	  alt="Character Status in Lineage 2 Guardian"
+	  class="guide-image-small"/>
+      <div class="note">
+        <strong>Recomendación:</strong> Comprueba los breakpoints de tus estadísticas en la ventana de información del personaje (T) y después en "Stat Bonus".
+      </div>
+	 
+    </section>
+	
+	    <section class="section" id="obtaining-patterns">
+      <h2>Obtener Patterns</h2>
+
+      <p>
+        Los Patterns se pueden obtener mediante Dye Boosters.
+		<br>Puedes obtener un máximo de 3 Dye Boosters al día cazando monstruos.
+		<br>Para obtener un Dye Coupon necesitarás 5 Dye Boosters y 5 millones de adena, y se consigue en la ventana de Special Craft.
+		Escribir el Dye tiene un coste de 1,3 millones de adena.
+      </p>
+	<img
+	  src="/images/dye_coupon.jpg"
+	  alt="Dye Coupon crafting in Lineage 2 Guardian"
+	  class="guide-image-small"/>
+	  
+      <div class="note">
+        <strong>Recomendación:</strong> Concéntrate primero en 1-2 Patterns principales en lugar de repartir recursos entre muchas mejoras de bajo nivel.
+      </div>
+    </section>
+
+    <section class="section" id="priority">
+      <h2>Prioridad de estadísticas by Class</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de clase</th>
+            <th>Principal</th>
+            <th>Secundaria</th>
+            <th>Evitar al principio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Mago</strong></td>
+            <td class="good">WIT</td>
+            <td>INT</td>
+            <td class="bad">CON</td>
+          </tr>
+
+          <tr>
+            <td><strong>Dagger</strong></td>
+            <td class="good">DEX</td>
+            <td>STR</td>
+            <td class="bad">MEN</td>
+          </tr>
+
+          <tr>
+            <td><strong>Archer</strong></td>
+            <td class="good">DEX</td>
+            <td>STR</td>
+            <td class="bad">MEN</td>
+          </tr>
+
+          <tr>
+            <td><strong>Guerrero</strong></td>
+            <td class="good">STR</td>
+            <td>DEX</td>
+            <td class="bad">MEN</td>
+          </tr>
+
+          <tr>
+            <td><strong>Tanque</strong></td>
+            <td class="good">CON</td>
+            <td>DEX</td>
+            <td class="bad">INT</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>No sigas ciegamente las prioridades de retail.</strong>
+        Guardian está reequilibrado y algunas clases obtienen más valor de DEX o WIT que en Essence oficial.
+      </div>
+    </section>
+
+    <section class="section" id="materials">
+      <h2>Required Materiales</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Uso</th>
+            
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Dye Booster</td>
+            <td>Mejora básica</td>
+            
+          </tr>
+          <tr>
+            <td>Adena</td>
+            <td>Coste de mejora</td>
+           
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="upgrading">
+      <h2>Ruta de mejora recomendada</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong>Level 1-3</strong>
+            <p>Mejora inmediatamente tu Pattern principal. El coste es bajo y la ganancia de poder es excelente.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong>Level 4-11</strong>
+            <p>Continúa solo si este Pattern forma parte de tu build a largo plazo.</p>
+          </div>
+        </div>
+      </div>
+	  <div class="note">
+        <strong>Recomendación:</strong> En nivel 3 tu Pattern otorgará +4 a la estadística correspondiente. No subirá a +5 hasta el nivel 11.
+      </div>
+    </section>
+	
+	<section class="section" id="multidye">
+      <h2>Sistema Multi Dye</h2>
+
+      <p>
+        Puedes tener 2 Patterns diferentes en cada hueco y cambiar libremente entre ellos fuera de combate, lo que te permite tener distintos sets según el contenido que estés realizando.
+      </p>
+	<img
+	  src="/images/multidye.jpg"
+	  alt="Multi Dye Sytem in Lineage 2 Guardian"
+	  class="guide-image-small"/>
+      <div class="note">
+        <strong>Recomendación:</strong> Un uso habitual del sistema Multi Dye es tener un set para PvE puro y otro para Olimpiadas o eventos PvP.
+      </div>
+	
+    </section>
+	
+	
+    <section class="section" id="mistakes">
+      <h2>Errores comunes</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Impacto</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Mejora all Patterns equally</td>
+            <td class="bad">Very Alta</td>
+          </tr>
+
+          <tr>
+            <td>Ignorar WIT en magos</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Gastar toda la adena en Patterns</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Mejora without a final build</td>
+            <td>Media</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Mejor práctica:</strong> Decide el rol final de tu clase (farmeo, PvP o bosses) antes de invertir mucho en Patterns de alto nivel.
+      </div>
+    </section>
+
+    <section class="section" id="related">
+      <h2>Guías relacionadas</h2>
+
+      <div class="related">
+
+        <a href="/es/guides/hidden-power">
+          <strong>Hidden Power</strong>
+          <p>Optimiza la progresión a largo plazo y el escalado de daño.</p>
+        </a>
+
+        <a href="/es/guides/collections">
+          <strong>Collections</strong>
+          <p>Permanente account bonuses and efficient priorities.</p>
+        </a>
+
+        <a href="/es/guides/dolls">
+          <strong>Dolls</strong>
+          <p>Elige las mejores dolls para tu build y configuración de farmeo.</p>
+        </a>
+
+      </div>
+    </section></div></GuideLayout>

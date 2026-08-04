@@ -1,0 +1,19 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import '../../styles/home.css';
+---
+<SiteLayout title="L2 Guardian Guides" lang="en"><div class="site-shell"><Sidebar lang="en"/><main class="home-main"><section class="home-hero"><div class="home-hero-content"><h1>L2 Guardian Guides</h1><p>Everything you need to master Guardian server systems and progress your character.</p></div></section><h2 class="home-section-title">ALL GUIDES</h2><div class="guide-grid" data-guide-grid><a class="guide-card" href="/en/guides/patterns" data-guide-card data-search-terms="patterns learn everything about patterns, stats, types and best combinations."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/patterns.png" alt=""/><h2>Patterns</h2><p>Learn everything about Patterns, stats, types and best combinations.</p><div class="card-cta">View Guide <span>→</span></div></div></a>
+<a class="guide-card" href="/en/guides/hidden-power" data-guide-card data-search-terms="hidden power discover how hidden power works and how to increase your bonuses."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/hidden-power.png" alt=""/><h2>Hidden Power</h2><p>Discover how Hidden Power works and how to increase your bonuses.</p><div class="card-cta">View Guide <span>→</span></div></div></a>
+<a class="guide-card" href="/en/guides/aden-laboratory" data-guide-card data-search-terms="aden laboratory everything about research, stages and useful progression."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/aden-laboratory.png" alt=""/><h2>Aden Laboratory</h2><p>Everything about research, stages and useful progression.</p><div class="card-cta">View Guide <span>→</span></div></div></a>
+<a class="guide-card" href="/en/guides/collections" data-guide-card data-search-terms="collections complete collections and get powerful rewards and bonuses."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/collections.png" alt=""/><h2>Collections</h2><p>Complete collections and get powerful rewards and bonuses.</p><div class="card-cta">View Guide <span>→</span></div></div></a>
+<a class="guide-card" href="/en/guides/dolls" data-guide-card data-search-terms="dolls learn how dolls work and which ones are the best for you."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/dolls.png" alt=""/><h2>Dolls</h2><p>Learn how Dolls work and which ones are the best for you.</p><div class="card-cta">View Guide <span>→</span></div></div></a>
+<a class="guide-card" href="/en/guides/pets" data-guide-card data-search-terms="guardians (pets) everything about guardians, skills, growth and management."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/pets.svg" alt=""/><h2>Guardians (Pets)</h2><p>Everything about Guardians, skills, growth and management.</p><div class="card-cta">View Guide <span>→</span></div></div></a><div class="no-results" data-card-empty hidden>No guides found.</div></div></main></div></SiteLayout>
+<script is:inline>
+  function connectHomeSearch(){
+    const input=document.querySelector('[data-search-input]'); const cards=[...document.querySelectorAll('[data-guide-card]')]; const empty=document.querySelector('[data-card-empty]');
+    if(!input||!cards.length||input.dataset.homeReady)return; input.dataset.homeReady='1';
+    input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let shown=0;cards.forEach(c=>{const match=!q||c.dataset.searchTerms.includes(q);c.hidden=!match;if(match)shown++;});if(empty)empty.hidden=shown!==0;});
+  }
+  document.addEventListener('astro:page-load',connectHomeSearch); connectHomeSearch();
+</script>

@@ -1,0 +1,317 @@
+---
+import GuideLayout from '../../../layouts/GuideLayout.astro';
+const toc=[{href:'#overview',label:'Resumen'},{href:'#obtaining-reports',label:'Obtener Informes'},{href:'#how-it-works',label:'Cómo funciona'},{href:'#materials',label:'Materiales'},{href:'#stages',label:'Etapas y progreso'},{href:'#tips',label:'Recomendaciones'},{href:'#mistakes',label:'Errores comunes'},{href:'#related',label:'Guías relacionadas'}];
+---
+<GuideLayout title="Aden Laboratory - L2 Guardian Guides" lang="es" active="aden-laboratory" toc={toc}><div class="content"><a class="back" href="/es/">← Volver al inicio</a>
+
+    <section class="hero no-image">
+
+     
+
+      <div class="hero-body">
+        <div class="badge">SISTEMA GUARDIAN</div>
+
+        <h1>Aden Laboratory</h1>
+
+        <p class="subtitle">
+          Aden Laboratory es un sistema de estadísticas permanentes centrado en investigar a Queen Ant.
+          Gastando Informes de Exploración y Adena vas desbloqueando progresivamente los bonos de cada etapa,
+          lo que lo convierte en una de las mejores relaciones coste-beneficio durante el early y mid game.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="label">Tipo de sistema</div>
+            <div class="value">Permanente</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Mejor para</div>
+            <div class="value">Early / Mid Game</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Dificultad</div>
+            <div class="value">Baja</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Prioridad</div>
+            <div class="value">Media</div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+	<section class="section quick-start">
+  <div class="quick-head">
+    <div class="quick-icon">⚡</div>
+    <div>
+      <h2>Inicio rápido</h2>
+      <p>Lo que debes saber antes de abrir la ventana de Aden Laboratory por primera vez.</p>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+
+    <div class="quick-card">
+      <div class="quick-title">Acceso</div>
+      <div class="quick-value">Menú general</div>
+      <span class="quick-tag high">Necesario</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Coste principal</div>
+      <div class="quick-value">Informe + Adena</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Jefe investigado</div>
+      <div class="quick-value">Queen Ant</div>
+      <span class="quick-tag medium">Media Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Cambio en Guardian</div>
+      <div class="quick-value">Costes reducidos</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+  </div>
+
+  <div class="quick-footer">
+
+    <div class="quick-tip">
+      <strong>Costes reducidos</strong>
+      Guardian ha bajado la tarifa en Adena, así que merece la pena usar el sistema mucho antes que en el Essence retail.
+    </div>
+
+    <div class="quick-tip">
+      <strong>Primera confirmación gratis</strong>
+      La primera vez que confirmas un valor obtenido en una etapa no tiene coste, así que úsala siempre antes de bloquear un valor.
+    </div>
+
+    <div class="quick-tip">
+      <strong>Farmeo pasivo de informes</strong>
+      Los Informes de Exploración caen mientras haces tu farmeo normal en campo abierto, no hace falta una zona dedicada.
+    </div>
+
+  </div>
+</section>
+
+    <section class="section" id="overview">
+      <h2>Resumen</h2>
+
+      <p>
+        Aden Laboratory es un sistema permanente de personaje disponible desde el menú general. Dentro de
+        él investigas a Queen Ant, y cada etapa que superas otorga un bono de estadísticas permanente.
+        A diferencia de Patterns o Hidden Power, no se paga con un booster que se encanta, sino que funciona
+        mediante un sistema de selección de cartas que consume Informes de Exploración y Adena en cada intento.
+      </p>
+	<img
+	  src="/images/aden-laboratory.png"
+	  alt="Ventana de Aden Laboratory en Lineage 2 Guardian"
+	  class="guide-image-small"/>
+      <div class="note">
+        <strong>Recomendación:</strong> Abre la ventana de Aden Laboratory pronto, incluso con solo un par de
+        Informes de Exploración, ya que los costes reducidos de Guardian hacen que merezca la pena empezar
+        mucho antes que en un servidor Essence estándar.
+      </div>
+	 
+    </section>
+	
+	    <section class="section" id="obtaining-reports">
+      <h2>Obtener Informes</h2>
+
+      <p>
+        Los Informes de Exploración de Aden caen directamente de los monstruos mientras farmeas en campo
+        abierto, así que no necesitas visitar ninguna zona concreta para conseguirlos.
+		<br>La tarifa en Adena necesaria para usar cada informe en un intento de investigación se ha reducido
+		en Guardian respecto al Essence estándar, lo que hace que esta función sea relevante durante el
+		early-mid game en lugar de ser un sumidero de adena de final de juego.
+      </p>
+	  
+      <div class="note">
+        <strong>Recomendación:</strong> Gasta tus informes según los vayas consiguiendo en lugar de acumularlos,
+        cada intento hace avanzar una etapa o te acerca al valor garantizado.
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <h2>Cómo funciona</h2>
+
+      <p>
+        Cada intento de investigación te muestra un conjunto de cartas. Seleccionar una carta siempre
+        consume un Informe de Exploración más la tarifa en Adena, sin importar el resultado.
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong>Elige una carta</strong>
+            <p>Si la carta no es la del jefe, desaparece y simplemente vuelves a intentarlo con otra distinta.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong>Encuentra la carta del jefe</strong>
+            <p>Elegir la carta correcta te otorga el bono de esa etapa y te lleva a la etapa especial de ese mismo bono.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <strong>Refina el efecto</strong>
+            <p>Durante la etapa especial el valor del bono cambia en cada nueva investigación. Puedes confirmar un valor obtenido para fijarlo, y la primera confirmación es gratuita.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <strong>Alcanza las etapas trascendentales</strong>
+            <p>Una vez completadas todas las etapas comunes y especiales, se desbloquean las etapas trascendentales. Subir a una etapa trascendental no está garantizado.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="warning">
+        <strong>Los efectos confirmados no son automáticos.</strong>
+        Si no confirmas el valor obtenido, desaparece en cuanto inicias una nueva investigación, así que presta atención antes de lanzar otro intento.
+      </div>
+    </section>
+
+    <section class="section" id="materials">
+      <h2>Materiales necesarios</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Informe de Exploración de Aden</td>
+            <td>Se gasta en cada selección de carta / intento de investigación</td>
+          </tr>
+          <tr>
+            <td>Adena</td>
+            <td>Tarifa que se paga junto a cada informe, reducida en Guardian</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="stages">
+      <h2>Etapas y progreso</h2>
+
+      <p>
+        El progreso en Aden Laboratory siempre avanza en el mismo orden: primero las etapas comunes, después
+        su etapa especial correspondiente para refinar el valor del bono, y solo cuando todas las etapas
+        están completadas se desbloquean las etapas trascendentales.
+      </p>
+
+      <div class="note">
+        <strong>Recomendación:</strong> Trata las etapas comunes y especiales como la prioridad real, ya que
+        están garantizadas con suficientes intentos. Las etapas trascendentales son un bono a largo plazo,
+        no algo que farmear de inmediato.
+      </div>
+    </section>
+
+    <section class="section" id="tips">
+      <h2>Recomendaciones</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong>Early game</strong>
+            <p>Usa cada Informe de Exploración en cuanto lo consigas. El coste reducido en Adena de Guardian hace que no tenga sentido esperar.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong>Mid game</strong>
+            <p>Cuando ya superes las etapas comunes con regularidad, céntrate en confirmar buenas tiradas durante la etapa especial en lugar de repetir intentos sin parar.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="mistakes">
+      <h2>Errores comunes</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Error</th>
+            <th>Impacto</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Acumular Informes de Exploración en vez de usarlos</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Iniciar una nueva investigación sin confirmar un buen valor obtenido</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Ignorar el sistema por parecer "de final de juego"</td>
+            <td class="bad">Media</td>
+          </tr>
+
+          <tr>
+            <td>Buscar las etapas trascendentales sin haber completado las comunes/especiales</td>
+            <td>Media</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Mejor práctica:</strong> Aden Laboratory premia la constancia más que los gastos puntuales, haz
+        algunos intentos cada vez que junten informes en lugar de guardarlos para una única sesión grande.
+      </div>
+    </section>
+
+    <section class="section" id="related">
+      <h2>Guías relacionadas</h2>
+
+      <div class="related">
+
+        <a href="/es/guides/patterns">
+          <strong>Patterns</strong>
+          <p>Bonificaciones de estadísticas permanentes a través del sistema de Dye.</p>
+        </a>
+
+        <a href="/es/guides/hidden-power">
+          <strong>Hidden Power</strong>
+          <p>Optimiza la progresión a largo plazo y el escalado de daño.</p>
+        </a>
+
+        <a href="/es/guides/collections">
+          <strong>Collections</strong>
+          <p>Bonificaciones de cuenta permanentes y prioridades eficientes.</p>
+        </a>
+
+      </div>
+    </section></div></GuideLayout>

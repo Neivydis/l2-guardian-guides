@@ -1,0 +1,19 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import '../../styles/home.css';
+---
+<SiteLayout title="L2 Guardian Guides" lang="es"><div class="site-shell"><Sidebar lang="es"/><main class="home-main"><section class="home-hero"><div class="home-hero-content"><h1>L2 Guardian Guides</h1><p>Todo lo que necesitas para dominar los sistemas de Guardian y mejorar tu personaje.</p></div></section><h2 class="home-section-title">TODAS LAS GUÍAS</h2><div class="guide-grid" data-guide-grid><a class="guide-card" href="/es/guides/patterns" data-guide-card data-search-terms="patterns aprende todo sobre patterns, estadísticas, tipos y mejores combinaciones."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/patterns.png" alt=""/><h2>Patterns</h2><p>Aprende todo sobre Patterns, estadísticas, tipos y mejores combinaciones.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/hidden-power" data-guide-card data-search-terms="hidden power descubre cómo funciona hidden power y cómo aumentar tus bonificaciones."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/hidden-power.png" alt=""/><h2>Hidden Power</h2><p>Descubre cómo funciona Hidden Power y cómo aumentar tus bonificaciones.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/aden-laboratory" data-guide-card data-search-terms="aden laboratory todo sobre el laboratorio, investigaciones y progresión."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/aden-laboratory.png" alt=""/><h2>Aden Laboratory</h2><p>Todo sobre el laboratorio, investigaciones y progresión.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/collections" data-guide-card data-search-terms="collections completa colecciones y consigue poderosas recompensas y bonificaciones."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/collections.png" alt=""/><h2>Collections</h2><p>Completa colecciones y consigue poderosas recompensas y bonificaciones.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/dolls" data-guide-card data-search-terms="dolls aprende cómo funcionan las dolls y cuáles son mejores para ti."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/dolls.png" alt=""/><h2>Dolls</h2><p>Aprende cómo funcionan las Dolls y cuáles son mejores para ti.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/pets" data-guide-card data-search-terms="guardianes (pets) todo sobre guardianes, habilidades, crecimiento y gestión."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/pets.svg" alt=""/><h2>Guardianes (Pets)</h2><p>Todo sobre Guardianes, habilidades, crecimiento y gestión.</p><div class="card-cta">Ver guía <span>→</span></div></div></a><div class="no-results" data-card-empty hidden>No se encontraron guías.</div></div></main></div></SiteLayout>
+<script is:inline>
+  function connectHomeSearch(){
+    const input=document.querySelector('[data-search-input]'); const cards=[...document.querySelectorAll('[data-guide-card]')]; const empty=document.querySelector('[data-card-empty]');
+    if(!input||!cards.length||input.dataset.homeReady)return; input.dataset.homeReady='1';
+    input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let shown=0;cards.forEach(c=>{const match=!q||c.dataset.searchTerms.includes(q);c.hidden=!match;if(match)shown++;});if(empty)empty.hidden=shown!==0;});
+  }
+  document.addEventListener('astro:page-load',connectHomeSearch); connectHomeSearch();
+</script>

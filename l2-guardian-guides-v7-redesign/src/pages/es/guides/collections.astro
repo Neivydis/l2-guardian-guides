@@ -1,0 +1,338 @@
+---
+import GuideLayout from '../../../layouts/GuideLayout.astro';
+const toc=[{href:'#overview',label:'Resumen'},{href:'#how-it-works',label:'Cómo funciona'},{href:'#categories',label:'Categorías'},{href:'#obtaining-items',label:'Obtener ítems'},{href:'#recommended',label:'Colecciones recomendadas al inicio'},{href:'#mistakes',label:'Errores comunes'},{href:'#related',label:'Guías relacionadas'}];
+---
+<GuideLayout title="Collections - L2 Guardian Guides" lang="es" active="collections" toc={toc}><div class="content"><a class="back" href="/es/">← Volver al inicio</a>
+
+    <section class="hero no-image">
+
+     
+
+      <div class="hero-body">
+        <div class="badge">SISTEMA GUARDIAN</div>
+
+        <h1>Collections</h1>
+
+        <p class="subtitle">
+          Las Collections son bonificaciones de estadísticas permanentes y de cuenta que se desbloquean
+          registrando sets concretos de ítems. Se aplican a todos los personajes de tu cuenta, así que el
+          tiempo invertido en completarlas nunca se pierde, aunque cambies o rehagas una clase más adelante.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="label">Tipo de sistema</div>
+            <div class="value">Permanente / Cuenta</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Mejor para</div>
+            <div class="value">Todas las clases</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Dificultad</div>
+            <div class="value">Baja / Media</div>
+          </div>
+
+          <div class="info-card">
+            <div class="label">Prioridad</div>
+            <div class="value">Media-Alta</div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+	<section class="section quick-start">
+  <div class="quick-head">
+    <div class="quick-icon">⚡</div>
+    <div>
+      <h2>Inicio rápido</h2>
+      <p>Lo que debes saber antes de abrir la ventana de Collections por primera vez.</p>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+
+    <div class="quick-card">
+      <div class="quick-title">Alcance</div>
+      <div class="quick-value">Toda la cuenta</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Categorías</div>
+      <div class="quick-value">8 pestañas</div>
+      <span class="quick-tag medium">Media Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Fuente principal</div>
+      <div class="quick-value">Random Craft</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+    <div class="quick-card">
+      <div class="quick-title">Ítems usados</div>
+      <div class="quick-value">Se consumen para siempre</div>
+      <span class="quick-tag high">Alta Prioridad</span>
+    </div>
+
+  </div>
+
+  <div class="quick-footer">
+
+    <div class="quick-tip">
+      <strong>Los ítems se consumen</strong>
+      Una vez registrado en una colección, el ítem se elimina de tu inventario para siempre, así que confirma bien antes de meterlo.
+    </div>
+
+    <div class="quick-tip">
+      <strong>Los ítems Sealed también cuentan</strong>
+      La mayoría de ítems de colección tienen una versión Sealed obtenible por Random Craft, casi nunca hace falta comprar o farmear la versión normal.
+    </div>
+
+    <div class="quick-tip">
+      <strong>De cuenta, no por personaje</strong>
+      El progreso y las colecciones completadas se comparten con todos los personajes que crees en la misma cuenta.
+    </div>
+
+  </div>
+</section>
+
+    <section class="section" id="overview">
+      <h2>Resumen</h2>
+
+      <p>
+        Las Collections son sets de ítems concretos que, una vez registrados por completo, otorgan una
+        bonificación de estadísticas permanente. Están disponibles desde el nivel 1, y tanto su progreso
+        como sus efectos se comparten entre todos los personajes de tu cuenta, aunque no entre servidores distintos.
+      </p>
+	<img
+	  src="/images/collections.png"
+	  alt="Ventana de Collections en Lineage 2 Guardian"
+	  class="guide-image-small"/>
+      <div class="note">
+        <strong>Recomendación:</strong> Abre la ventana de Collections pronto y usa la opción de búsqueda para
+        ver si algún ítem que ya tienes se puede registrar, algunas piezas de equipo tempranas cuentan sin que te des cuenta.
+      </div>
+	 
+    </section>
+
+    <section class="section" id="how-it-works">
+      <h2>Cómo funciona</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong>Registra un ítem</strong>
+            <p>Selecciona el ítem con clic izquierdo y abre el botón de Collections desde tu inventario. Se resaltará cualquier colección que ese ítem pueda completar.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong>El ítem se consume</strong>
+            <p>Una vez añadido, el ítem se elimina de tu inventario de forma permanente. No se puede recuperar, así que asegúrate de que no lo necesitas equipado.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <strong>Usa los huecos alternativos cuando existan</strong>
+            <p>Algunas colecciones aceptan más de un ítem válido por hueco (por ejemplo un spellbook normal o su versión Sealed). Puedes combinar libremente qué versión usas en cada hueco, siempre que se cumpla el total requerido.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <strong>El efecto se aplica al instante</strong>
+            <p>En cuanto registras el último ítem necesario, la colección se completa y su bono se aplica de inmediato. Los bonos permanentes se quedan activos para siempre, los temporales muestran su caducidad en la pantalla de Collections.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="warning">
+        <strong>Algunos ítems no se pueden registrar.</strong>
+        Los ítems augmentados, encantados (salvo que se indique lo contrario), con Soul Crystal insertado, la mayoría de Sealed que no se pueden desellar y los ítems equipados no se pueden añadir a una colección.
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <h2>Categorías</h2>
+
+      <p>
+        Las colecciones se dividen en 8 pestañas. Pasa el cursor sobre cualquier categoría en el juego para ver
+        tu porcentaje de completado, y usa Favoritos para mantener arriba las colecciones en las que estás trabajando.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Enfoque</th>
+            <th>Ejemplo de colección</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Attack</strong></td>
+            <td>P./M. Atk., Skill Power, Ratio/Daño Crítico</td>
+            <td>Ambidexterity — P./M. Atk. +125</td>
+          </tr>
+          <tr>
+            <td><strong>Defense</strong></td>
+            <td>P./M. Def., reducción de daño/crítico recibido</td>
+            <td>Great Power — P./M. Def. +100</td>
+          </tr>
+          <tr>
+            <td><strong>Support</strong></td>
+            <td>Max HP/MP/CP, Velocidad de ataque/casteo, Cooldown</td>
+            <td>Music Lover I — Max MP +150</td>
+          </tr>
+          <tr>
+            <td><strong>Special</strong></td>
+            <td>Resistencias (Pull, Hold, Suppression, Imprisonment...)</td>
+            <td>Undying Body III — Hellfire Resistance +3%</td>
+          </tr>
+          <tr>
+            <td><strong>Stats</strong></td>
+            <td>STR/DEX/CON/INT/WIT/MEN en bruto</td>
+            <td>Resistance Set — STR/INT/DEX/WIT +1</td>
+          </tr>
+          <tr>
+            <td><strong>Utility</strong></td>
+            <td>Sayha's Grace, ganancia de XP/SP, huecos de inventario/almacén</td>
+            <td>Supporting Accessories I — Acquired XP/SP +2%</td>
+          </tr>
+          <tr>
+            <td><strong>Events</strong></td>
+            <td>Colecciones temporales ligadas a ofertas concretas</td>
+            <td>Growth Rune Collection II — Acquired XP/SP +2%</td>
+          </tr>
+          <tr>
+            <td><strong>Favorites</strong></td>
+            <td>No es una categoría real, es un panel para marcar cualquier colección</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="obtaining-items">
+      <h2>Obtener ítems</h2>
+
+      <p>
+        En Guardian, el Random Craft es la fuente principal de ítems para completar colecciones, es el camino
+        pensado desde el early game y no una bonificación de final de juego.
+		<br>La mayoría de ítems de colección tienen un equivalente Sealed que puede salir del Random Craft,
+		así que casi nunca hace falta farmear o comprar la versión normal.
+      </p>
+
+      <div class="note">
+        <strong>Recomendación:</strong> Guarda los ítems de bajo grado que normalmente venderías, muchos son
+        materiales válidos para Random Craft y alimentan directamente el progreso de tus colecciones.
+      </div>
+    </section>
+
+    <section class="section" id="recommended">
+      <h2>Colecciones recomendadas al inicio</h2>
+
+      <p>
+        Esta sección listará las colecciones más baratas y rentables para completar durante tus primeros días
+        en Guardian, basándose en costes reales del juego y no en teoría.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Colección</th>
+            <th>Ítems necesarios</th>
+            <th>Efecto</th>
+            <th>Por qué al inicio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="4">Pendiente de rellenar.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Nota:</strong> Esta tabla es un hueco reservado, rellénala con las colecciones que realmente
+        merezca la pena priorizar en Guardian.
+      </div>
+    </section>
+
+    <section class="section" id="mistakes">
+      <h2>Errores comunes</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Error</th>
+            <th>Impacto</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Vender ítems de bajo grado sin comprobar antes su valor en Random Craft/colecciones</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Registrar un ítem sin comprobar si lo necesitas equipado</td>
+            <td class="bad">Alta</td>
+          </tr>
+
+          <tr>
+            <td>Ignorar las colecciones de Utility y Support por centrarse solo en Attack</td>
+            <td class="bad">Media</td>
+          </tr>
+
+          <tr>
+            <td>No usar la pestaña de Favoritos para seguir las colecciones en curso</td>
+            <td>Baja</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Mejor práctica:</strong> Antes de vender o desencantar algo, comprueba si su icono tiene la
+        marca de colección, es una forma fácil de no perder estadísticas permanentes gratis.
+      </div>
+    </section>
+
+    <section class="section" id="related">
+      <h2>Guías relacionadas</h2>
+
+      <div class="related">
+
+        <a href="/es/guides/patterns">
+          <strong>Patterns</strong>
+          <p>Bonificaciones de estadísticas permanentes a través del sistema de Dye.</p>
+        </a>
+
+        <a href="/es/guides/aden-laboratory">
+          <strong>Aden Laboratory</strong>
+          <p>Investiga a Queen Ant para conseguir un bono de estadísticas permanente.</p>
+        </a>
+
+        <a href="/es/guides/hidden-power">
+          <strong>Hidden Power</strong>
+          <p>Optimiza la progresión a largo plazo y el escalado de daño.</p>
+        </a>
+
+      </div>
+    </section></div></GuideLayout>

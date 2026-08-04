@@ -1,0 +1,5 @@
+---
+const { lang='en' } = Astro.props;
+const copyright = lang === 'es' ? '© 2026 L2 Reborn Guides. Todos los derechos reservados.' : '© 2026 L2 Reborn Guides. All rights reserved.';
+---
+<footer class="site-footer"><div class="footer-inner"><span>{copyright}</span><a href="https://l2reborn.org/essence/" target="_blank" rel="noopener">{lang==='es'?'Jugar ahora':'Play Now'} ↗</a><a href="https://discord.gg/l2reborn" target="_blank" rel="noopener">Discord ↗</a></div></footer>

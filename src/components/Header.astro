@@ -5,11 +5,12 @@ const enPath = currentPath.startsWith('/es/') ? currentPath.replace(/^\/es\//, '
 const esPath = currentPath.startsWith('/en/') ? currentPath.replace(/^\/en\//, '/es/') : (currentPath.startsWith('/es/') ? currentPath : '/es/');
 const home = `/${lang}/`;
 const labels = lang === 'es' ? {
-  search:'Buscar guías, sistemas, objetos...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', pets:'Guardianes (Pets)'
+  search:'Buscar guías, sistemas, objetos...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', character:'Character', pets:'Guardianes (Pets)'
 } : {
-  search:'Search guides, systems, items...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', pets:'Guardians (Pets)'
+  search:'Search guides, systems, items...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', character:'Character', pets:'Guardians (Pets)'
 };
 const items = [
+  {title:labels.character, terms:'character skills buffs skill enchant stats elixirs combat power spellbooks', href:`/${lang}/guides/character`, icon:'/icons/character.png'},
   {title:labels.patterns, terms:'patterns dyes stats wit int dex str', href:`/${lang}/guides/patterns`, icon:'/icons/patterns.png'},
   {title:labels.hidden, terms:'hidden power nodes progression damage', href:`/${lang}/guides/hidden-power`, icon:'/icons/hidden-power.png'},
   {title:labels.aden, terms:'aden laboratory research queen ant crafting', href:`/${lang}/guides/aden-laboratory`, icon:'/icons/aden-laboratory.png'},

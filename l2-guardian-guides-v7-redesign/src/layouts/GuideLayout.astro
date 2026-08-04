@@ -1,0 +1,10 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/site.css';
+import '../styles/guide.css';
+const { title='L2 Guardian Guides', lang='en', active='', toc=[] } = Astro.props;
+---
+<!doctype html><html lang={lang}><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#02060d"/><title>{title}</title><ClientRouter /></head><body><Header lang={lang}/><div class="site-shell"><Sidebar lang={lang} active={active} toc={toc}/><main class="guide-main"><slot/></main></div><Footer lang={lang}/></body></html>

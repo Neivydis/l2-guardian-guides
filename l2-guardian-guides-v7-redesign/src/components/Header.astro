@@ -1,0 +1,67 @@
+---
+const { lang = 'en' } = Astro.props;
+const currentPath = Astro.url.pathname;
+const enPath = currentPath.startsWith('/es/') ? currentPath.replace(/^\/es\//, '/en/') : (currentPath.startsWith('/en/') ? currentPath : '/en/');
+const esPath = currentPath.startsWith('/en/') ? currentPath.replace(/^\/en\//, '/es/') : (currentPath.startsWith('/es/') ? currentPath : '/es/');
+const home = `/${lang}/`;
+const labels = lang === 'es' ? {
+  search:'Buscar guías, sistemas, objetos...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', pets:'Guardianes (Pets)'
+} : {
+  search:'Search guides, systems, items...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', pets:'Guardians (Pets)'
+};
+const items = [
+  {title:labels.patterns, terms:'patterns dyes stats wit int dex str', href:`/${lang}/guides/patterns`, icon:'/icons/patterns.png'},
+  {title:labels.hidden, terms:'hidden power nodes progression damage', href:`/${lang}/guides/hidden-power`, icon:'/icons/hidden-power.png'},
+  {title:labels.aden, terms:'aden laboratory research queen ant crafting', href:`/${lang}/guides/aden-laboratory`, icon:'/icons/aden-laboratory.png'},
+  {title:labels.collections, terms:'collections bonuses items account', href:`/${lang}/guides/collections`, icon:'/icons/collections.png'},
+  {title:labels.dolls, terms:'dolls summon enhancement compounding', href:`/${lang}/guides/dolls`, icon:'/icons/dolls.png'},
+  {title:labels.pets, terms:'guardians pets skills evolution books', href:`/${lang}/guides/pets`, icon:'/icons/pets.svg'}
+];
+---
+<header class="site-header">
+  <a class="site-logo" href={home} aria-label="L2 Reborn home">
+    <img src="/images/reborn-logo.png" alt="Reborn - Home of Lineage" />
+  </a>
+  <div class="search-wrap" data-search-root>
+    <label class="search-box">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" autocomplete="off" placeholder={labels.search} aria-label={labels.search} data-search-input />
+    </label>
+    <div class="search-results" data-search-results hidden>
+      {items.map(item => <a class="search-result" href={item.href} data-search-item data-terms={`${item.title} ${item.terms}`.toLowerCase()}><img src={item.icon} alt=""/><span>{item.title}</span></a>)}
+      <div class="search-result" data-search-empty hidden>{lang === 'es' ? 'No se encontraron guías.' : 'No guides found.'}</div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <a class="discord-icon" href="https://discord.gg/l2reborn" target="_blank" rel="noopener" aria-label="Discord">◉</a>
+    <nav class="language-switcher" aria-label="Language">
+      <a class:list={['flag-link', {active:lang==='en'}]} href={enPath} title="English" aria-label="English">🇬🇧</a>
+      <a class:list={['flag-link', {active:lang==='es'}]} href={esPath} title="Español" aria-label="Español">🇪🇸</a>
+    </nav>
+  </div>
+</header>
+<script is:inline>
+  function setupSiteSearch(){
+    document.querySelectorAll('[data-search-root]').forEach(root => {
+      if(root.dataset.searchReady) return;
+      root.dataset.searchReady='1';
+      const input=root.querySelector('[data-search-input]');
+      const panel=root.querySelector('[data-search-results]');
+      const items=[...root.querySelectorAll('[data-search-item]')];
+      const empty=root.querySelector('[data-search-empty]');
+      const update=()=>{
+        const q=input.value.trim().toLowerCase();
+        panel.hidden=!q;
+        let visible=0;
+        items.forEach(item=>{const match=!q||item.dataset.terms.includes(q);item.hidden=!match;if(match)visible++;});
+        empty.hidden=visible!==0;
+      };
+      input.addEventListener('input',update);
+      input.addEventListener('focus',update);
+      input.addEventListener('keydown',e=>{if(e.key==='Escape'){panel.hidden=true;input.blur()} if(e.key==='Enter'){const first=items.find(x=>!x.hidden);if(first) location.href=first.href;}});
+      document.addEventListener('click',e=>{if(!root.contains(e.target))panel.hidden=true;});
+    });
+  }
+  document.addEventListener('astro:page-load',setupSiteSearch);
+  setupSiteSearch();
+</script>
