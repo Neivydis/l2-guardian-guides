@@ -12,6 +12,7 @@ const copy = lang === 'es'
   ? { title:'Resultados de búsqueda', intro:'Todas las guías y frases que contienen', empty:'No se encontraron coincidencias.', occurrences:'coincidencias', open:'Abrir guía' }
   : { title:'Search results', intro:'All guides and sentences containing', empty:'No matches found.', occurrences:'matches', open:'Open guide' };
 const guides = [
+  ['character','Character','/icons/character.png'],
   ['patterns','Patterns','/icons/patterns.png'],
   ['hidden-power','Hidden Power','/icons/hidden-power.png'],
   ['aden-laboratory','Aden Laboratory','/icons/aden-laboratory.png'],
@@ -53,6 +54,10 @@ const guides = [
     const query=new URLSearchParams(location.search).get('q')?.trim()||'';
     const normalise=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
     const q=normalise(query);
+    const exactStatQueries=new Set(['str','int','dex','wit','con','men']);
+    const matchesQuery=value=>exactStatQueries.has(q)
+      ?new RegExp(`(^|[^a-z0-9])${q}([^a-z0-9]|$)`).test(normalise(value))
+      :normalise(value).includes(q);
     root.querySelector('[data-query-label]').textContent=query;
     const headerInput=document.querySelector('[data-search-input]');
     if(headerInput)headerInput.value=query;
@@ -72,7 +77,8 @@ const guides = [
     };
     const appendHighlighted=(container,text)=>{
       const comparable=normalise(text);
-      const start=comparable.indexOf(q);
+      const exactMatch=exactStatQueries.has(q)?new RegExp(`(^|[^a-z0-9])${q}([^a-z0-9]|$)`).exec(comparable):null;
+      const start=exactMatch?exactMatch.index+exactMatch[1].length:comparable.indexOf(q);
       if(start<0){container.textContent=text;return;}
       container.append(document.createTextNode(text.slice(0,start)));
       const mark=document.createElement('mark');mark.textContent=text.slice(start,start+query.length);container.append(mark);
@@ -83,8 +89,8 @@ const guides = [
       try{
         const response=await fetch(guide.dataset.href);
         const doc=new DOMParser().parseFromString(await response.text(),'text/html');
-        const matches=extractSentences(doc).filter(sentence=>normalise(sentence).includes(q));
-        const titleMatch=normalise(guide.dataset.title).includes(q);
+        const matches=extractSentences(doc).filter(matchesQuery);
+        const titleMatch=matchesQuery(guide.dataset.title);
         if(!titleMatch&&!matches.length)return false;
         guide.hidden=false;
         guide.querySelector('[data-match-count]').textContent=`${matches.length} ${root.dataset.occurrencesLabel}`;

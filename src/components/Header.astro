@@ -10,7 +10,7 @@ const labels = lang === 'es' ? {
   search:'Search guides, systems, items...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', character:'Character', pets:'Guardians (Pets)'
 };
 const items = [
-  {title:labels.character, terms:'character skills buffs skill enchant stats elixirs combat power spellbooks', href:`/${lang}/guides/character`, icon:'/icons/character.png'},
+  {title:labels.character, terms:'character skills buffs skill enchant stats str int dex wit con men elixirs combat power spellbooks', href:`/${lang}/guides/character`, icon:'/icons/character.png'},
   {title:labels.patterns, terms:'patterns dyes stats wit int dex str', href:`/${lang}/guides/patterns`, icon:'/icons/patterns.png'},
   {title:labels.hidden, terms:'hidden power nodes progression damage', href:`/${lang}/guides/hidden-power`, icon:'/icons/hidden-power.png'},
   {title:labels.aden, terms:'aden laboratory research queen ant crafting', href:`/${lang}/guides/aden-laboratory`, icon:'/icons/aden-laboratory.png'},
@@ -51,6 +51,10 @@ const items = [
       const items=[...root.querySelectorAll('[data-search-item]')];
       const empty=root.querySelector('[data-search-empty]');
       const normalise=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+      const exactStatQueries=new Set(['str','int','dex','wit','con','men']);
+      const matchesQuery=(value,q)=>exactStatQueries.has(q)
+        ?new RegExp(`(^|[^a-z0-9])${q}([^a-z0-9]|$)`).test(normalise(value))
+        :normalise(value).includes(q);
       const extractSentences=doc=>{
         const selectors='.guide-main h2,.guide-main h3,.guide-main p,.guide-main td,.guide-main .note,.guide-main .warning,.guide-main .quick-title,.guide-main .quick-tip,.guide-main .step strong';
         const seen=new Set();
@@ -87,8 +91,8 @@ const items = [
 
         let visible=0;
         index.forEach(({item,sentences})=>{
-          const matches=sentences.filter(sentence=>normalise(sentence).includes(q));
-          const titleMatch=normalise(item.dataset.terms).includes(q);
+          const matches=sentences.filter(sentence=>matchesQuery(sentence,q));
+          const titleMatch=matchesQuery(item.dataset.terms,q);
           const match=titleMatch||matches.length>0;
           item.hidden=!match;
           if(!match) return;
