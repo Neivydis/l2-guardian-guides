@@ -42,7 +42,7 @@ button,input{font:inherit}
 .flag-link svg{width:32px;height:auto;border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,.45)}
 .flag-link:hover,.flag-link.active{border-color:var(--gold);background:#111827;box-shadow:0 0 18px rgba(224,170,57,.12)}
 .site-shell{display:grid;grid-template-columns:274px minmax(0,1fr);gap:38px;max-width:1540px;margin:0 auto;padding:18px 22px 26px}
-.site-sidebar{position:sticky;top:130px;align-self:start;display:grid;gap:16px;max-height:calc(100vh - 150px);overflow:auto;padding-right:2px;scrollbar-width:thin}
+.site-sidebar{position:sticky;top:130px;align-self:start;display:grid;gap:16px;padding-right:2px}
 .sidebar-card{background:linear-gradient(180deg,rgba(8,17,31,.96),rgba(5,12,22,.97));border:1px solid #273244;border-radius:13px;padding:18px 14px;box-shadow:0 10px 32px rgba(0,0,0,.18)}
 .sidebar-title{display:flex;justify-content:space-between;align-items:center;margin:0 8px 14px;color:var(--gold-light);font-family:Georgia,serif;font-size:19px;letter-spacing:.025em}
 .guide-nav{display:grid;gap:5px}
