@@ -44,7 +44,8 @@ button,input{font:inherit}
 .flag-link svg{width:32px;height:auto;border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,.45)}
 .flag-link:hover,.flag-link.active{border-color:var(--gold);background:#111827;box-shadow:0 0 18px rgba(224,170,57,.12)}
 .site-shell{display:grid;grid-template-columns:274px minmax(0,1fr);gap:38px;max-width:1540px;margin:0 auto;padding:18px 22px 26px}
-.site-sidebar{position:relative;align-self:start;display:grid;gap:16px;padding-right:2px}
+.site-sidebar{position:sticky;top:130px;align-self:start;display:grid;gap:16px;max-height:calc(100vh - 146px);padding-right:2px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;-ms-overflow-style:none}
+.site-sidebar::-webkit-scrollbar{display:none}
 .sidebar-navigation{display:grid;gap:16px}
 .sidebar-card{background:linear-gradient(180deg,rgba(8,17,31,.96),rgba(5,12,22,.97));border:1px solid #273244;border-radius:13px;padding:18px 14px;box-shadow:0 10px 32px rgba(0,0,0,.18)}
 .sidebar-title{display:flex;justify-content:space-between;align-items:center;margin:0 8px 14px;color:var(--gold-light);font-family:Georgia,serif;font-size:19px;letter-spacing:.025em}
@@ -62,7 +63,7 @@ button,input{font:inherit}
 .discord-button{color:#fff;background:#151f2e;border:1px solid #303b4d}
 .button-icon{width:21px;height:21px;flex:0 0 auto}
 .discord-button:hover{background:#1b293c}
-.toc-card{position:sticky;top:130px;z-index:2;margin-top:2px}
+.toc-card{margin-top:2px}
 .toc-links{display:grid;gap:4px}
 .toc-links a{padding:8px 10px;border-left:2px solid transparent;text-decoration:none;color:#aeb7c6;font-size:14px;line-height:1.35}
 .toc-links a:hover{color:#fff;border-left-color:var(--gold)}
