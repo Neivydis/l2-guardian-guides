@@ -1,49 +1,54 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import GuideLayout from '../../../layouts/GuideLayout.astro';
+const toc=[
+  {href:'#overview',label:'Overview'},
+  {href:'#access',label:'How to Access'},
+  {href:'#boosters',label:'Boosters & Daily Cycle'},
+  {href:'#upgrading',label:'Upgrade System'},
+  {href:'#effects',label:'Hidden Power Effects'},
+  {href:'#builds',label:'Recommended Builds'},
+  {href:'#strategy',label:'Progression Strategy'},
+  {href:'#future',label:'Hidden Power 4'},
+  {href:'#mistakes',label:'Common Mistakes'}
+];
 ---
+<GuideLayout title="Hidden Power | L2 Guardian Guides" lang="en" active="hidden-power" toc={toc}>
+<div class="content">
+  <a class="back" href="/en/">← Back to home</a>
+  <section class="hero">
+    <img src="/images/hidden-power-overview.png" alt="Hidden Power main window on L2 Reborn Guardian"/>
+    <div class="hero-body"><div class="badge">GUARDIAN SYSTEM</div><h1>Hidden Power</h1><p class="subtitle">A permanent progression system that uses daily Hidden Power Boosters to raise stages and unlock configurable offensive or defensive effects.</p>
+      <div class="info-grid"><div class="info-card"><div class="label">Maximum Stage</div><div class="value">30</div></div><div class="info-card"><div class="label">Daily Uses</div><div class="value">20</div></div><div class="info-card"><div class="label">Cost per Use</div><div class="value">1 Booster + 10k</div></div><div class="info-card"><div class="label">Points per Use</div><div class="value">1 to 5</div></div></div>
+    </div>
+  </section>
 
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hidden Power</title><style>
-:root{
-  --bg:#060b16;--panel:#0d1528;--panel2:#111b33;--border:#23304d;
-  --gold:#d8b56a;--text:#f5f7fb;--muted:#9fb0d0;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#10213f 0%,#060b16 55%);color:var(--text)}
-.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(6,11,22,.92);border-bottom:1px solid rgba(216,181,106,.18);backdrop-filter:blur(10px)}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-.crest{width:44px;height:44px;border-radius:14px;border:1px solid rgba(216,181,106,.35);background:linear-gradient(180deg,#1b2848,#0d1528);display:grid;place-items:center;color:var(--gold);font-weight:700}
-.brand h1{margin:0;font-size:22px}.brand span{display:block;color:var(--muted);font-size:11px;letter-spacing:.22em}
-.top-actions{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end}
-.search{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid rgba(216,181,106,.18);border-radius:16px;padding:12px 16px;max-width:620px;flex:1}
-.search input{flex:1;background:transparent;border:none;outline:none;color:var(--text)}
-.langs{display:flex;gap:8px}
-.langs a{padding:10px 14px;border-radius:12px;text-decoration:none;color:white;background:#111b33;border:1px solid #23304d;font-weight:700}
-.layout{display:grid;grid-template-columns:260px 1fr;gap:24px;max-width:1440px;margin:0 auto;padding:24px}
-.sidebar{position:sticky;top:88px;align-self:start;background:rgba(13,21,40,.86);border:1px solid rgba(216,181,106,.16);border-radius:24px;padding:22px}
-.sidebar h3{margin:0 0 16px;color:var(--gold);font-size:14px;letter-spacing:.12em}
-.side-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;color:var(--text);text-decoration:none;margin-bottom:8px}
-.side-link:hover,.side-link.active{background:var(--panel2);border:1px solid rgba(216,181,106,.18)}
-.dot{width:8px;height:8px;border-radius:999px;background:var(--gold)}
-.promo{margin-top:24px;background:linear-gradient(180deg,#122244,#0d1528);border:1px solid rgba(216,181,106,.18);border-radius:20px;padding:18px;text-align:center}
-.promo h4{margin:0 0 8px;color:var(--gold)}.promo p{margin:0 0 16px;color:var(--muted);font-size:14px}
-.promo a{display:inline-block;background:linear-gradient(180deg,#d8b56a,#b99046);color:#24180a;text-decoration:none;border-radius:12px;padding:12px 16px;font-weight:700}
-.main{display:flex;flex-direction:column;gap:28px}
-.hero{border-radius:28px;border:1px solid rgba(216,181,106,.18);background:linear-gradient(90deg, rgba(6,11,22,.92) 0%, rgba(6,11,22,.55) 48%, rgba(6,11,22,.15) 100%), linear-gradient(180deg,#10213f,#060b16);min-height:300px;padding:42px;display:flex;align-items:center}
-.hero h2{margin:14px 0;font-size:54px}.hero p{color:#d8e2f6;font-size:17px;line-height:1.6}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid rgba(216,181,106,.22);background:rgba(17,27,51,.85);color:var(--text)}
-.btn.primary{background:linear-gradient(180deg,#d8b56a,#b99046);color:#24180a}
-.section-head h3{margin:0;font-size:30px}.section-head p{margin:6px 0 0;color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-.card-link{text-decoration:none;color:inherit;display:block}
-.card{background:rgba(13,21,40,.9);border:1px solid rgba(216,181,106,.16);border-radius:24px;overflow:hidden;height:100%;transition:.18s ease}
-.card:hover{transform:translateY(-6px);border-color:rgba(216,181,106,.32);box-shadow:0 18px 40px rgba(0,0,0,.45)}
-.card img{width:100%;height:190px;object-fit:cover;display:block}.card-body{padding:18px}
-.tag{display:inline-block;color:var(--gold);background:rgba(216,181,106,.1);border:1px solid rgba(216,181,106,.16);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700;margin-bottom:12px}
-.card h4{margin:0 0 10px;font-size:22px}.card p{margin:0 0 16px;color:var(--muted);line-height:1.55}
-footer{max-width:1440px;margin:20px auto 40px;padding:0 24px}.footer-box{background:rgba(13,21,40,.86);border:1px solid rgba(216,181,106,.14);border-radius:24px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-box p{margin:0;color:var(--muted)}
-.guide-content{max-width:980px;margin:0 auto;background:rgba(13,21,40,.9);border:1px solid rgba(216,181,106,.16);border-radius:24px;padding:28px}
-.guide-content img{width:100%;border-radius:18px;margin-bottom:24px}.guide-content h1{font-size:42px;margin-top:0}.guide-content p,.guide-content li{color:#d8e2f6;line-height:1.7}
-.back{display:inline-block;margin-bottom:20px;color:#d8e2f6;text-decoration:none}
-@media (max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0}.hero h2{font-size:40px}.topbar{flex-wrap:wrap}.top-actions{width:100%;justify-content:stretch}}
-</style></head><body><header class="topbar"><a class="brand" href="/en/"><div class="crest">L2</div><div><h1>L2 Guardian Guides</h1><span>REBORN • GUARDIAN • WIKI</span></div></a><div class="top-actions"><div class="search"><span>🔎</span><input placeholder="Search..."></div><div class="langs"><a href="/en/">🇬🇧 EN</a><a href="/es/">🇪🇸 ES</a></div></div></header><div class="guide-content"><a class="back" href="/en/">← Back to home</a><img src="/images/hidden-power.png" alt="Hidden Power"><h1>Hidden Power</h1><p>Placeholder content for this guide. Replace it with your final Guardian guide.</p></div></body></html>
+  <section class="section quick-start"><div class="quick-head"><div class="quick-icon">⚡</div><div><h2>Quick Start</h2><p>The essential routine for progressing efficiently.</p></div></div>
+    <div class="quick-grid"><div class="quick-card"><div class="quick-title">Farm Daily</div><div class="quick-value">20 Boosters</div><span class="quick-tag high">Required</span></div><div class="quick-card"><div class="quick-title">Daily Mission</div><div class="quick-value">+6 Boosters</div><span class="quick-tag high">Always Claim</span></div><div class="quick-card"><div class="quick-title">Base Cycle</div><div class="quick-value">20 Uses</div><span class="quick-tag high">Every Day</span></div><div class="quick-card"><div class="quick-title">Average Progress</div><div class="quick-value">33 Points</div><span class="quick-tag medium">Per 20 Uses</span></div></div>
+    <div class="quick-footer"><div class="quick-tip"><strong>Standard DPS setup</strong>P./M. Atk. → Skill Damage Bonus → Skill Critical Damage.</div><div class="quick-tip"><strong>Change freely</strong>Effects can be switched whenever the character is out of combat.</div><div class="quick-tip"><strong>Save the surplus</strong>The six mission boosters can be stored or used after resetting the daily counter.</div></div>
+  </section>
+
+  <section class="section" id="overview"><h2>Overview</h2><p>Hidden Power is divided into effect slots. Increasing its stage improves the value of the selected effect, while the effect itself can be changed outside combat. Progress is permanent; changing from an offensive option to a defensive one does not remove the stage already earned.</p><p>Guardian currently provides Hidden Power 1, 2 and 3. The interface displays a fourth slot, but Hidden Power 4 is not available on the server yet. There is currently no Set B.</p><div class="note"><strong>Important:</strong> “20 uses” refers to the number of boosters the system lets you consume before resetting the counter. Every use grants points; it is not an enchant attempt that can fail.</div></section>
+
+  <section class="section" id="access"><h2>How to Access Hidden Power</h2><div class="steps"><div class="step"><div class="num">1</div><div><strong>Open it from the inventory</strong><p>Click the Hidden Power area to the right of the Agathion Bracelet, then click an empty space between the Hidden Power slots.</p></div></div><div class="step"><div class="num">2</div><div><strong>Open it with a Booster</strong><p>Use the right mouse button on any Hidden Power Booster in your inventory to open the upgrade window directly.</p></div></div><div class="step"><div class="num">3</div><div><strong>Quickly switch an effect</strong><p>Click an equipped Hidden Power icon in the inventory. This opens its effect selector without entering the full upgrade menu. The character must be out of combat.</p></div></div></div>
+    <div class="guide-gallery"><figure><img src="/images/hidden-power-inventory.png" alt="Hidden Power slots in the inventory"/><figcaption>Open the system or select an equipped slot from the inventory.</figcaption></figure><figure><img src="/images/hidden-power-quick-switch.png" alt="Changing a Hidden Power effect outside combat"/><figcaption>Effects can be changed without losing progression.</figcaption></figure></div>
+  </section>
+
+  <section class="section" id="boosters"><h2>Boosters and the Daily Cycle</h2><table><thead><tr><th>Source</th><th>Daily Amount</th><th>Notes</th></tr></thead><tbody><tr><td>Monster drops</td><td class="good">20</td><td>Obtained while farming mobs.</td></tr><tr><td>Daily Upgrade of Hidden Power</td><td class="good">6</td><td>Extra daily mission reward.</td></tr><tr><td><strong>Total obtainable</strong></td><td><strong>26</strong></td><td>Six more than the initial daily counter allows.</td></tr></tbody></table><p>The normal daily cycle consumes 20 Boosters and 200,000 Adena. After all 20 uses have been consumed, the counter can be reset for 10,000,000 Adena or one Hidden Power Upgrade Reset Ticket. The reset allows another 20 Boosters to be used and can be purchased multiple times per day.</p><div class="warning"><strong>A reset does not provide Boosters.</strong> It only reopens 20 uses. Make sure you already own enough Boosters before paying the 10 million Adena fee.</div></section>
+
+  <section class="section" id="upgrading"><h2>Upgrade System and Success Rates</h2><p>Each use costs one Hidden Power Booster and 10,000 Adena. It always grants between one and five points according to the following distribution:</p><table><thead><tr><th>Points</th><th>Chance</th><th>Average Contribution</th></tr></thead><tbody><tr><td>+1</td><td>60%</td><td>0.60</td></tr><tr><td>+2</td><td>23%</td><td>0.46</td></tr><tr><td>+3</td><td>11%</td><td>0.33</td></tr><tr><td>+4</td><td>4%</td><td>0.16</td></tr><tr><td>+5</td><td>2%</td><td>0.10</td></tr><tr><td><strong>Expected value</strong></td><td>100%</td><td class="good"><strong>1.65 points</strong></td></tr></tbody></table><p>On average, a complete 20-use cycle grants approximately <strong>33 points</strong>. Actual daily progress will vary because each result is random, but zero points are impossible.</p>
+    <div class="guide-gallery wide"><figure><img src="/images/hidden-power-upgrade.png" alt="Hidden Power upgrade cost window"/><figcaption>Each use costs one Booster and 10,000 Adena.</figcaption></figure><figure><img src="/images/hidden-power-rates.png" alt="Hidden Power point success rates"/><figcaption>The official point distribution shown in Guardian.</figcaption></figure></div>
+  </section>
+
+  <section class="section" id="effects"><h2>Hidden Power Effects</h2><p>The selected effect is marked as applied. Any available option in the same slot can be selected outside combat.</p><table><thead><tr><th>Slot</th><th>Available Effect</th><th>Maximum</th><th>Typical Use</th></tr></thead><tbody><tr><td rowspan="3"><strong>Hidden Power 1</strong></td><td>P./M. Atk.</td><td>+3000</td><td>General damage</td></tr><tr><td>P./M. Def.</td><td>+3000</td><td>Defensive PvP / survivability</td></tr><tr><td>Atk. Spd./Casting Spd.</td><td>+600</td><td>Characters not already near their speed target</td></tr><tr><td rowspan="2"><strong>Hidden Power 2</strong></td><td>Skill Damage Bonus</td><td>+15%</td><td>PvE/PvP offense</td></tr><tr><td>Received Skill Damage</td><td>−15%</td><td>PvP defense / survivability</td></tr><tr><td rowspan="4"><strong>Hidden Power 3</strong></td><td>Skill Critical Damage</td><td>+15%</td><td>Offensive critical builds</td></tr><tr><td>Skill Critical Rate</td><td>+15%</td><td>When critical consistency is needed</td></tr><tr><td>Received Skill Critical Damage</td><td>−15%</td><td>Defense against burst damage</td></tr><tr><td>Received Skill Critical Rate</td><td>−10%</td><td>Defense against frequent criticals</td></tr></tbody></table>
+    <div class="guide-gallery effects"><figure><img src="/images/hidden-power-slot-1.png" alt="Hidden Power 1 effects"/><figcaption>Hidden Power 1</figcaption></figure><figure><img src="/images/hidden-power-slot-2.png" alt="Hidden Power 2 effects"/><figcaption>Hidden Power 2</figcaption></figure><figure><img src="/images/hidden-power-slot-3.png" alt="Hidden Power 3 effects"/><figcaption>Hidden Power 3</figcaption></figure></div>
+  </section>
+
+  <section class="section" id="builds"><h2>Recommended Configurations</h2><table><thead><tr><th>Goal</th><th>Hidden Power 1</th><th>Hidden Power 2</th><th>Hidden Power 3</th></tr></thead><tbody><tr><td><strong>General PvE DPS</strong></td><td>P./M. Atk.</td><td>Skill Damage Bonus</td><td>Skill Critical Damage</td></tr><tr><td><strong>Low Critical Rate</strong></td><td>P./M. Atk.</td><td>Skill Damage Bonus</td><td>Skill Critical Rate</td></tr><tr><td><strong>PvP Offense</strong></td><td>P./M. Atk.</td><td>Skill Damage Bonus</td><td>Critical Damage or Rate</td></tr><tr><td><strong>PvP Defense</strong></td><td>P./M. Def.</td><td>Received Skill Damage</td><td>Received Skill Critical Damage</td></tr><tr><td><strong>Speed Utility</strong></td><td>Atk./Casting Spd.</td><td>Skill Damage Bonus</td><td>Critical Damage or Rate</td></tr></tbody></table><div class="note"><strong>Recommendation:</strong> Skill Critical Damage is the default offensive choice only when your class already crits reliably. If criticals are inconsistent, Skill Critical Rate can produce more stable practical damage.</div></section>
+
+  <section class="section" id="strategy"><h2>Efficient Progression Strategy</h2><div class="steps"><div class="step"><div class="num">1</div><div><strong>Never miss the free daily cycle</strong><p>Farm the 20 mob Boosters, complete the mission and use all 20 base uses before the daily reset.</p></div></div><div class="step"><div class="num">2</div><div><strong>Keep the six extra Boosters</strong><p>The mission creates a daily surplus. Store it until you have enough Boosters and Adena to justify an additional counter reset.</p></div></div><div class="step"><div class="num">3</div><div><strong>Reset deliberately</strong><p>The 10 million fee is much larger than the 200,000 Adena upgrade cost of a cycle. Do not reset merely because the option is available.</p></div></div><div class="step"><div class="num">4</div><div><strong>Switch effects for the content</strong><p>Use offensive effects for farming and defensive effects for PvP. Since switching is free outside combat, there is no reason to remain on the wrong setup.</p></div></div></div></section>
+
+  <section class="section" id="future"><h2>Hidden Power 4: Not Available Yet</h2><p>The fourth slot is visible in Guardian's interface but cannot currently be unlocked. No release date has been announced. Its known maximum effects are listed only as a preview of future content:</p><table><thead><tr><th>Future Effect</th><th>Maximum</th></tr></thead><tbody><tr><td>Soulshot/Spiritshot Damage</td><td>+30%</td></tr><tr><td>Soulshot/Spiritshot Damage Resistance</td><td>+15%</td></tr><tr><td>Damage Reduction</td><td>−2600</td></tr><tr><td>Damage Reduction Ignore</td><td>2600</td></tr><tr><td>Anomaly Atk. Rate</td><td>+20%</td></tr></tbody></table><div class="warning"><strong>Unavailable in Guardian:</strong> Do not plan your current build around these bonuses until the server announces the fourth slot.</div></section>
+
+  <section class="section" id="mistakes"><h2>Common Mistakes</h2><table><thead><tr><th>Mistake</th><th>Why It Hurts</th></tr></thead><tbody><tr><td>Missing the 20 daily uses</td><td class="bad">Permanent progression is lost for that day.</td></tr><tr><td>Buying a reset without enough Boosters</td><td class="bad">The reset supplies uses, not materials.</td></tr><tr><td>Ignoring the six mission Boosters</td><td>Slower continued progress and fewer stored reset cycles.</td></tr><tr><td>Keeping a PvE setup during defensive PvP</td><td>You miss effects that can reduce incoming skill burst.</td></tr></tbody></table></section>
+</div>
+</GuideLayout>

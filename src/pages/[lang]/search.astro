@@ -1,0 +1,105 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import '../../styles/search.css';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'es' } }];
+}
+
+const lang = Astro.params.lang === 'es' ? 'es' : 'en';
+const copy = lang === 'es'
+  ? { title:'Resultados de búsqueda', intro:'Todas las guías y frases que contienen', empty:'No se encontraron coincidencias.', occurrences:'coincidencias', open:'Abrir guía' }
+  : { title:'Search results', intro:'All guides and sentences containing', empty:'No matches found.', occurrences:'matches', open:'Open guide' };
+const guides = [
+  ['patterns','Patterns','/icons/patterns.png'],
+  ['hidden-power','Hidden Power','/icons/hidden-power.png'],
+  ['aden-laboratory','Aden Laboratory','/icons/aden-laboratory.png'],
+  ['collections','Collections','/icons/collections.png'],
+  ['dolls','Dolls','/icons/dolls.png'],
+  ['pets',lang === 'es' ? 'Guardianes (Pets)' : 'Guardians (Pets)','/icons/pets.png']
+];
+---
+<SiteLayout title={`${copy.title} - L2 Guardian Guides`} lang={lang}>
+  <div class="site-shell">
+    <Sidebar lang={lang}/>
+    <main class="search-summary" data-search-summary data-empty-label={copy.empty} data-occurrences-label={copy.occurrences}>
+      <header class="summary-header">
+        <p class="summary-kicker">{copy.title}</p>
+        <h1>{copy.intro} “<span data-query-label></span>”</h1>
+      </header>
+      <div class="summary-loading" data-summary-loading>{lang === 'es' ? 'Buscando en las guías…' : 'Searching guides…'}</div>
+      <div class="summary-results" data-summary-results>
+        {guides.map(([slug,title,icon]) => (
+          <article class="summary-result" data-summary-guide data-title={title} data-href={`/${lang}/guides/${slug}`} hidden>
+            <div class="summary-result-head">
+              <img src={icon} alt=""/>
+              <div><h2>{title}</h2><span data-match-count></span></div>
+              <a href={`/${lang}/guides/${slug}`}>{copy.open}<span>→</span></a>
+            </div>
+            <div class="summary-excerpts" data-excerpts></div>
+          </article>
+        ))}
+      </div>
+      <div class="summary-empty" data-summary-empty hidden>{copy.empty}</div>
+    </main>
+  </div>
+</SiteLayout>
+<script is:inline>
+  function setupSearchSummary(){
+    const root=document.querySelector('[data-search-summary]');
+    if(!root||root.dataset.ready)return;
+    root.dataset.ready='1';
+    const query=new URLSearchParams(location.search).get('q')?.trim()||'';
+    const normalise=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    const q=normalise(query);
+    root.querySelector('[data-query-label]').textContent=query;
+    const headerInput=document.querySelector('[data-search-input]');
+    if(headerInput)headerInput.value=query;
+    const loading=root.querySelector('[data-summary-loading]');
+    const empty=root.querySelector('[data-summary-empty]');
+    const guides=[...root.querySelectorAll('[data-summary-guide]')];
+    if(!q){loading.hidden=true;empty.hidden=false;return;}
+
+    const selectors='.guide-main h2,.guide-main h3,.guide-main p,.guide-main td,.guide-main .note,.guide-main .warning,.guide-main .quick-title,.guide-main .quick-tip,.guide-main .step strong';
+    const extractSentences=doc=>{
+      const seen=new Set();
+      return [...doc.querySelectorAll(selectors)].flatMap(node=>node.textContent.trim().split(/(?<=[.!?])\s+/)).map(text=>text.replace(/\s+/g,' ').trim()).filter(text=>{
+        const key=normalise(text);
+        if(text.length<12||seen.has(key)){return false;}
+        seen.add(key);return true;
+      });
+    };
+    const appendHighlighted=(container,text)=>{
+      const comparable=normalise(text);
+      const start=comparable.indexOf(q);
+      if(start<0){container.textContent=text;return;}
+      container.append(document.createTextNode(text.slice(0,start)));
+      const mark=document.createElement('mark');mark.textContent=text.slice(start,start+query.length);container.append(mark);
+      container.append(document.createTextNode(text.slice(start+query.length)));
+    };
+
+    Promise.all(guides.map(async guide=>{
+      try{
+        const response=await fetch(guide.dataset.href);
+        const doc=new DOMParser().parseFromString(await response.text(),'text/html');
+        const matches=extractSentences(doc).filter(sentence=>normalise(sentence).includes(q));
+        const titleMatch=normalise(guide.dataset.title).includes(q);
+        if(!titleMatch&&!matches.length)return false;
+        guide.hidden=false;
+        guide.querySelector('[data-match-count]').textContent=`${matches.length} ${root.dataset.occurrencesLabel}`;
+        const excerpts=guide.querySelector('[data-excerpts]');
+        matches.forEach(sentence=>{
+          const link=document.createElement('a');
+          link.href=`${guide.dataset.href}?find=${encodeURIComponent(sentence)}`;
+          link.setAttribute('aria-label',`${guide.dataset.title}: ${sentence}`);
+          appendHighlighted(link,sentence);
+          excerpts.append(link);
+        });
+        return true;
+      }catch(error){console.warn('Search summary failed:',guide.dataset.href,error);return false;}
+    })).then(found=>{loading.hidden=true;empty.hidden=found.some(Boolean);});
+  }
+  document.addEventListener('astro:page-load',setupSearchSummary);
+  setupSearchSummary();
+</script>

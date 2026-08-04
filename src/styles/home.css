@@ -1,0 +1,20 @@
+
+.home-main{min-width:0;padding-bottom:18px}
+.home-hero{position:relative;min-height:244px;display:flex;align-items:center;overflow:hidden;border:1px solid #344052;border-radius:13px;background-image:linear-gradient(90deg,#02060c 3%,rgba(2,6,12,.94) 32%,rgba(2,6,12,.35) 66%,rgba(2,6,12,.08)),url('/images/guardian-castle.webp');background-size:cover;background-position:center right;box-shadow:inset 0 0 45px rgba(0,0,0,.22)}
+.home-hero-content{position:relative;z-index:2;max-width:620px;padding:46px 62px}
+.home-hero h1{margin:0 0 14px;color:var(--gold-light);font-family:Georgia,'Times New Roman',serif;font-size:42px;font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+.home-hero p{max-width:560px;margin:0;color:#f1f1ef;font-size:18px;line-height:1.55}
+.home-section-title{margin:26px 2px 16px;color:var(--gold-light);font-family:Georgia,serif;font-size:20px;font-weight:500;letter-spacing:.045em;text-transform:uppercase}
+.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.guide-card{position:relative;min-height:232px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #344052;border-radius:12px;text-decoration:none;background-image:linear-gradient(180deg,rgba(2,6,12,.36),rgba(2,6,12,.93)),url('/images/guide-card-bg.webp');background-size:cover;background-position:center;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.guide-card:nth-child(2){background-position:70% center}.guide-card:nth-child(3){background-position:85% center}.guide-card:nth-child(4){background-position:20% center}.guide-card:nth-child(5){background-position:55% center}.guide-card:nth-child(6){background-position:90% center}
+.guide-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 25%,rgba(224,170,57,.10),transparent 38%);pointer-events:none}
+.guide-card:hover{transform:translateY(-4px);border-color:#9d7225;box-shadow:0 16px 35px rgba(0,0,0,.42),0 0 22px rgba(224,170,57,.10)}
+.guide-card-content{position:relative;z-index:2;width:100%;padding:20px 24px;text-align:center}
+.guide-card-icon{width:72px;height:72px;object-fit:contain;margin-bottom:5px}
+.guide-card h2{margin:2px 0 10px;color:#fff;font-family:Georgia,'Times New Roman',serif;font-size:27px;font-weight:600;text-transform:uppercase;text-shadow:0 2px 4px #000}
+.guide-card p{min-height:48px;max-width:360px;margin:0 auto 12px;color:#e1e3e6;font-size:16px;line-height:1.45}
+.card-cta{color:#efb735;font-size:16px}.card-cta span{display:inline-block;margin-left:9px;font-size:22px;transition:transform .18s ease}.guide-card:hover .card-cta span{transform:translateX(5px)}
+.no-results{grid-column:1/-1;padding:34px;border:1px dashed #394559;border-radius:12px;text-align:center;color:#aeb7c4}
+@media(max-width:1180px){.guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-hero-content{padding:38px}.home-hero h1{font-size:36px}}
+@media(max-width:680px){.guide-grid{grid-template-columns:1fr}.home-hero{min-height:270px;background-position:65% center}.home-hero-content{padding:30px 24px}.home-hero h1{font-size:30px}.home-hero p{font-size:16px}.guide-card{min-height:220px}}

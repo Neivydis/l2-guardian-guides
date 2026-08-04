@@ -1,0 +1,26 @@
+---
+const { lang='en', active='', toc=[] } = Astro.props;
+const t = lang === 'es' ? {
+ title:'GUÍAS', playTitle:'JUEGA A L2 REBORN', playText:'Únete a miles de jugadores y comienza tu aventura en Lineage 2 Reborn.', play:'JUGAR AHORA', discordTitle:'ÚNETE A NUESTRO DISCORD', discordText:'Recibe ayuda, habla con jugadores y mantente al día.', discord:'ENTRAR A DISCORD', onPage:'EN ESTA PÁGINA', pets:'Guardianes (Pets)'
+} : {
+ title:'GUIDES', playTitle:'PLAY L2 REBORN', playText:'Join thousands of players and begin your adventure in Lineage 2 Reborn.', play:'PLAY NOW', discordTitle:'JOIN OUR DISCORD', discordText:'Get help, talk with players and stay updated.', discord:'JOIN DISCORD', onPage:'ON THIS PAGE', pets:'Guardians (Pets)'
+};
+const links=[
+ ['patterns','Patterns','/icons/patterns.png'],['hidden-power','Hidden Power','/icons/hidden-power.png'],['aden-laboratory','Aden Laboratory','/icons/aden-laboratory.png'],['collections','Collections','/icons/collections.png'],['dolls','Dolls','/icons/dolls.png'],['pets',t.pets,'/icons/pets.png']
+];
+---
+<aside class="site-sidebar">
+  <section class="sidebar-card">
+    <h2 class="sidebar-title">{t.title}<span>›</span></h2>
+    <nav class="guide-nav">
+      {links.map(([slug,label,icon]) => <a class:list={['guide-nav-link',{active:active===slug}]} href={`/${lang}/guides/${slug}`}><img class:list={['nav-icon',{paw:slug==='pets'}]} src={icon} alt=""/><span>{label}</span></a>)}
+    </nav>
+  </section>
+  {toc?.length > 0 && <section class="sidebar-card toc-card"><h2 class="sidebar-title">{t.onPage}</h2><nav class="toc-links">{toc.map(item => <a href={item.href}>{item.label}</a>)}</nav></section>}
+  <section class="sidebar-card promo-card">
+    <h2 class="promo-title">{t.playTitle}</h2><p class="promo-text">{t.playText}</p><a class="gold-button" href="https://l2reborn.org/essence/" target="_blank" rel="noopener">{t.play}<span>↗</span></a>
+  </section>
+  <section class="sidebar-card promo-card">
+    <h2 class="promo-title">{t.discordTitle}</h2><p class="promo-text">{t.discordText}</p><a class="discord-button" href="https://discord.gg/l2reborn" target="_blank" rel="noopener"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.54 5.34A17.3 17.3 0 0 0 15.22 4l-.53 1.09a16 16 0 0 0-5.36 0L8.78 4a17.5 17.5 0 0 0-4.33 1.35C1.71 9.4.97 13.35 1.34 17.25a17.7 17.7 0 0 0 5.3 2.68l1.28-1.75a11 11 0 0 1-1.67-.81l.41-.32a12.4 12.4 0 0 0 10.68 0l.42.32c-.54.31-1.1.58-1.68.81l1.28 1.75a17.6 17.6 0 0 0 5.3-2.68c.43-4.52-.74-8.43-3.42-11.91ZM8.3 14.87c-1.03 0-1.87-.94-1.87-2.09s.82-2.1 1.87-2.1 1.89.95 1.87 2.1c0 1.15-.83 2.09-1.87 2.09Zm7.4 0c-1.03 0-1.87-.94-1.87-2.09s.82-2.1 1.87-2.1 1.89.95 1.87 2.1c0 1.15-.82 2.09-1.87 2.09Z"/></svg>{t.discord}</a>
+  </section>
+</aside>

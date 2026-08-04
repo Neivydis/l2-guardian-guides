@@ -1,70 +1,19 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import '../../styles/home.css';
 ---
-
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>L2 Guardian Guides</title><style>
-:root{
-  --bg:#060b16;--panel:#0d1528;--panel2:#111b33;--border:#23304d;
-  --gold:#d8b56a;--text:#f5f7fb;--muted:#9fb0d0;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#10213f 0%,#060b16 55%);color:var(--text)}
-.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;padding:18px 28px;background:rgba(6,11,22,.92);border-bottom:1px solid rgba(216,181,106,.18);backdrop-filter:blur(10px)}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-.crest{width:44px;height:44px;border-radius:14px;border:1px solid rgba(216,181,106,.35);background:linear-gradient(180deg,#1b2848,#0d1528);display:grid;place-items:center;color:var(--gold);font-weight:700}
-.brand h1{margin:0;font-size:22px}.brand span{display:block;color:var(--muted);font-size:11px;letter-spacing:.22em}
-.top-actions{display:flex;align-items:center;gap:14px;flex:1;justify-content:flex-end}
-.search{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid rgba(216,181,106,.18);border-radius:16px;padding:12px 16px;max-width:620px;flex:1}
-.search input{flex:1;background:transparent;border:none;outline:none;color:var(--text)}
-.langs{display:flex;gap:8px}
-.langs a{padding:10px 14px;border-radius:12px;text-decoration:none;color:white;background:#111b33;border:1px solid #23304d;font-weight:700}
-.layout{display:grid;grid-template-columns:260px 1fr;gap:24px;max-width:1440px;margin:0 auto;padding:24px}
-.sidebar{position:sticky;top:88px;align-self:start;background:rgba(13,21,40,.86);border:1px solid rgba(216,181,106,.16);border-radius:24px;padding:22px}
-.sidebar h3{margin:0 0 16px;color:var(--gold);font-size:14px;letter-spacing:.12em}
-.side-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;color:var(--text);text-decoration:none;margin-bottom:8px}
-.side-link:hover,.side-link.active{background:var(--panel2);border:1px solid rgba(216,181,106,.18)}
-.dot{width:8px;height:8px;border-radius:999px;background:var(--gold)}
-.promo{margin-top:24px;background:linear-gradient(180deg,#122244,#0d1528);border:1px solid rgba(216,181,106,.18);border-radius:20px;padding:18px;text-align:center}
-.promo h4{margin:0 0 8px;color:var(--gold)}.promo p{margin:0 0 16px;color:var(--muted);font-size:14px}
-.promo a{display:inline-block;background:linear-gradient(180deg,#d8b56a,#b99046);color:#24180a;text-decoration:none;border-radius:12px;padding:12px 16px;font-weight:700}
-.main{display:flex;flex-direction:column;gap:28px}
-.hero{border-radius:28px;border:1px solid rgba(216,181,106,.18);background:linear-gradient(90deg, rgba(6,11,22,.92) 0%, rgba(6,11,22,.55) 48%, rgba(6,11,22,.15) 100%), linear-gradient(180deg,#10213f,#060b16);min-height:300px;padding:42px;display:flex;align-items:center}
-.hero h2{margin:14px 0;font-size:54px}.hero p{color:#d8e2f6;font-size:17px;line-height:1.6}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid rgba(216,181,106,.22);background:rgba(17,27,51,.85);color:var(--text)}
-.btn.primary{background:linear-gradient(180deg,#d8b56a,#b99046);color:#24180a}
-.section-head h3{margin:0;font-size:30px}.section-head p{margin:6px 0 0;color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-.card-link{text-decoration:none;color:inherit;display:block}
-.card{background:rgba(13,21,40,.9);border:1px solid rgba(216,181,106,.16);border-radius:24px;overflow:hidden;height:100%;transition:.18s ease}
-.card:hover{transform:translateY(-6px);border-color:rgba(216,181,106,.32);box-shadow:0 18px 40px rgba(0,0,0,.45)}
-.card img{width:100%;height:190px;object-fit:cover;display:block}.card-body{padding:18px}
-.tag{display:inline-block;color:var(--gold);background:rgba(216,181,106,.1);border:1px solid rgba(216,181,106,.16);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700;margin-bottom:12px}
-.card h4{margin:0 0 10px;font-size:22px}.card p{margin:0 0 16px;color:var(--muted);line-height:1.55}
-footer{max-width:1440px;margin:20px auto 40px;padding:0 24px}.footer-box{background:rgba(13,21,40,.86);border:1px solid rgba(216,181,106,.14);border-radius:24px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-box p{margin:0;color:var(--muted)}
-.guide-content{max-width:980px;margin:0 auto;background:rgba(13,21,40,.9);border:1px solid rgba(216,181,106,.16);border-radius:24px;padding:28px}
-.guide-content img{width:100%;border-radius:18px;margin-bottom:24px}.guide-content h1{font-size:42px;margin-top:0}.guide-content p,.guide-content li{color:#d8e2f6;line-height:1.7}
-.back{display:inline-block;margin-bottom:20px;color:#d8e2f6;text-decoration:none}
-@media (max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0}.hero h2{font-size:40px}.topbar{flex-wrap:wrap}.top-actions{width:100%;justify-content:stretch}}
-</style></head><body>
-<header class="topbar">
-  <a class="brand" href="/es/"><div class="crest">L2</div><div><h1>L2 Guardian Guides</h1></div></a>
-  <div class="top-actions">
-    <div class="search"><span>🔎</span><input placeholder="Buscar guías, sistemas, builds..."></div>
-    <div class="langs"><a href="/en/">🇬🇧 EN</a><a href="/es/">🇪🇸 ES</a></div>
-  </div>
-</header>
-<div class="layout"><aside class="sidebar"><h3>GUARDIAN</h3>
-<a class="side-link active" href="/es/guides/patterns"><span class="dot"></span>Patterns</a>
-<a class="side-link" href="/es/guides/hidden-power"><span class="dot"></span>Hidden Power</a>
-<a class="side-link" href="/es/guides/aden-laboratory"><span class="dot"></span>Aden Laboratory</a>
-<a class="side-link" href="/es/guides/collections"><span class="dot"></span>Collections</a>
-<a class="side-link" href="/es/guides/dolls"><span class="dot"></span>Dolls</a>
-<a class="side-link" href="/es/guides/pets"><span class="dot"></span>Guardianes (Pets)</a>
-<div class="promo"><h4>REBORN GUARDIAN</h4><p>Aprende cómo funcionan los sistemas más importantes de Guardian: Patterns, Hidden Power, Aden Laboratory, Collections, Dolls y Guardianes.</p><a href="https://l2reborn.org/essence/" target="_blank">JUGAR AHORA</a></div>
-<div style="margin-top:16px;text-align:center"><a href="https://discord.gg/l2reborn" target="_blank" style="color:#d8e2f6;text-decoration:none">💬 Entrar a Discord</a></div>
-</aside>
-<main class="main"><section class="hero"><div><div style="color:#d8b56a;letter-spacing:.18em;font-size:12px;font-weight:700">GUÍAS DE LA COMUNIDAD</div><h2>L2 Guardian Guides</h2><p>Aprende cómo funcionan los sistemas más importantes de Guardian: Patterns, Hidden Power, Aden Laboratory, Collections, Dolls y Guardianes.</p><div class="hero-actions"><a class="btn primary" href="#guides">Explorar guías</a><a class="btn" href="/es/news">Ver novedades</a></div></div></section>
-<section id="guides"><div class="section-head"><h3>Sistemas principales de Guardian</h3><p>Enfocado exclusivamente en Guardian / Reborn Essence Remastered.</p></div>
-<div class="cards"><a class="card-link" href="/es/guides/patterns"><article class="card"><img src="/images/patterns.png" alt="Patterns"><div class="card-body"><div class="tag">GUÍA</div><h4>Patterns</h4><p>Aprende cómo funcionan los Patterns, qué stats priorizar y cómo mejorarlos de forma eficiente.</p><div style="font-weight:700;color:#dfe9ff">Leer guía →</div></div></article></a><a class="card-link" href="/es/guides/hidden-power"><article class="card"><img src="/images/hidden-power.png" alt="Hidden Power"><div class="card-body"><div class="tag">PROGRESIÓN</div><h4>Hidden Power</h4><p>Entiende Hidden Power, optimiza tu ruta y evita gastar recursos innecesarios.</p><div style="font-weight:700;color:#dfe9ff">Leer guía →</div></div></article></a><a class="card-link" href="/es/guides/aden-laboratory"><article class="card"><img src="/images/aden-laboratory.png" alt="Aden Laboratory"><div class="card-body"><div class="tag">ENDGAME</div><h4>Aden Laboratory</h4><p>Investigación, progresión por etapas y cómo sacar el máximo provecho al laboratorio.</p><div style="font-weight:700;color:#dfe9ff">Leer guía →</div></div></article></a><a class="card-link" href="/es/guides/collections"><article class="card"><img src="/images/collections.png" alt="Collections"><div class="card-body"><div class="tag">BONIFICACIONES</div><h4>Collections</h4><p>Bonos permanentes de cuenta, colecciones rentables y consejos de progresión.</p><div style="font-weight:700;color:#dfe9ff">Leer guía →</div></div></article></a><a class="card-link" href="/es/guides/dolls"><article class="card"><img src="/images/dolls.png" alt="Dolls"><div class="card-body"><div class="tag">SISTEMA</div><h4>Dolls</h4><p>Cómo conseguirlas, mejorarlas y elegir las mejores Dolls para tu clase.</p><div style="font-weight:700;color:#dfe9ff">Leer guía →</div></div></article></a><a class="card-link" href="/es/guides/pets"><article class="card"><img src="/images/pets.png" alt="Guardianes (Pets)"><div class="card-body"><div class="tag">PETS</div><h4>Guardianes (Pets)</h4><p>Tipos, habilidades, evolución y qué guardián encaja mejor con tu estilo de juego.</p><div style="font-weight:700;color:#dfe9ff">Leer guía →</div></div></article></a></div></section></main></div>
-<footer><div class="footer-box"><div><strong>L2 Guardian Guides</strong><p>Tu centro de conocimiento para Guardian / Reborn Essence Remastered.</p></div><p>© 2026 • Not affiliated with NCSoft.</p></div></footer></body></html>
+<SiteLayout title="L2 Guardian Guides" lang="es"><div class="site-shell"><Sidebar lang="es"/><main class="home-main"><section class="home-hero"><div class="home-hero-content"><h1>L2 Guardian Guides</h1><p>Todo lo que necesitas para dominar los sistemas de Guardian y mejorar tu personaje.</p></div></section><h2 class="home-section-title">TODAS LAS GUÍAS</h2><div class="guide-grid" data-guide-grid><a class="guide-card" href="/es/guides/patterns" data-guide-card data-search-terms="patterns aprende todo sobre patterns, estadísticas, tipos y mejores combinaciones."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/patterns.png" alt=""/><h2>Patterns</h2><p>Aprende todo sobre Patterns, estadísticas, tipos y mejores combinaciones.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/hidden-power" data-guide-card data-search-terms="hidden power descubre cómo funciona hidden power y cómo aumentar tus bonificaciones."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/hidden-power.png" alt=""/><h2>Hidden Power</h2><p>Descubre cómo funciona Hidden Power y cómo aumentar tus bonificaciones.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/aden-laboratory" data-guide-card data-search-terms="aden laboratory todo sobre el laboratorio, investigaciones y progresión."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/aden-laboratory.png" alt=""/><h2>Aden Laboratory</h2><p>Todo sobre el laboratorio, investigaciones y progresión.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/collections" data-guide-card data-search-terms="collections completa colecciones y consigue poderosas recompensas y bonificaciones."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/collections.png" alt=""/><h2>Collections</h2><p>Completa colecciones y consigue poderosas recompensas y bonificaciones.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/dolls" data-guide-card data-search-terms="dolls aprende cómo funcionan las dolls y cuáles son mejores para ti."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/dolls.png" alt=""/><h2>Dolls</h2><p>Aprende cómo funcionan las Dolls y cuáles son mejores para ti.</p><div class="card-cta">Ver guía <span>→</span></div></div></a>
+<a class="guide-card" href="/es/guides/pets" data-guide-card data-search-terms="guardianes (pets) todo sobre guardianes, habilidades, crecimiento y gestión."><div class="guide-card-content"><img class="guide-card-icon" src="/icons/pets.png" alt=""/><h2>Guardianes (Pets)</h2><p>Todo sobre Guardianes, habilidades, crecimiento y gestión.</p><div class="card-cta">Ver guía <span>→</span></div></div></a><div class="no-results" data-card-empty hidden>No se encontraron guías.</div></div></main></div></SiteLayout>
+<script is:inline>
+  function connectHomeSearch(){
+    const input=document.querySelector('[data-search-input]'); const cards=[...document.querySelectorAll('[data-guide-card]')]; const empty=document.querySelector('[data-card-empty]');
+    if(!input||!cards.length||input.dataset.homeReady)return; input.dataset.homeReady='1';
+    input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let shown=0;cards.forEach(c=>{const match=!q||c.dataset.searchTerms.includes(q);c.hidden=!match;if(match)shown++;});if(empty)empty.hidden=shown!==0;});
+  }
+  document.addEventListener('astro:page-load',connectHomeSearch); connectHomeSearch();
+</script>

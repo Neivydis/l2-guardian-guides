@@ -1,0 +1,20 @@
+.search-summary{min-width:0;padding-bottom:30px}
+.summary-header{padding:34px 38px;border:1px solid #344052;border-radius:13px;background:linear-gradient(135deg,rgba(16,30,50,.96),rgba(4,10,18,.98));box-shadow:var(--shadow)}
+.summary-kicker{margin:0 0 8px;color:var(--gold);font-size:13px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.summary-header h1{margin:0;color:#f5f1e7;font-family:Georgia,serif;font-size:34px;font-weight:500;line-height:1.25}
+.summary-header h1 span{color:var(--gold-light)}
+.summary-loading,.summary-empty{margin-top:18px;padding:30px;border:1px dashed #394559;border-radius:12px;text-align:center;color:#aeb7c4}
+.summary-results{display:grid;gap:14px;margin-top:18px}
+.summary-result{border:1px solid #303c50;border-radius:13px;background:linear-gradient(180deg,rgba(9,19,34,.98),rgba(5,12,22,.98));overflow:hidden}
+.summary-result[hidden],.summary-empty[hidden],.summary-loading[hidden]{display:none}
+.summary-result-head{display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:15px;padding:18px 20px;border-bottom:1px solid #243044}
+.summary-result-head img{width:48px;height:48px;object-fit:contain}
+.summary-result-head h2{margin:0 0 4px;color:#fff;font-family:Georgia,serif;font-size:23px}
+.summary-result-head div span{color:#929dac;font-size:13px}
+.summary-result-head>a{display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #71551f;border-radius:8px;color:var(--gold-light);text-decoration:none;font-size:14px;font-weight:700}
+.summary-result-head>a:hover{border-color:var(--gold);background:rgba(224,170,57,.08)}
+.summary-excerpts{display:grid;gap:1px;padding:8px}
+.summary-excerpts>a{display:block;margin:0;padding:13px 15px;border-radius:8px;color:#cbd2dc;font-size:14px;line-height:1.55;text-decoration:none;transition:background .16s ease,color .16s ease,transform .16s ease}
+.summary-excerpts>a:hover,.summary-excerpts>a:focus{background:#101c2e;color:#fff;outline:0;transform:translateX(3px)}
+.summary-excerpts mark{padding:1px 3px;border-radius:3px;background:rgba(224,170,57,.3);color:#ffe39a}
+@media(max-width:680px){.summary-header{padding:26px 22px}.summary-header h1{font-size:27px}.summary-result-head{grid-template-columns:44px 1fr}.summary-result-head img{width:40px;height:40px}.summary-result-head>a{grid-column:1/-1;justify-content:center}}
