@@ -10,13 +10,15 @@ const links=[
 ];
 ---
 <aside class="site-sidebar">
-  <section class="sidebar-card">
-    <h2 class="sidebar-title">{t.title}<span>›</span></h2>
-    <nav class="guide-nav">
-      {links.map(([slug,label,icon]) => <a class:list={['guide-nav-link',{active:active===slug}]} href={`/${lang}/guides/${slug}`}><img class:list={['nav-icon',{paw:slug==='pets'}]} src={icon} alt=""/><span>{label}</span></a>)}
-    </nav>
-  </section>
-  {toc?.length > 0 && <section class="sidebar-card toc-card"><h2 class="sidebar-title">{t.onPage}</h2><nav class="toc-links">{toc.map(item => <a href={item.href}>{item.label}</a>)}</nav></section>}
+  <div class="sidebar-navigation">
+    <section class="sidebar-card">
+      <h2 class="sidebar-title">{t.title}<span>›</span></h2>
+      <nav class="guide-nav">
+        {links.map(([slug,label,icon]) => <a class:list={['guide-nav-link',{active:active===slug}]} href={`/${lang}/guides/${slug}`}><img class:list={['nav-icon',{paw:slug==='pets'}]} src={icon} alt=""/><span>{label}</span></a>)}
+      </nav>
+    </section>
+    {toc?.length > 0 && <section class="sidebar-card toc-card"><h2 class="sidebar-title">{t.onPage}</h2><nav class="toc-links">{toc.map(item => <a href={item.href}>{item.label}</a>)}</nav></section>}
+  </div>
   <section class="sidebar-card promo-card">
     <h2 class="promo-title">{t.playTitle}</h2><p class="promo-text">{t.playText}</p><a class="gold-button" href="https://l2reborn.org/essence/" target="_blank" rel="noopener">{t.play}<span>↗</span></a>
   </section>
