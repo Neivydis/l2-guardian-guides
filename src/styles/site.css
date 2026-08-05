@@ -36,6 +36,9 @@ button,input{font:inherit}
 .search-preview{display:none;color:#aeb9c9;font-size:13px;font-weight:400;line-height:1.45;max-width:72ch}
 .search-result:hover .search-preview:not([hidden]),.search-result:focus .search-preview:not([hidden]){display:block}
 .header-actions{display:flex;align-items:center;gap:16px;white-space:nowrap}
+.balance-icon{display:grid;place-items:center;width:52px;height:52px;border:1px solid transparent;border-radius:12px;text-decoration:none;background:rgba(8,13,21,.5);transition:.2s ease}
+.balance-icon img{width:36px;height:36px;object-fit:contain}
+.balance-icon:hover{border-color:var(--gold);background:#111a29;box-shadow:0 0 18px rgba(224,170,57,.14);transform:translateY(-2px)}
 .discord-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:12px;text-decoration:none;color:#fff;font-size:28px;transition:.2s ease}
 .discord-icon svg{width:29px;height:29px}
 .discord-icon:hover{background:#111a29;transform:translateY(-2px)}
@@ -73,4 +76,4 @@ button,input{font:inherit}
 .mobile-menu-button{display:none}
 @media(max-width:1050px){.site-header{grid-template-columns:220px 1fr auto;gap:18px;padding:10px 16px}.site-logo{height:72px}.site-shell{grid-template-columns:230px minmax(0,1fr);gap:22px}.flag-link{width:48px;height:48px;font-size:25px}}
 @media(max-width:820px){.site-header{position:relative;grid-template-columns:1fr auto;min-height:auto}.site-logo{max-width:235px}.search-wrap{grid-column:1/-1;grid-row:2}.site-shell{grid-template-columns:1fr;padding:14px}.site-sidebar{position:relative;top:0;max-height:none}.toc-card{position:relative;top:0}.guide-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar-card.promo-card{display:none}}
-@media(max-width:540px){.site-header{padding:9px 10px}.site-logo{height:60px;max-width:190px}.discord-icon{display:none}.flag-link{width:44px;height:44px;font-size:23px}.guide-nav{grid-template-columns:1fr}.footer-inner{gap:16px}.search-box{height:52px}}
+@media(max-width:540px){.site-header{padding:9px 10px}.site-logo{height:60px;max-width:190px}.balance-icon,.discord-icon{display:none}.flag-link{width:44px;height:44px;font-size:23px}.guide-nav{grid-template-columns:1fr}.footer-inner{gap:16px}.search-box{height:52px}}

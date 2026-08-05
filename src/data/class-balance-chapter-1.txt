@@ -1,0 +1,525 @@
+Warg
+Direct Strike / Double Claw Strike
+Reuse time 0.5s → 1s.
+Unleashed Potential
+Wolf form duration 60s → 30s.
+Imminent Piercing
+Armor Break Effect removed.
+Blood Rose
+Crimson Rose
+PvP Damage +5%.
+Kingdom of Plants
+PvP Damage +10%.
+Bleeding Rose Attack
+Reuse time 0.5s → 1s.
+Samurai
+Crippling Strike
+Weapon Break effect removed. Instead applies P. Atk –30% for 15 seconds.
+Battojutsu / Perception Battojutsu
+Decreased affected targets from 20 to 5.
+Adamant Will
+One-handed Sword Damage bonus 10% → 3%. Triple Strike effect removed.
+Divine Templar
+Privilege
+Skill Evasion bonus set to 5% / 10% / 15%.
+Sacral Strike / Nobless Sacral Strike
+Healing power reduced by 50%.
+Nobless Purify
+Now cleanses any debuff instead of only Imprisonment and Knockdown.
+Flying Leap
+Knockdown has a 35% chance to land.
+Elemental Weaver
+Tree Animation
+Replaced with Tree of Life (live version).
+Incompatibility
+Damage removed. Now only applies the M. Def debuff.
+Weaver's Shield
+Cancels 70% of received damage. The remaining 30% consumes MP instead of HP. Cancels when MP reaches 0. While active: M. Atk +200, skill cooldown –4%, and M. Skill MP consumption +400%. On expiration, restores 30% of Max MP and reduces received PvP Damage by 30% for 3 seconds.
+Blink
+New skill learned at level 60 with an Enhanced Spellbook. Teleports away from the target, may knock them down, and removes all disabilities.
+Blazing Tempest / Flaming Blazing Tempest
+Can hit max 5 targets.
+Glacier Strike / Frosty Glacier Strike
+Can hit max 5 targets.
+Plants
+Resistance to all weapons –30% → –15%.
+Twin Plants
+Resistance to all weapons –60% → –30%.
+Assassin
+Resolve to Kill
+Cooldown 20m → 5m.
+Shadow Attack / Enhanced Shadow Attack
+Additional hit removed.
+Storm Blaster
+Dual Blow
+Reuse time 1.5s → 1s.
+Fire Explosion
+Maximum targets 3 → 5.
+Death Knight
+Punishment
+Makes an additional attack in PvE. Target Defense ignore 20% → 10%.
+Wipeout
+Target Defense ignore 20% → 10%.
+Lightning / Burning / Freezing Wipeout
+Target Defense ignore 20% → 10% and 25% → 15%.
+Deadly Pull
+Reuse time 3s → 5s.
+Lightning Storm / Frozen Field / Burning Field
+Hits enemies 3 times instead of 4. Maximum 5 targets.
+Hellfire
+Maximum 5 targets.
+Doombringer
+Rush Impact / Effective Rush Impact
+Disability effect removed.
+Collecting Light Souls
+Cooldown 15min → 2min.
+Collecting Shadow Souls
+Cooldown 15min → 2min.
+Shadow Veil
+Additional-hit cooldown removed. At skill level 2, trigger chance 20% → 40%. New skill level 3 with trigger chance 40% → 100%.
+Soul Smash
+Removes the 30% power bonus against stunned targets. Base skill power increased by 30%.
+Amazing Soul Smash
+Removes the 60% power bonus against stunned targets. Base skill power increased by 60%.
+Soulhound
+Soulhound's Shield
+Cancels 70% of received damage. The remaining 30% consumes MP instead of HP. Cancels when MP reaches 0. While active: M. Atk +200, skill cooldown –4%, and M. Skill MP consumption +400%. On expiration, restores 30% of Max MP and reduces received PvP Damage by 30% for 3 seconds.
+Leopold
+Spirit Ore cost 50 → 10.
+Arcane Shield
+Can now be learned at level 76.
+Sagittarius
+Double Shot
+Reuse time 1.5s → 1s.
+Lethal Shot
+Reuse time 1.5s → 1s. Now attacks twice in PvE.
+Hamstring Shot
+Casting time 4s → 2s.
+Holding Shot
+Casting time 3s → 2s.
+Retreat
+New skill learned at level 60. Teleports the character backward and blocks nearby enemies' Rush skills for 10 seconds.
+Moonlight Sentinel
+Double Shot
+Reuse time 1.5s → 1s.
+Lethal Shot
+Reuse time 1.5s → 1s. Now attacks twice in PvE.
+Hamstring Shot
+Casting time 4s → 2s.
+Holding Shot
+Casting time 3s → 2s.
+Retreat
+New skill learned at level 60. Teleports the character backward and blocks nearby enemies' Rush skills for 10 seconds.
+Ghost Sentinel
+Double Shot
+Reuse time 1.5s → 1s.
+Lethal Shot
+Reuse time 1.5s → 1s. Now attacks twice in PvE.
+Hamstring Shot
+Casting time 4s → 2s.
+Holding Shot
+Casting time 3s → 2s.
+Retreat
+New skill learned at level 60. Teleports the character backward and blocks nearby enemies' Rush skills for 10 seconds.
+Trickster
+Twin Shot / Ultimate Twin Shot
+Reuse time 2s → 1s.
+Multishot / Ultimate Multishot
+Skill Power increased by 50%. Can critically hit.
+Collecting Light Souls
+Cooldown decreased from 15min to 2min.
+Collecting Shadow Souls
+Cooldown decreased from 15min to 2min.
+Shadow Veil
+Additional-hit cooldown removed. At skill level 2, trigger chance 20% → 40%. New skill level 3 with trigger chance 40% → 100%.
+Legendary Archer
+Increased Fear Attack Rate +20%. Added new bonuses: P. Atk +2000, PvE damage +10%, Silence atk rate +20%, resistance to all weapons +10%.
+Legendary Archer Master
+New skill. Same bonuses as Ghost Sentinel's version but with 10% Melee Resistance. Replaces Mental Panic Shot and Soul Stigma when activated.
+Legendary Mental Panic Shot
+New skill. 50% more power than the original. Debuff has new trait for better success rate. Also applies 10% Received P. Skill Critical Damage along with Fear. Cooldown 20s → 30s.
+Enhanced Blink
+New skill learned at level 60 with an Enhanced Spellbook. Teleports away from the target, grants invisibility for 20 seconds, and removes all disabilities.
+Adventurer
+Max blow land rate
+80% → 100%.
+Backstab
+Range 250 → 500/600/700 by skill level. Now hits with the same chance from any angle. Reuse time 5s → 3s.
+Flying Dagger
+Skill has been reworked combined with Critical Wound effects.
+Fatal Accuracy
+Frontal Backstab accuracy bonus removed.
+Reversed Pull
+Now requires an Enhanced Spellbook instead of Rare.
+Hidden Dagger
+Now requires a Rare Spellbook instead of Enhanced.
+Focus Death / Focus Chance / Focus Power
+Magic Tablet cost 31 → 10.
+Focus Chance
+Vital Point Attack rate (blow rate) +40% → +80%. Can now be learned at level 60.
+Wind Rider
+Max blow land rate
+80% → 100%.
+Backstab
+Range 250 → 500/600/700 by skill level. Now hits with the same chance from any angle. Reuse time 5s → 3s.
+Flying Dagger
+Skill has been reworked combined with Critical Wound effects.
+Fatal Accuracy
+Frontal Backstab accuracy bonus removed.
+Synchro Freedom
+Now requires an Enhanced Spellbook instead of Rare.
+Hidden Dagger
+Now requires a Rare Spellbook instead of Enhanced.
+Focus Death / Focus Chance / Focus Power
+Magic Tablet cost 31 → 10.
+Focus Chance
+Vital Point Attack rate (blow rate) +40% → +80%. Can now be learned at level 60.
+Ghost Hunter
+Max blow land rate
+80% → 100%.
+Backstab
+Range 250 → 500/600/700 by skill level. Now hits with the same chance from any angle. Reuse time 5s → 3s.
+Flying Dagger
+Skill has been reworked combined with Critical Wound effects.
+Fatal Accuracy
+Frontal Backstab accuracy bonus removed.
+Ethereal Blood
+Now requires an Enhanced Spellbook instead of Rare.
+Hidden Dagger
+Now requires a Rare Spellbook instead of Enhanced.
+Focus Death / Focus Chance / Focus Power
+Magic Tablet cost 31 → 10.
+Focus Chance
+Vital Point Attack rate (blow rate) +40% → +80%. Can now be learned at level 60.
+Maestro
+Fatal Strike
+Power increased by 50%. Target Defense ignore 5% → 10%.
+Fatal Vortex
+Ignores 10% Target Defense. Now requires a target.
+Provoke
+Can be auto-used.
+Body Crush
+Reuse time 20s → 15s.
+Armor Crush
+Reuse time 20s → 15s.
+Earth Tremor
+Power increased by 40%. Target Defense ignore 10% → 20%.
+Earthquake
+Ignores 20% Target Defense. Reuse time 8s → 3s. Now requires a target.
+Blacksmith Attack
+Range 500 → 700. Now requires a Superior Spellbook instead of Rare.
+Mechanical Master Piece
+Earth Tremor triggers an additional attack that may stun. Cooldown 10s.
+Hammer Rumble
+Skill Power increased by 25%.
+Dwarven Armor Mastery
+Stats completely reworked: increased P. Def, added M. Def and MP regeneration.
+Dwarven Weapon Mastery
+Stats completely reworked: increased P. Atk and Attack Speed, added PvE Damage.
+Fortune Seeker
+Fatal Strike
+Power increased by 50%. Target Defense ignore 5% → 10%.
+Vortex / Fatal Vortex
+Ignores 10% Target Defense. Now requires a target.
+Provoke
+Can be auto-used.
+Body Crush
+Reuse time 20s → 15s.
+Armor Crush
+Reuse time 20s → 15s.
+Crushing Leap
+Power increased by 40%. Target Defense ignore 10% → 20%.
+Earthquake
+Ignores 20% Target Defense. Reuse time 8s → 3s. Now requires a target.
+Adena Stun
+Active buff with 20min duration and 20s cooldown. Crushing Leap triggers an additional hit with a 30% Knockdown chance and 15s trigger cooldown.
+Trophy Thief
+Power increased by 30%. Item-stealing effect removed.
+Blessed Fortune Time
+Removed all Fortune Mark and additional drop mechanics.
+Fortune Time
+Now requires an Enhanced Spellbook instead of Rare.
+Dwarven Armor Mastery
+Stats completely reworked: increased P. Def, added M. Def and MP regeneration.
+Dwarven Weapon Mastery
+Stats completely reworked: increased P. Atk and Attack Speed, added PvE Damage.
+Dreadnought
+Fatal Strike
+Power increased by 50%. Target Defense ignore 5% → 10%.
+Vortex / Fatal Vortex
+Ignores 10% Target Defense. Now requires a target.
+Thunder Storm
+Now requires a target.
+Amazing Thunder Storm
+Now requires a target. Maximum targets 8 → 5.
+Spear Rumble
+Now requires a target.
+Spear Howl
+Now requires a target.
+Provoke
+Can be auto-used.
+Spike Thrust
+Skill Power increased by 20%.
+Amazing Spike Thrust
+Skill Power increased by 20%. Attacks the target twice.
+Revival
+Now also removes all disabilities when used.
+Splash Attack
+Replaces Rush with Blessed Rush.
+Titan
+Fatal Strike
+Power increased by 50%. Target Defense ignore 5% → 10%.
+Fatal Vortex
+Ignores 10% Target Defense. Now requires a target.
+Armor Crush
+Reuse time 20s → 15s.
+Rush
+New skill.
+Excruciating Strike
+Can critically hit.
+Demolition Impact
+Skill Power increased by 20%.
+Titanic Weapon
+Replaces Rush with Blessed Rush. Additional-hit chance 20% → 100%.
+Grand Khavatari
+Hurricane Assault
+Range increased to 400.
+Double Hurricane Assault
+Range increased to 400.
+Vanguard Rider
+BP Regen
+Increased.
+Piercing
+Ignores 15% P. Def.
+Amazing Piercing
+Ignores 20% P. Def and attacks the enemy twice.
+Threatening Swing
+Ignores 10% P. Def.
+Wide Threatening Swing
+Ignores 15% P. Def.
+Wild Scratch
+Reuse time 10s → 8s.
+Shadow Scratch
+Additional-attack chance increased to 100%.
+Blazing Fury
+PvE Damage +10%.
+Final Secret
+Basic PvP Damage replaced by PvP Damage.
+Wild Growl
+Reuse time 45s → 15s.
+Giant's Stomp
+Reuse time 1min → 20s. Deals skill-power-based damage to 5 targets.
+Guts
+New skill.
+Dominator
+Fatal Strike
+Power increased by 50%. Target Defense ignore 5% → 10%.
+Inferno Strike
+Casting time 4s → 3s.
+Bloody Strike
+Casting time 4s → 3s. Now requires a Superior Spellbook instead of Rare.
+Flame Bloody Strike
+Reuse time 0.5s → 1s.
+Doomcryer
+Fatal Strike
+Power increased by 50%. Target Defense ignore 5% → 10%.
+Inferno Strike
+Casting time 4s → 3s.
+Bloody Strike
+Casting time 4s → 3s. Now requires a Superior Spellbook instead of Rare.
+Flame Bloody Strike
+Reuse time 0.5s → 1s.
+Hell Knight
+Shield Strike
+Power increased by 45% through skill level 15. Attacks twice from skill level 16.
+Knight's Assault
+Now attacks twice.
+Dark Strike
+Power doubled. Reuse time 5s → 10s. Fixed cooldown removed. Can critically hit and ignores 15% P. Def.
+Stun Shield
+Power doubled. Reuse time 20s → 15s. Can critically hit and ignores 10% P. Def.
+Dark Panther's Help
+Trigger chance: 30% at Lv. 1–7, 40% at Lv. 8–9, and 50% at Lv. 10–13. Triggers from Shield Strike, Shield Throwing, or Knight's Assault and ignores 10% P. Def.
+Help of the Hatred
+Additional hit removed when using Shield Strike or Knight's Assault.
+Phoenix Knight
+Shield Strike
+Power increased by 45% through skill level 15. Attacks twice from skill level 16.
+Knight's Assault
+Now attacks twice.
+Holy Strike
+Power doubled. Reuse time 5s → 10s. Fixed cooldown removed. Can critically hit and ignores 15% P. Def.
+Stun Shield
+Power doubled. Reuse time 20s → 15s. Can critically hit and ignores 10% P. Def.
+Angelic Archon
+With a Sword or Blunt: P. Atk +10%/20%/30% and P. Skill Power +5%/10%/15%.
+Phoenix Help
+Trigger rate 50% → 75%. Additional hit removed when using Shield Strike or Knight's Assault.
+Eva's Templar
+Aqua Strike
+Power increased by 45% through skill level 15. Attacks twice from skill level 16.
+Templar's Assault
+Now attacks twice.
+Shield Bash
+Power doubled. Reuse time 20s → 15s. Can critically hit and ignores 10% P. Def.
+Eva's Defense
+Cooldown reduced to 10s. Duration increased to 20 minutes.
+Eva's Help
+Additional-attack chance 50% → 100%. Additional hit removed when using Aqua Strike or Templar's Assault.
+Chain Strike
+New skill.
+Shillien Templar
+Abyss Strike
+Power increased by 45% through skill level 15. Attacks twice from skill level 16.
+Templar's Assault
+Now attacks twice.
+Battle Shield
+Spirit Ore cost 200 → 20.
+Shillien's Help
+Additional-attack chance 50% → 100%. Additional hit removed when using Abyss Strike or Templar's Assault.
+Chain Strike
+New skill.
+Sword Muse
+Guard Crush
+Range 40 → 300. Skill Power increased by 35%.
+Symphony
+Power doubled. Reuse time 20s → 15s.
+Song of Wind
+Now requires an Enhanced Spellbook.
+Song of Hunter
+Now requires a Superior Spellbook.
+Song of Wind Legato
+Double hit removed.
+Song of Hunter Legato
+Reuse time 8s → 12s.
+Rush
+New skill.
+Spectral Dancer
+Guard Crush
+Range 40 → 300. Skill Power increased by 35%.
+Poison Blade
+Power doubled. Can critically hit.
+Dance of Fury
+Now requires an Enhanced Spellbook.
+Dance of Fire
+Now requires a Superior Spellbook.
+Dance of Fury Legato
+Double hit removed.
+Dance of Fire Legato
+Reuse time 8s → 12s.
+Rush
+New skill.
+Duelist
+Blade Strike
+Range 40 → 600.
+Blade Storm Dance
+Skill Power increased fivefold. Reuse time 10s → 15s. Range 500 → 600.
+Hierophant
+Fatal Strike
+Power increased by 50%. Target Defense ignore 5% → 10%.
+Might of Heaven
+Casting time 4s → 3s.
+Essential Energy
+Can now be learned at level 76.
+Essential Fatal Crush
+Range increased 400 → 700.
+Divine Beam
+Now requires a Superior Spellbook instead of Rare.
+Holy Buster
+Now requires an Enhanced Spellbook instead of Superior.
+Eva's Saint
+Divine Beam
+Now requires a Superior Spellbook instead of Rare.
+Might of Heaven
+Casting time 4s → 3s. Skill Power increased by 20%.
+Shillien Saint
+Divine Beam
+Now requires a Superior Spellbook instead of Rare.
+Might of Heaven
+Casting time 4s → 3s. Skill Power increased by 20%.
+Cardinal
+Shining Beam
+Now requires a Superior Spellbook instead of Rare. Skill Power increased by 15%.
+Might of Heaven
+Casting time 4s → 3s. Skill Power increased by 20%.
+Abyss Beam
+Skill Power increased by 15%.
+Storm Screamer
+Hurricane
+Casting time 4s → 3s.
+Thunder Explosion
+Casting time 4s → 3s. Now requires a Superior Spellbook instead of Rare.
+Storm Screamer's Shield
+While active: M. Atk +200, skill cooldown –4%, and M. Skill MP consumption +400%. On expiration, restores 30% of Max MP and reduces received PvP Damage by 30% for 3 seconds.
+Arcane Shield
+Can now be learned at level 76.
+Blink
+New skill learned at level 60 with an Enhanced Spellbook. Teleports away from the target, may knock them down, and removes all disabilities.
+Archmage
+Prominence
+Casting time 4s → 3s.
+Flame Explosion
+Casting time 4s → 3s. Now requires a Superior Spellbook instead of Rare.
+Archmage's Shield
+While active: M. Atk +200, skill cooldown –4%, and M. Skill MP consumption +400%. On expiration, restores 30% of Max MP and reduces received PvP Damage by 30% for 3 seconds.
+Arcane Shield
+Can now be learned at level 76.
+Blink
+New skill learned at level 60 with an Enhanced Spellbook. Teleports away from the target, may knock them down, and removes all disabilities.
+Soultaker
+Death Spike
+Casting time 4s → 3s.
+Void Explosion
+Casting time 4s → 3s. Now requires a Superior Spellbook instead of Rare.
+Servitors
+Cannot be targeted or damaged.
+Summons
+Can now be auto-summoned in case of death.
+Blink
+New skill learned at level 60 with an Enhanced Spellbook. Teleports away from the target, may knock them down, and removes all disabilities.
+Mystic Muse
+Relict
+Upgrades Mystic Explosion from level 1. Now requires a Superior Spellbook instead of Enhanced.
+Arcane Shield
+Can now be learned at level 76.
+Elemental Master
+Elemental Mastership (88242)
+M. Skill Power +15% removed.
+Elemental Concentration (88251)
+M. Skill Cooldown -10% removed.
+Elemental Concentration (88252)
+M. Skill Cooldown reduction decreased from 15% to 5%.
+Elemental Strike
+Reuse time 1s → 1.2s.
+Elemental Acumen
+M. Skill Cooldown -3% removed.
+Arcana Lord
+Blaze
+Casting time 4s → 3s.
+Ray of Light
+Casting time 6.5s → 3s. Reuse time 10s → 5s.
+Ethereal Strike
+Casting time 4s → 3s.
+Servitors
+Cannot be targeted or damaged.
+Summons
+Can now be auto-summoned in case of death.
+Powerful Servitor Share
+Now transfers P./M. Critical Rate, Critical Damage, P./M. Skill Critical Damage, Weapon attack and resistances, Skill Power bonus, PVP/PVE Bonuses, AOE damage and resistance bonuses.
+Cat Emperor: Cat's Prominence
+New single-target magical skill with a 1s cooldown.
+Spectral Master
+Twister
+Casting time 4s → 3s.
+Ray of Light
+Casting time 6.5s → 3s. Reuse time 10s → 5s.
+Ethereal Strike
+Casting time 4s → 3s.
+Servitors
+Cannot be targeted or damaged.
+Summons
+Can now be auto-summoned in case of death.
+Powerful Servitor Share
+Now transfers P./M. Critical Rate, Critical Damage, P./M. Skill Critical Damage, Weapon attack and resistances, Skill Power bonus, PVP/PVE Bonuses, AOE damage and resistance bonuses.
+Lord Raise: Lord's Hurricane
+New single-target magical skill with a 1s cooldown.

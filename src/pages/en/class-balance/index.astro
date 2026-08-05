@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import chapterOneRaw from '../../../data/class-balance-chapter-1.txt?raw';
+import chapterTwoSource from '../../../data/class-balance-chapter-2.txt?raw';
+import { parseChapterOne, parseChapterTwo } from '../../../lib/classBalance';
+import '../../../styles/class-balance.css';
+const chapterTwoRaw=`Warg\nDirect Strike / Double Claw Strike: Reuse time increased from 0.5s to 1s.\n${chapterTwoSource}`;
+const chapterOneClasses=parseChapterOne(chapterOneRaw).length;
+const chapterTwoClasses=parseChapterTwo(chapterTwoRaw).length;
+---
+<SiteLayout title="Class Balance | L2 Guardian Guides" lang="en">
+  <main class="balance-main"><a class="balance-back" href="/en/">← Back to home</a><section class="balance-hero"><div class="balance-eyebrow">Guardian Server</div><h1>Class Balance</h1><p>Browse the complete class changes for every Guardian chapter. Each chapter is preserved separately so current adjustments can be compared with previous balance versions.</p></section><div class="chapter-grid"><a class="chapter-card" href="/en/class-balance/chapter-1/"><div class="chapter-number">Chapter 1</div><h2>Initial Class Balance</h2><p>The complete balance configuration used during the first Guardian chapter.</p><div class="chapter-meta"><span>{chapterOneClasses} classes</span><span>Historical</span></div></a><a class="chapter-card" href="/en/class-balance/chapter-2/"><div class="chapter-number">Chapter 2</div><h2>Current Class Balance</h2><p>Chapter 2 adjustments with changes removed since Chapter 1 clearly identified in red.</p><div class="chapter-meta"><span>{chapterTwoClasses} classes</span><span>Current</span></div></a></div></main>
+</SiteLayout>
