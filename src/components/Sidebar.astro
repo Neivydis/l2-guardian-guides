@@ -32,10 +32,9 @@ const links=[
     const sidebar=document.querySelector('.site-sidebar');
     if(!sidebar)return;
     if(window.innerWidth<=820){sidebar.scrollTop=0;return;}
-    const pageRange=document.documentElement.scrollHeight-window.innerHeight;
     const sidebarRange=sidebar.scrollHeight-sidebar.clientHeight;
-    sidebar.scrollTop=pageRange>0&&sidebarRange>0
-      ? sidebarRange*(window.scrollY/pageRange)
+    sidebar.scrollTop=sidebarRange>0
+      ? Math.min(sidebarRange,Math.max(0,window.scrollY))
       : 0;
   }
 

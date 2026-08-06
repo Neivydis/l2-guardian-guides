@@ -1,338 +1,145 @@
 ---
 import GuideLayout from '../../../layouts/GuideLayout.astro';
-const toc=[{href:'#overview',label:'Overview'},{href:'#how-it-works',label:'How It Works'},{href:'#categories',label:'Categories'},{href:'#obtaining-items',label:'Obtaining Items'},{href:'#recommended',label:'Recommended Early Collections'},{href:'#mistakes',label:'Common Mistakes'},{href:'#related',label:'Related Guides'}];
+
+const toc = [
+  {href:'#overview',label:'Overview'},
+  {href:'#access',label:'How to Access'},
+  {href:'#registration',label:'Registering Items'},
+  {href:'#requirements',label:'Requirements'},
+  {href:'#effects',label:'Effects and Completion'},
+  {href:'#categories',label:'Categories'},
+  {href:'#tools',label:'Favorites and Details'},
+  {href:'#obtaining',label:'Obtaining Items'},
+  {href:'#recommended',label:'Recommendations'},
+  {href:'#mistakes',label:'Common Mistakes'}
+];
 ---
-<GuideLayout title="Collections | L2 Guardian Guides" lang="en" active="collections" toc={toc}><div class="content"><a class="back" href="/en/">← Back to home</a>
+
+<GuideLayout title="Collections | L2 Guardian Guides" lang="en" active="collections" toc={toc}>
+  <div class="content">
+    <a class="back" href="/en/">← Back to home</a>
 
     <section class="hero">
-
       <img src="/images/collections.png" alt="Collections system window in L2 Reborn Guardian"/>
-
       <div class="hero-body">
-        <div class="badge">GUARDIAN SYSTEM</div>
-
+        <div class="badge">CHARACTER PROGRESSION</div>
         <h1>Collections</h1>
-
-        <p class="subtitle">
-          Collections are permanent, shared across the account stat bonuses you unlock by registering specific sets of
-          items. They apply to every character on your account, so time spent completing them is never wasted,
-          even if you switch or reroll a class later.
-        </p>
-
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="label">System Type</div>
-            <div class="value">Permanent / Shared across the account</div>
-          </div>
-
-          <div class="info-card">
-            <div class="label">Best For</div>
-            <div class="value">All Classes</div>
-          </div>
-
-          <div class="info-card">
-            <div class="label">Difficulty</div>
-            <div class="value">Low / Medium</div>
-          </div>
-
-          <div class="info-card">
-            <div class="label">Priority</div>
-            <div class="value">Medium to High</div>
-          </div>
-        </div>
+        <p class="subtitle">Register specific items to complete permanent stat collections for one character. Requirements vary by item, enchant level and collection, so always inspect the Details window before committing equipment.</p>
       </div>
     </section>
-	
-	
-	<section class="section quick-start">
-  <div class="quick-head">
-    <div class="quick-icon">⚡</div>
-    <div>
-      <h2>Quick Start</h2>
-      <p>What to know before opening the Collections window for the first time.</p>
-    </div>
-  </div>
 
-  <div class="quick-grid">
-
-    <div class="quick-card">
-      <div class="quick-title">Scope</div>
-      <div class="quick-value">Shared across the account</div>
-      <span class="quick-tag high">High Priority</span>
-    </div>
-
-    <div class="quick-card">
-      <div class="quick-title">Categories</div>
-      <div class="quick-value">8 Tabs</div>
-      <span class="quick-tag medium">Medium Priority</span>
-    </div>
-
-    <div class="quick-card">
-      <div class="quick-title">Main Source</div>
-      <div class="quick-value">Random Craft</div>
-      <span class="quick-tag high">High Priority</span>
-    </div>
-
-    <div class="quick-card">
-      <div class="quick-title">Items Used</div>
-      <div class="quick-value">Consumed Forever</div>
-      <span class="quick-tag high">High Priority</span>
-    </div>
-
-  </div>
-
-  <div class="quick-footer">
-
-    <div class="quick-tip">
-      <strong>Items are consumed</strong>
-      Once an item is registered into a collection it is removed from your inventory permanently, so double check before confirming.
-    </div>
-
-    <div class="quick-tip">
-      <strong>Sealed items count too</strong>
-      Most collection items have a Sealed equivalent obtainable through Random Craft, you rarely need to buy or farm the unsealed version.
-    </div>
-
-    <div class="quick-tip">
-      <strong>Shared across the account, not per character</strong>
-      Progress and completed collections carry over to every character you create on the same account.
-    </div>
-
-  </div>
-</section>
+    <section class="section quick-start">
+      <div class="quick-head"><div class="quick-icon">⚡</div><div><h2>Quick Start</h2><p>The essential rules before registering your first item.</p></div></div>
+      <div class="quick-grid">
+        <div class="quick-card"><div class="quick-title">Progress</div><div class="quick-value">Per Character</div><span class="quick-tag high">Not Account Wide</span></div>
+        <div class="quick-card"><div class="quick-title">Main Source</div><div class="quick-value">Random Craft and Collection Marks</div><span class="quick-tag high">Plan Ahead</span></div>
+        <div class="quick-card"><div class="quick-title">Registration</div><div class="quick-value">Consumes Item</div><span class="quick-tag high">Cannot Recover</span></div>
+        <div class="quick-card"><div class="quick-title">Stat Activation</div><div class="quick-value">Full Collection</div><span class="quick-tag medium">Complete Every Slot</span></div>
+      </div>
+      <div class="quick-footer">
+        <div class="quick-tip"><strong>Check Details first</strong>Confirm the exact item and enchant requirement before registering anything.</div>
+        <div class="quick-tip"><strong>Sealed items work</strong>Eligible sealed items can be registered directly.</div>
+        <div class="quick-tip"><strong>Bonuses accumulate</strong>Statistics from completed Collections remain active together.</div>
+      </div>
+    </section>
 
     <section class="section" id="overview">
       <h2>Overview</h2>
-
-      <p>
-        Collections are sets of specific items that, once fully registered, grant a permanent stat bonus.
-        They are available from level 1, and both their progress and their effects are shared across every
-        character on your account, though not between different servers.
-      </p>
-	<img
-	  src="/images/collections.png"
-	  alt="Collections window in Lineage 2 Guardian"
-	  class="guide-image-small"/>
-      <div class="note">
-        <strong>Recommendation:</strong> Open the Collections window early and check the search option to see
-        if any item you already own can be registered, some early gear pieces qualify without you realizing it.
-      </div>
-	 
+      <p>Collections are sets of required items that award a listed statistic after every slot in the set has been completed. Progress and bonuses belong to the character that completes them. They are not shared across the account.</p>
+      <p>Most completed effects are permanent and automatically stack with bonuses from other completed Collections. Content under Events and Offers, or any Collection whose tooltip states a duration, is temporary.</p>
+      <div class="warning"><strong>Registration is irreversible:</strong> an item disappears when it is added to a Collection and cannot be recovered.</div>
     </section>
 
-    <section class="section" id="how-it-works">
-      <h2>How It Works</h2>
-
+    <section class="section" id="access">
+      <h2>How to Access Collections</h2>
       <div class="steps">
-
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <strong>Register an item</strong>
-            <p>Select the item with left click, then open the Collections button from your inventory. Any collection that item can fill will be highlighted.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <strong>Item is consumed</strong>
-            <p>Once added, the item is permanently removed from your inventory. It cannot be taken back out, so make sure you are not going to need it equipped.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">3</div>
-          <div>
-            <strong>Use alternative slots when available</strong>
-            <p>Some collections accept more than one valid item per slot (for example a normal spellbook or its Sealed version). You can freely mix which version you use for each slot as long as the total required count is met.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">4</div>
-          <div>
-            <strong>Effect applies immediately</strong>
-            <p>As soon as the last required item is registered, the collection completes and its bonus is applied right away, permanent bonuses stay active forever, temporary ones show their expiration in the Collections screen.</p>
-          </div>
-        </div>
-
+        <div class="step"><div class="num">1</div><div><strong>Main menu</strong><p>Open the menu from the bottom right corner of the game interface and click Collections.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Inventory shortcut</strong><p>Open the Inventory and click the Collections button along its bottom edge.</p></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Search with an item</strong><p>Drag an inventory item onto the Collections button to display the Collections in which that item can be registered.</p></div></div>
       </div>
-
-      <div class="warning">
-        <strong>Some items cannot be registered.</strong>
-        Augmented items, enchanted items (unless stated otherwise), items with inserted Soul Crystals, most unsealable Sealed items and equipped items cannot be added to a collection.
+      <div class="guide-gallery">
+        <figure><img src="/images/collections-menu.png" alt="Collections button in the main game menu"/><figcaption>Open the bottom right menu and select Collections.</figcaption></figure>
+        <figure><img src="/images/collections-inventory-access.png" alt="Collections shortcut at the bottom of the Inventory"/><figcaption>The Inventory shortcut can also receive a dragged item.</figcaption></figure>
       </div>
+    </section>
+
+    <section class="section" id="registration">
+      <h2>Registering Items</h2>
+      <p>Items that belong to at least one Collection display the Collection icon in their tooltip. Sealed items can be registered, but the item must still meet the exact requirement shown by the Collection.</p>
+      <figure class="guide-figure compact"><img src="/images/collections-item-icon.png" alt="Collection icon displayed on an eligible item tooltip"/><figcaption>The highlighted symbol identifies an item used by the Collections system.</figcaption></figure>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>Open the Collection Details</strong><p>Select Details beside the desired Collection to view all required slots.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Select the required slot</strong><p>Check the accepted object and its required enchant level before choosing an item.</p></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Confirm Registration</strong><p>The selected item is consumed permanently and fills that Collection slot.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="requirements">
+      <h2>Item and Enchant Requirements</h2>
+      <p>Every slot can require a different enchant level. Some Collections also request the same item at different tiers or enchant levels, so owning one version does not automatically satisfy every related slot.</p>
+      <p>Some slots accept equivalent items. Left click the item shown in the Collection to open the list of valid alternatives before purchasing or upgrading equipment.</p>
+      <figure class="guide-figure compact"><img src="/images/collections-equivalent-items.png" alt="Alternative items accepted by one Collection slot"/><figcaption>Use the item selector to inspect every equivalent accepted by the slot.</figcaption></figure>
+      <div class="note"><strong>Exact enchant matters:</strong> never assume a visually similar item or another tier will be accepted. Verify the selectable alternatives inside the Collection window.</div>
+    </section>
+
+    <section class="section" id="effects">
+      <h2>Effects and Completion</h2>
+      <p>The listed Collection Effect activates only after the entire Collection is complete. Completing one or several individual slots does not grant a partial version of the statistic.</p>
+      <p>Permanent Collection statistics accumulate, so every completed set contributes to the character at the same time. The area labelled Bonus Reward is tied to completing the Collection and should not be treated as a separate additional reward system.</p>
+      <figure class="guide-figure compact"><img src="/images/collections-details.png" alt="Collection Details window with required items and Collection Effect"/><figcaption>Details displays every required slot and the effect awarded by full completion.</figcaption></figure>
     </section>
 
     <section class="section" id="categories">
-      <h2>Categories</h2>
-
-      <p>
-        Collections are split into 8 tabs. Hover any category inside the game to see your completion percentage for it,
-        and use Favorites to keep the collections you are actively working on at the top of the list.
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Focus</th>
-            <th>Example Collection</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td><strong>Attack</strong></td>
-            <td>P./M. Atk., Skill Power, Critical Rate/Damage</td>
-            <td>Ambidexterity: P./M. Atk. +125</td>
-          </tr>
-          <tr>
-            <td><strong>Defense</strong></td>
-            <td>P./M. Def., Received damage/critical reduction</td>
-            <td>Great Power: P./M. Def. +100</td>
-          </tr>
-          <tr>
-            <td><strong>Support</strong></td>
-            <td>Max HP/MP/CP, Casting/Atk. Speed, Cooldown</td>
-            <td>Music Lover I: Max MP +150</td>
-          </tr>
-          <tr>
-            <td><strong>Special</strong></td>
-            <td>Resistances (Pull, Hold, Suppression, Imprisonment...)</td>
-            <td>Undying Body III: Hellfire Resistance +3%</td>
-          </tr>
-          <tr>
-            <td><strong>Stats</strong></td>
-            <td>Raw STR/DEX/CON/INT/WIT/MEN</td>
-            <td>Resistance Set: STR/INT/DEX/WIT +1</td>
-          </tr>
-          <tr>
-            <td><strong>Utility</strong></td>
-            <td>Sayha's Grace, XP/SP gain, inventory/warehouse slots</td>
-            <td>Supporting Accessories I: Acquired XP/SP +2%</td>
-          </tr>
-          <tr>
-            <td><strong>Events</strong></td>
-            <td>Temporary collections tied to specific offers</td>
-            <td>Growth Rune Collection II: Acquired XP/SP +2%</td>
-          </tr>
-          <tr>
-            <td><strong>Favorites</strong></td>
-            <td>Not a real category, a pinboard for any collection you star</td>
-            <td>Not applicable</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Categories and Temporary Collections</h2>
+      <p>The main filters are Attack, Defense, Battle Assist, Special, Stats, Utility, Events and Offers, and Favorites. Use them to narrow the list according to the bonus or Collection type you want to inspect.</p>
+      <h3>Events and Offers</h3>
+      <p>This category contains temporary content and is divided into two types:</p>
+      <table><thead><tr><th>Type</th><th>Duration</th></tr></thead><tbody><tr><td><strong>Season Collections</strong></td><td>Reset on the first day of each month at 06:30 server time.</td></tr><tr><td><strong>Event Collections</strong></td><td>Remain active for the duration stated by that Collection after completion.</td></tr></tbody></table>
+      <div class="warning"><strong>Check the tooltip:</strong> temporary effects do not follow the permanent rules of standard Collections.</div>
     </section>
 
-    <section class="section" id="obtaining-items">
-      <h2>Obtaining Items</h2>
+    <section class="section" id="tools">
+      <h2>Favorites, Details and Item Search</h2>
+      <p>Click the star beside a Collection to add it to Favorites and locate it quickly later. The Details button opens the full requirement window, including the items that must be registered and the final Collection Effect.</p>
+      <h3>Drag an Item onto Collections</h3>
+      <p>Dragging an inventory item onto the Collections shortcut shows its relevant Collections and adds a colored status point:</p>
+      <table><thead><tr><th>Point</th><th>Meaning</th></tr></thead><tbody><tr><td class="good"><strong>Yellow</strong></td><td>The item can be registered exactly as it is.</td></tr><tr><td class="bad"><strong>Red</strong></td><td>The item has less enchant than the Collection requires.</td></tr><tr><td><strong>Blue</strong></td><td>The item has more enchant than the Collection requires.</td></tr></tbody></table>
+      <div class="note"><strong>Important:</strong> these colored points appear only when an item is dragged from the Inventory onto the Collections button.</div>
+    </section>
 
-      <p>
-        In Guardian, Random Craft is the main source of items to complete collections, this is the intended
-        path from early game instead of a later progression bonus.
-		<br>Most collection items have a Sealed equivalent that can drop from Random Craft, so you rarely
-		need to farm or buy the raw unsealed version.
-      </p>
-
-      <div class="note">
-        <strong>Recommendation:</strong> Save low grade items you would otherwise sell, many of them are valid
-        Random Craft materials and feed directly into collection progress.
-      </div>
+    <section class="section" id="obtaining">
+      <h2>Obtaining Collection Items</h2>
+      <p>Collection items can come from Random Craft, Purges, Master Collection Marks and town merchants. Compare the required enchant level and accepted alternatives before spending Adena or limited materials.</p>
+      <p>All Collections are visible, but some required objects are not obtainable yet. More items will become available as the server progresses.</p>
+      <div class="warning"><strong>Visible does not always mean completable:</strong> check whether every required item is currently obtainable before investing in the rest of a Collection.</div>
     </section>
 
     <section class="section" id="recommended">
-      <h2>Recommended Early Collections</h2>
-
-      <p>
-        This section will list the cheapest and most efficient collections to complete during your first days
-        on Guardian, based on real inside the game costs rather than theoretical ones.
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Collection</th>
-            <th>Required Items</th>
-            <th>Effect</th>
-            <th>Why Early</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td colspan="4">To be filled in.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="note">
-        <strong>Note:</strong> This table is a placeholder, fill it in with the collections that are actually
-        cheap and worth prioritizing on Guardian.
-      </div>
+      <h2>Recommended Collections</h2>
+      <h3>Efficient Early Options</h3>
+      <p>If you have excess Adena, inexpensive No Grade items from town merchants can be used to complete accessible P./M. Atk. and P./M. Def. Collections. Skill Cooldown is useful for every class and is worth checking whenever an affordable Collection becomes available.</p>
+      <h3>PvP Priority</h3>
+      <ol>
+        <li>Flat Skill Critical Damage</li>
+        <li>Received Skill Damage</li>
+        <li>Received Skill Critical Damage</li>
+      </ol>
+      <h3>PvE Options</h3>
+      <p>PvE does not have one fixed Collection priority. Useful bonuses include P./M. Atk., Skill Cooldown, Lamp XP and XP. Choose according to your class, current stats, available items and the cost of completing the set.</p>
+      <div class="note"><strong>Value comes first:</strong> treat these as guidelines. A cheap Collection that provides an immediately useful bonus can be better than forcing an expensive theoretical priority.</div>
     </section>
 
     <section class="section" id="mistakes">
       <h2>Common Mistakes</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Mistake</th>
-            <th>Impact</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Selling low grade items instead of checking Random Craft/collection value first</td>
-            <td class="bad">High</td>
-          </tr>
-
-          <tr>
-            <td>Registering an item without checking if you need it equipped first</td>
-            <td class="bad">High</td>
-          </tr>
-
-          <tr>
-            <td>Ignoring Utility and Support collections in favor of only Attack ones</td>
-            <td class="bad">Medium</td>
-          </tr>
-
-          <tr>
-            <td>Not using the Favorites tab to track active collections</td>
-            <td>Low</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="note">
-        <strong>Best practice:</strong> Before selling or disenchanting anything, check whether it has a
-        collection mark on its icon, it is an easy way to avoid losing free permanent stats.
-      </div>
+      <table><thead><tr><th>Mistake</th><th>Why It Hurts</th></tr></thead><tbody>
+        <tr><td>Registering an equipped or valuable item by accident</td><td class="bad">Registered items disappear permanently and cannot be recovered.</td></tr>
+        <tr><td>Ignoring the required enchant level</td><td>The item may not qualify, or you may overinvest in enchantment that the slot does not need.</td></tr>
+        <tr><td>Buying before checking equivalent items</td><td>A cheaper accepted alternative may be available from the same item selector.</td></tr>
+        <tr><td>Expecting partial stats</td><td>The Collection Effect activates only after every required slot is complete.</td></tr>
+        <tr><td>Treating progress as account wide</td><td>Collections and their bonuses belong to the character that completes them.</td></tr>
+        <tr><td>Ignoring temporary durations</td><td>Season and Event Collection effects can expire or reset.</td></tr>
+        <tr><td>Investing in unavailable content</td><td>Some visible Collections require objects that have not been unlocked yet.</td></tr>
+      </tbody></table>
     </section>
-
-    <section class="section" id="related">
-      <h2>Related Guides</h2>
-
-      <div class="related">
-
-        <a href="/en/guides/patterns">
-          <strong>Patterns</strong>
-          <p>Permanent stat bonuses through the Dye system.</p>
-        </a>
-
-        <a href="/en/guides/aden-laboratory">
-          <strong>Aden Laboratory</strong>
-          <p>Research Queen Ant for a permanent stat buff.</p>
-        </a>
-
-        <a href="/en/guides/hidden-power">
-          <strong>Hidden Power</strong>
-          <p>Optimize continued progression and damage scaling.</p>
-        </a>
-
-      </div>
-    </section></div></GuideLayout>
+  </div>
+</GuideLayout>
