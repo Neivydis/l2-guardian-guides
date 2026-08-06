@@ -26,7 +26,7 @@ const toc = [
       <div class="hero-body">
         <div class="badge">COMBAT COMPANION</div>
         <h1>Guardians (Pets)</h1>
-        <p class="subtitle">Guardians fight beside the character, gain XP according to their combat contribution, equip their own gear, evolve and learn specialized skills.</p>
+        <p class="subtitle">Guardians fight beside the character, gain additional XP according to their damage contribution, equip their own gear, evolve and learn specialized skills.</p>
         <div class="info-grid">
           <div class="info-card"><div class="label">First Guardian</div><div class="value">Level 70</div></div>
           <div class="info-card"><div class="label">Active Limit</div><div class="value">1 Guardian</div></div>
@@ -84,22 +84,20 @@ const toc = [
 
     <section class="section" id="leveling">
       <h2>Guardian XP and Leveling</h2>
-      <p>The Guardian receives XP according to the percentage of damage it deals to the defeated monster. This XP is taken from the experience that would otherwise be awarded to the character.</p>
+      <p>The Guardian receives additional XP according to the percentage of damage it deals to the defeated monster. This experience does not reduce the XP awarded to the character.</p>
       <table><thead><tr><th>Rule</th><th>Effect</th></tr></thead><tbody>
-        <tr><td>Damage contribution</td><td>More Guardian damage results in a larger share of the earned XP.</td></tr>
+        <tr><td>Damage contribution</td><td>More Guardian damage results in more additional XP for the Guardian.</td></tr>
         <tr><td>Level difference</td><td>Keep the Guardian and monster within the allowed 11 level range.</td></tr>
         <tr><td>Bee Hive</td><td>Guardians receive a special buff that increases their earned XP while farming there.</td></tr>
         <tr><td>Chapter 2 limit</td><td>The current maximum Guardian level is 84.</td></tr>
       </tbody></table>
-      <div class="note"><strong>Faster Guardian growth has a cost:</strong> because XP distribution depends on its damage contribution, a strong Guardian levels faster but also takes a larger portion of the kill XP from the character.</div>
+      <div class="note"><strong>Guardian XP is extra:</strong> a strong Guardian levels faster because its XP scales with its damage contribution, without taking any experience from the character.</div>
     </section>
 
     <section class="section" id="satiety">
       <h2>Satiety, Potions and Automatic Use</h2>
       <table><thead><tr><th>Satiety</th><th>Result</th></tr></thead><tbody>
-        <tr><td>Below 50%</td><td>Penalties are applied.</td></tr>
-        <tr><td>Below 1%</td><td>The Guardian cannot be summoned.</td></tr>
-        <tr><td>0%</td><td>The Guardian stops fighting and no longer obeys its owner.</td></tr>
+        <tr><td>Below 10%</td><td>The Guardian stops obeying commands.</td></tr>
       </tbody></table>
       <p>Guardian Combat Rations restore Satiety and can be purchased from Pet Managers in towns. Guardians use the same Soulshots and Spiritshots as characters, but require their own Guardian HP Potions, also sold by Pet Managers.</p>
       <h3>Configure Automatic Potions</h3>
@@ -212,13 +210,13 @@ const toc = [
       <h2>Common Mistakes</h2>
       <table><thead><tr><th>Mistake</th><th>Why It Hurts</th></tr></thead><tbody>
         <tr><td>Choosing the level 70 reward without comparing roles</td><td class="bad">The first Guardian mission is one time.</td></tr>
-        <tr><td>Ignoring Satiety</td><td>The Guardian receives penalties, becomes impossible to summon and eventually stops fighting.</td></tr>
+        <tr><td>Ignoring Satiety</td><td>Below 10% Satiety, the Guardian stops obeying commands.</td></tr>
         <tr><td>Leaving the necklace without automatic use</td><td>A defeated Guardian will not return automatically during a long farming session.</td></tr>
         <tr><td>Using the wrong weapon type</td><td>The Guardian loses the offensive bonuses designed for its combat style.</td></tr>
         <tr><td>Leaving easy equipment slots empty</td><td>The character delays HP +400 and the valuable Guardian XP +10% full equipment bonus.</td></tr>
         <tr><td>Farming outside the allowed level range</td><td>The Guardian may stop gaining useful XP from those monsters.</td></tr>
         <tr><td>Upgrading every skill immediately</td><td>Guardian Books and Ancient Adena can be wasted on abilities that are not part of the final setup.</td></tr>
-        <tr><td>Forgetting that Guardian damage consumes XP</td><td>A higher damage contribution gives the Guardian a larger share of the experience that would go to the character.</td></tr>
+        <tr><td>Assuming Guardian XP is taken from the character</td><td>Guardian XP is additional and scales with its damage contribution. The character keeps its normal experience.</td></tr>
       </tbody></table>
     </section>
   </div>
