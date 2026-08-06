@@ -10,6 +10,7 @@ const labels = lang === 'es' ? {
   search:'Search guides, systems, items...', patterns:'Patterns', hidden:'Hidden Power', aden:'Aden Laboratory', collections:'Collections', dolls:'Dolls', character:'Character', pets:'Guardians (Pets)', classBalance:'Class Balance Chapter 2'
 };
 const items = [
+  {title:labels.classBalance, terms:'class balance balance de clases classes chapter 2 current balance', href:'/en/class-balance/chapter-2/', icon:'/icons/class-balance.png'},
   {title:labels.character, terms:'character skills buffs skill enchant stats str int dex wit con men elixirs combat power spellbooks', href:`/${lang}/guides/character`, icon:'/icons/character.png'},
   {title:labels.patterns, terms:'patterns dyes stats wit int dex str', href:`/${lang}/guides/patterns`, icon:'/icons/patterns.png'},
   {title:labels.hidden, terms:'hidden power nodes progression damage', href:`/${lang}/guides/hidden-power`, icon:'/icons/hidden-power.png'},
@@ -53,6 +54,31 @@ const items = [
       const empty=root.querySelector('[data-search-empty]');
       const normalise=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
       const exactStatQueries=new Set(['str','int','dex','wit','con','men']);
+      const classBalanceQueries=new Set(['class balance','class balance chapter 2','balance de clases','balance de clases chapter 2']);
+      let activeResultIndex=-1;
+      const visibleItems=()=>items.filter(item=>!item.hidden);
+      const clearActiveResult=()=>{
+        items.forEach(item=>{
+          item.classList.remove('keyboard-active');
+          item.removeAttribute('aria-current');
+        });
+        activeResultIndex=-1;
+      };
+      const moveActiveResult=direction=>{
+        const visible=visibleItems();
+        if(!visible.length)return;
+        items.forEach(item=>{
+          item.classList.remove('keyboard-active');
+          item.removeAttribute('aria-current');
+        });
+        activeResultIndex=activeResultIndex<0
+          ?(direction>0?0:visible.length-1)
+          :(activeResultIndex+direction+visible.length)%visible.length;
+        const activeItem=visible[activeResultIndex];
+        activeItem.classList.add('keyboard-active');
+        activeItem.setAttribute('aria-current','true');
+        activeItem.scrollIntoView({block:'nearest'});
+      };
       const matchesQuery=(value,q)=>exactStatQueries.has(q)
         ?new RegExp(`(^|[^a-z0-9])${q}([^a-z0-9]|$)`).test(normalise(value))
         :normalise(value).includes(q);
@@ -82,6 +108,7 @@ const items = [
         const currentRevision=++revision;
         const rawQuery=input.value.trim();
         const q=normalise(rawQuery);
+        clearActiveResult();
         panel.hidden=!q;
         if(!q){items.forEach(item=>item.hidden=true);empty.hidden=true;return;}
 
@@ -114,8 +141,22 @@ const items = [
       input.addEventListener('focus',update);
       input.addEventListener('keydown',e=>{
         if(e.key==='Escape'){panel.hidden=true;input.blur();}
+        if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+          e.preventDefault();
+          moveActiveResult(e.key==='ArrowDown'?1:-1);
+          return;
+        }
         if(e.key==='Enter'&&input.value.trim()){
           e.preventDefault();
+          const selected=visibleItems()[activeResultIndex];
+          if(selected){
+            location.href=selected.href;
+            return;
+          }
+          if(classBalanceQueries.has(normalise(input.value.trim()))){
+            location.href='/en/class-balance/chapter-2/';
+            return;
+          }
           location.href=`${root.dataset.searchHref}?q=${encodeURIComponent(input.value.trim())}`;
         }
       });

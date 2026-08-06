@@ -31,11 +31,21 @@ const links=[
   function syncGuideSidebar(){
     const sidebar=document.querySelector('.site-sidebar');
     if(!sidebar)return;
-    if(window.innerWidth<=820){sidebar.scrollTop=0;return;}
+    const currentPageY=window.scrollY;
+    if(window.innerWidth<=820){
+      sidebar.scrollTop=0;
+      window.__guideSidebarLastPageY=currentPageY;
+      return;
+    }
     const sidebarRange=sidebar.scrollHeight-sidebar.clientHeight;
-    sidebar.scrollTop=sidebarRange>0
-      ? Math.min(sidebarRange,Math.max(0,window.scrollY))
-      : 0;
+    if(!Number.isFinite(window.__guideSidebarLastPageY)){
+      sidebar.scrollTop=Math.min(sidebarRange,Math.max(0,currentPageY));
+      window.__guideSidebarLastPageY=currentPageY;
+      return;
+    }
+    const scrollDelta=currentPageY-window.__guideSidebarLastPageY;
+    sidebar.scrollTop=Math.min(sidebarRange,Math.max(0,sidebar.scrollTop+scrollDelta));
+    window.__guideSidebarLastPageY=currentPageY;
   }
 
   if(!window.__guideSidebarScrollSync){
