@@ -1,5 +1,225 @@
 ---
 import GuideLayout from '../../../layouts/GuideLayout.astro';
-const toc=[{href:'#overview',label:'Overview'}];
+
+const toc = [
+  {href:'#overview',label:'Overview'},
+  {href:'#obtaining',label:'Obtaining a Guardian'},
+  {href:'#access',label:'Summoning and Access'},
+  {href:'#leveling',label:'XP and Leveling'},
+  {href:'#satiety',label:'Satiety and Potions'},
+  {href:'#evolution',label:'Evolution'},
+  {href:'#equipment',label:'Equipment'},
+  {href:'#weapons',label:'Weapon Bonuses'},
+  {href:'#skills',label:'Guardian Skills'},
+  {href:'#types',label:'Guardian Types'},
+  {href:'#recommended',label:'Recommendations'},
+  {href:'#mistakes',label:'Common Mistakes'}
+];
 ---
-<GuideLayout title="Guardians (Pets) | L2 Guardian Guides" lang="en" active="pets" toc={toc}><div class="content"><a class="back" href="/en/">← Back to home</a><section class="hero"><img src="/images/pets.png" alt="Guardians (Pets)"/><div class="hero-body"><div class="badge">GUARDIAN SYSTEM</div><h1>Guardians (Pets)</h1><p class="subtitle">Guardians are combat companions with equipment, skills and their own progression.</p></div></section><section class="section" id="overview"><h2>Overview</h2><p>Guardians are combat companions with equipment, skills and their own progression.</p><p>Use this page to explain Guardian types, evolution, books, skills and recommended setups.</p></section></div></GuideLayout>
+
+<GuideLayout title="Guardians (Pets) | L2 Guardian Guides" lang="en" active="pets" toc={toc}>
+  <div class="content">
+    <a class="back" href="/en/">← Back to home</a>
+
+    <section class="hero">
+      <img src="/images/guardians-window.png" alt="Guardian equipment and management window in L2 Reborn Guardian"/>
+      <div class="hero-body">
+        <div class="badge">COMBAT COMPANION</div>
+        <h1>Guardians (Pets)</h1>
+        <p class="subtitle">Guardians fight beside the character, gain XP according to their combat contribution, equip their own gear, evolve and learn specialized skills.</p>
+        <div class="info-grid">
+          <div class="info-card"><div class="label">First Guardian</div><div class="value">Level 70</div></div>
+          <div class="info-card"><div class="label">Active Limit</div><div class="value">1 Guardian</div></div>
+          <div class="info-card"><div class="label">Chapter 2 Max Level</div><div class="value">84</div></div>
+          <div class="info-card"><div class="label">Available Types</div><div class="value">7 Guardians</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quick-start">
+      <div class="quick-head"><div class="quick-icon">✦</div><div><h2>Quick Start</h2><p>The main rules for developing a Guardian efficiently.</p></div></div>
+      <div class="quick-grid">
+        <div class="quick-card"><div class="quick-title">First Guardian</div><div class="quick-value">Level 70 Mission</div><span class="quick-tag high">One Time</span></div>
+        <div class="quick-card"><div class="quick-title">Evolution</div><div class="quick-value">Levels 40 and 76</div><span class="quick-tag high">Skillbooks</span></div>
+        <div class="quick-card"><div class="quick-title">Chapter 2 Cap</div><div class="quick-value">Level 84</div><span class="quick-tag medium">Current Maximum</span></div>
+        <div class="quick-card"><div class="quick-title">Full Equipment</div><div class="quick-value">HP +400 and XP +10%</div><span class="quick-tag high">Fill Every Slot</span></div>
+      </div>
+      <div class="quick-footer">
+        <div class="quick-tip"><strong>Use the correct weapon</strong>An applicable weapon activates bonuses designed for that Guardian.</div>
+        <div class="quick-tip"><strong>Protect Satiety</strong>Configure Guardian Combat Rations and HP Potions for automatic use.</div>
+        <div class="quick-tip"><strong>Automate the collar</strong>Place it on the shortcut bar and activate it with the right mouse button for automatic resummoning.</div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <h2>Overview</h2>
+      <p>A Guardian is an independent combat companion with its own HP, MP, XP, Satiety, equipment and skills. Only one Guardian can be active at a time, and Guardians are unavailable during PvP events.</p>
+      <p>The Guardian management window does not appear in the general menu. It can only be opened through the Guardian HUD while a Guardian is summoned.</p>
+      <div class="note"><strong>No XP loss on death:</strong> a defeated Guardian can be summoned again without losing experience.</div>
+    </section>
+
+    <section class="section" id="obtaining">
+      <h2>Obtaining a Guardian</h2>
+      <h3>First Guardian at Level 70</h3>
+      <p>A one time mission becomes available at level 70 and awards the first Guardian. The player can choose one of four options:</p>
+      <div class="note"><strong>Available choices:</strong> Wolf, Dragon, Tiger or Hawk.</div>
+      <h3>Beoro Guardians at Level 76+</h3>
+      <p>Additional Guardians can be obtained from the Beoro dungeon after reaching level 76:</p>
+      <div class="note"><strong>Beoro Guardians:</strong> Buffalo, Kookaburra and Fox.</div>
+      <div class="warning"><strong>Choose the first Guardian carefully:</strong> the level 70 reward is one time. Compare combat style and weapon requirements before confirming the selection.</div>
+    </section>
+
+    <section class="section" id="access">
+      <h2>Summoning and Opening the Guardian Window</h2>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>Summon from the Inventory</strong><p>Use the right mouse button on the Guardian necklace.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Configure automatic resummoning</strong><p>Move the necklace to the shortcut bar and activate it with the right mouse button. Its glowing state indicates that automatic use is enabled.</p></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Open Manage Guardians</strong><p>While the Guardian is summoned, click the paw shaped Manage Guardians button in its HUD.</p></div></div>
+      </div>
+      <div class="guide-gallery">
+        <figure><img src="/images/guardians-hud-button.png" alt="Manage Guardians button in the Guardian HUD"/><figcaption>The management button exists only while a Guardian is summoned.</figcaption></figure>
+        <figure><img src="/images/guardians-window.png" alt="Guardian management window with equipment, level and skills"/><figcaption>The window combines equipment, progression, details and skill access.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section" id="leveling">
+      <h2>Guardian XP and Leveling</h2>
+      <p>The Guardian receives XP according to the percentage of damage it deals to the defeated monster. This XP is taken from the experience that would otherwise be awarded to the character.</p>
+      <table><thead><tr><th>Rule</th><th>Effect</th></tr></thead><tbody>
+        <tr><td>Damage contribution</td><td>More Guardian damage results in a larger share of the earned XP.</td></tr>
+        <tr><td>Level difference</td><td>Keep the Guardian and monster within the allowed 11 level range.</td></tr>
+        <tr><td>Bee Hive</td><td>Guardians receive a special buff that increases their earned XP while farming there.</td></tr>
+        <tr><td>Chapter 2 limit</td><td>The current maximum Guardian level is 84.</td></tr>
+      </tbody></table>
+      <div class="note"><strong>Faster Guardian growth has a cost:</strong> because XP distribution depends on its damage contribution, a strong Guardian levels faster but also takes a larger portion of the kill XP from the character.</div>
+    </section>
+
+    <section class="section" id="satiety">
+      <h2>Satiety, Potions and Automatic Use</h2>
+      <table><thead><tr><th>Satiety</th><th>Result</th></tr></thead><tbody>
+        <tr><td>Below 50%</td><td>Penalties are applied.</td></tr>
+        <tr><td>Below 1%</td><td>The Guardian cannot be summoned.</td></tr>
+        <tr><td>0%</td><td>The Guardian stops fighting and no longer obeys its owner.</td></tr>
+      </tbody></table>
+      <p>Guardian Combat Rations restore Satiety and can be purchased from Pet Managers in towns. Guardians use the same Soulshots and Spiritshots as characters, but require their own Guardian HP Potions, also sold by Pet Managers.</p>
+      <h3>Configure Automatic Potions</h3>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>Open Auto Use Settings</strong><p>Click the cogwheel beside the Guardian's HP display.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Add the potion</strong><p>Double click the Guardian HP Potion that should be used.</p></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Set the HP threshold</strong><p>Choose the percentage at which automatic use should begin and click Apply.</p></div></div>
+        <div class="step"><div class="num">4</div><div><strong>Enable it</strong><p>Use the right mouse button on the potion. A glowing effect confirms that automatic use is active.</p></div></div>
+      </div>
+      <figure class="guide-figure compact"><img src="/images/guardians-auto-potions.png" alt="Guardian automatic HP Potion configuration"/><figcaption>Set the HP threshold and activate the selected potion for automatic use.</figcaption></figure>
+    </section>
+
+    <section class="section" id="evolution">
+      <h2>Guardian Evolution</h2>
+      <table><thead><tr><th>Required Level</th><th>Evolution</th><th>Required Item</th><th>Price</th></tr></thead><tbody>
+        <tr><td>40</td><td>First Evolution</td><td>Guardian's Skillbook Volume 1</td><td>1,000,000 Adena</td></tr>
+        <tr><td>76</td><td>Second Evolution</td><td>Guardian's Skillbook Volume 2</td><td>5,000,000 Adena</td></tr>
+      </tbody></table>
+      <p>Both evolution Skillbooks appear in the Adena Store according to their chapter availability. Evolving changes the Guardian's appearance.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>First Evolution</strong><p>The Guardian receives a random name modifier and a passive skill that increases a random stat by +1, +2 or +3.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Second Evolution</strong><p>Higher level Guardian skills become available.</p></div></div>
+      </div>
+      <figure class="guide-figure wide"><img src="/images/guardians-skillbooks-store.png" alt="Guardian Skillbook Volume 1 in the Adena Store"/><figcaption>Evolution Skillbooks are purchased from the Adena Store when available.</figcaption></figure>
+    </section>
+
+    <section class="section" id="equipment">
+      <h2>Guardian Equipment</h2>
+      <p>Guardians can equip weapons, armor, jewelry and Special Equipment. Their available Special Equipment includes Cloak, Mask, Circlet, Belt and Pendant. Guardians can also use dedicated equipment such as Guardian Pendants and Amulets.</p>
+      <p>Filling every available equipment slot activates an additional bonus:</p>
+      <table><thead><tr><th>Full Equipment Bonus</th><th>Value</th></tr></thead><tbody>
+        <tr><td>Max HP</td><td class="good">+400</td></tr>
+        <tr><td>Guardian XP</td><td class="good">+10%</td></tr>
+      </tbody></table>
+      <div class="note"><strong>Progress efficiently:</strong> equip affordable items in every slot before concentrating all resources into one expensive piece. The complete equipment bonus improves both survivability and leveling speed.</div>
+    </section>
+
+    <section class="section" id="weapons">
+      <h2>Applicable Weapons and Bonuses</h2>
+      <p>Each Guardian has one or more applicable weapon types. Equipping one activates the following bonuses. The exact value inside each range depends on the equipped weapon progression.</p>
+      <table><thead><tr><th>Guardian</th><th>Weapon</th><th>Weapon Bonus</th></tr></thead><tbody>
+        <tr><td rowspan="2"><strong>Kookaburra</strong></td><td>Rapier</td><td>M. Atk. +10% to +40%</td></tr>
+        <tr><td>Blunt</td><td>M. Atk. +10% to +40%</td></tr>
+        <tr><td><strong>Tiger</strong></td><td>Dagger</td><td>P. Atk. +5% to +20% and Vital Point Attack Rate +10% to +30%</td></tr>
+        <tr><td rowspan="2"><strong>Buffalo</strong></td><td>Blunt</td><td>P. Atk. +10% to +30% and Atk. Spd. +10%</td></tr>
+        <tr><td>Spear</td><td>P. Atk. +10% to +30%</td></tr>
+        <tr><td><strong>Hawk</strong></td><td>Bow</td><td>P. Atk. +5% to +15% and P. Accuracy +2 to +5</td></tr>
+        <tr><td rowspan="2"><strong>Dragon</strong></td><td>Sword</td><td>P. Atk. +10% to +25% and Atk. Spd. +10%</td></tr>
+        <tr><td>Ancient Sword</td><td>P. Atk. +10% to +25% and P. Critical Rate +10 to +20</td></tr>
+        <tr><td rowspan="2"><strong>Wolf</strong></td><td>Dual Swords</td><td>P. Atk. +10% to +30% and Atk. Spd. +10%</td></tr>
+        <tr><td>Fists</td><td>P. Atk. +10% to +30% and P. Critical Rate +10 to +20</td></tr>
+        <tr><td><strong>Fox</strong></td><td>Firearms</td><td>P. Atk. +10%</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Learning and Automating Guardian Skills</h2>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>Open the Guardian window</strong><p>Summon the Guardian and click Manage Guardians in its HUD.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Open Skills</strong><p>Click the Skills button in the bottom right area of the management window.</p></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Select Available</strong><p>The Available tab lists skills that can currently be learned or upgraded.</p></div></div>
+        <div class="step"><div class="num">4</div><div><strong>Check the fee</strong><p>Some Guardian skills have no learning cost. Others require Guardian Books and may also have additional requirements.</p></div></div>
+      </div>
+      <p>Guardian Books can be purchased from Merchant of Mammon with Ancient Adena. Availability depends on the current chapter.</p>
+      <p>To automate a Guardian skill, move it to the shortcut bar and activate it with the right mouse button, following the same process used for normal character skills. A glowing icon indicates automatic use.</p>
+      <div class="guide-gallery effects">
+        <figure><img src="/images/guardians-skills-button.png" alt="Skills button in the Guardian management window"/><figcaption>Open Guardian Skills from the bottom right button.</figcaption></figure>
+        <figure><img src="/images/guardians-skills-available.png" alt="Available tab in the Guardian Skills window"/><figcaption>Available separates learnable active and passive skills.</figcaption></figure>
+        <figure><img src="/images/guardians-skill-no-fee.png" alt="Guardian skill available with no learning fee"/><figcaption>Some skill levels can be learned without consuming materials.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section" id="types">
+      <h2>Guardian Types</h2>
+      <table><thead><tr><th>Guardian</th><th>Combat Style</th><th>Important Characteristic</th></tr></thead><tbody>
+        <tr><td><strong>Wolf</strong></td><td>Physical melee damage</td><td>Has a Blink style ability for rapidly reaching its target.</td></tr>
+        <tr><td><strong>Dragon</strong></td><td>Physical melee damage</td><td>Uses a double hit attack.</td></tr>
+        <tr><td><strong>Tiger</strong></td><td>Physical back attacks</td><td>Uses a dagger style Backstab, but its landing rate can be unreliable.</td></tr>
+        <tr><td><strong>Hawk</strong></td><td>Ranged physical damage</td><td>Attacks safely from range with a Bow.</td></tr>
+        <tr><td><strong>Buffalo</strong></td><td>Physical frontline utility</td><td>Improves from level 76 through Aggro abilities.</td></tr>
+        <tr><td><strong>Kookaburra</strong></td><td>Ranged magical damage</td><td>High Casting Speed and the main magical Guardian option.</td></tr>
+        <tr><td><strong>Fox</strong></td><td>Physical multi hit damage</td><td>Uses Firearms and attacks through multiple hits.</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="section" id="recommended">
+      <h2>Recommended Guardians</h2>
+      <table><thead><tr><th>Goal</th><th>Recommended Guardian</th><th>Reason</th></tr></thead><tbody>
+        <tr><td><strong>Magical character</strong></td><td>Kookaburra</td><td>Ranged magical damage, high Casting Speed and up to +40% M. Atk. from an applicable weapon.</td></tr>
+        <tr><td><strong>General physical melee</strong></td><td>Wolf</td><td>Strong physical weapon scaling and a Blink ability that reduces time spent reaching targets.</td></tr>
+        <tr><td><strong>Physical burst</strong></td><td>Dragon</td><td>Double hit attacks with Sword speed or Ancient Sword critical bonuses.</td></tr>
+        <tr><td><strong>Ranged physical farming</strong></td><td>Hawk</td><td>Attacks from range and gains additional P. Accuracy from its Bow.</td></tr>
+        <tr><td><strong>Multi hit pressure</strong></td><td>Fox</td><td>Firearm attacks apply several hits and avoid melee travel time.</td></tr>
+        <tr><td><strong>Frontline utility after 76</strong></td><td>Buffalo</td><td>Aggro abilities can help control enemy attention while its applicable weapons provide solid P. Atk.</td></tr>
+        <tr><td><strong>Situational back attacks</strong></td><td>Tiger</td><td>Backstab style gameplay can be effective when attacks land, but its unreliable landing rate makes it a less consistent default choice.</td></tr>
+      </tbody></table>
+      <div class="note"><strong>These are starting recommendations:</strong> the best Guardian depends on its current level, evolution, learned skills, equipment and how consistently it can deal damage in your farming area.</div>
+      <h3>Upgrade Priority</h3>
+      <ol>
+        <li>Equip the correct weapon type.</li>
+        <li>Fill every equipment slot for HP +400 and Guardian XP +10%.</li>
+        <li>Configure Combat Rations, potions and shots.</li>
+        <li>Learn free skill levels.</li>
+        <li>Complete the level 40 and level 76 evolutions.</li>
+        <li>Spend Guardian Books only on skills used by the chosen long term Guardian.</li>
+      </ol>
+    </section>
+
+    <section class="section" id="mistakes">
+      <h2>Common Mistakes</h2>
+      <table><thead><tr><th>Mistake</th><th>Why It Hurts</th></tr></thead><tbody>
+        <tr><td>Choosing the level 70 reward without comparing roles</td><td class="bad">The first Guardian mission is one time.</td></tr>
+        <tr><td>Ignoring Satiety</td><td>The Guardian receives penalties, becomes impossible to summon and eventually stops fighting.</td></tr>
+        <tr><td>Leaving the necklace without automatic use</td><td>A defeated Guardian will not return automatically during a long farming session.</td></tr>
+        <tr><td>Using the wrong weapon type</td><td>The Guardian loses the offensive bonuses designed for its combat style.</td></tr>
+        <tr><td>Leaving easy equipment slots empty</td><td>The character delays HP +400 and the valuable Guardian XP +10% full equipment bonus.</td></tr>
+        <tr><td>Farming outside the allowed level range</td><td>The Guardian may stop gaining useful XP from those monsters.</td></tr>
+        <tr><td>Upgrading every skill immediately</td><td>Guardian Books and Ancient Adena can be wasted on abilities that are not part of the final setup.</td></tr>
+        <tr><td>Forgetting that Guardian damage consumes XP</td><td>A higher damage contribution gives the Guardian a larger share of the experience that would go to the character.</td></tr>
+      </tbody></table>
+    </section>
+  </div>
+</GuideLayout>
