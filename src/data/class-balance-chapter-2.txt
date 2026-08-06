@@ -5,10 +5,16 @@ Parasite Rose: SKill has now 3 levels, learnt at level 76 81 and 85, the power o
 Parasite Rose: Parasie Rose "Max HP" debuff effect decreased to 5% 10% and 15%
 Rose Thorns: Cursed Rose M. def debuff effect decreased from 30% to 15%
 Blooming Nightmare/Blooming Nightmare of Death: Nightmare Rose M.def debuff effect decreased from 30% to 15%
+Kingdom of Plants: PvE damage decreased from 10% to 5%.
+Bleeding Rose: PvE damage decreased from 10% to 5%.
+Forest of Thorn Vines: M. Atk. decreased to +500/+700/+900/+1100/+1300/+1500.
 Samurai
 
 Adamant Will: One-handed Sword Damage bonus decreased from 10% to 3%. Triple Strike effect has been removed.
-Determination: SKill level 2 is now learnt at character level 85. Skill Level 1: P.def buff decreased from 5k to 3k, Added M. Def debuff of 3k. - Breath of Blood HP recovering effect decreased from 10k to 2k.
+Determination: Skill level 2 is now learned at character level 85. Skill level 1 P. Def. buff decreased from 5,000 to 3,000 and an M. Def. debuff of 3,000 was added. Breath of Blood HP recovery decreased from 10,000 to 2,000. Duration decreased from 30s to 20s.
+Adamant Will: P. Skill Damage bonus replaced by P. Skill Damage Bonus in PvE.
+Fundamental Teaching: P. Atk. decreased from 2,000 to 1,000.
+Intimidating Giant Lv. 3: P. Atk. decreased from 25% to 20%.
 Divine Templar
 
 Privilege: Skill Evasion bonus set to 5% / 10% / 15%.
@@ -214,15 +220,25 @@ Crossed Blades: P. Atk +15%, P Skill Critical Damage +10%, PvE Damage +15%
 Titan
 
 New skill: Rush
-Excruciating Strike: Can now critically hit.
+Fatal Strike: Skill power increased by 50%. Target Defense Ignore increased from 5% to 10%.
+Vortex: Added +10% Target Defense Ignore. Now requires a target to be cast.
+Armor Crush: Reuse time decreased from 20s to 15s.
+Excruciating Strike: Can now critically hit. Now requires a target to be cast.
+Titanic Sweep: Now requires a target to be cast.
 Demolition Impact: Skill power increased by 20%.
-Titanic Weapon: Replaces Rush with Blessed Rush. Chance for an additional hit increased from 20% to 100%.
+Titanic Weapon: Replaces Demolition Impact with Demolition Formula. Chance for an additional hit increased from 20% to 100%.
+Demolition Formula: Can no longer be enchanted. Attacks the enemy 2 times.
 Hyper Rush: Now can be learned at level 76, replaces Rush.
+Over the Body: Reuse time decreased from 15 minutes to 20s. Duration increased from 1 minute to 20 minutes.
+Zealot: The skill now has only 2 levels. Level 2 does not improve its stats, but decreases reuse time from 3 minutes to 20s and increases duration from 1 minute to 20 minutes. Level 1 is learned at character level 58 and level 2 at character level 74.
  
 Grand Khavatari
 
 Hurricane Assault: Skill range increased to 400.
 Double Hurricane Assault: Skill range increased to 400.
+Khavatari Spirit: P. Atk. increased from 500 to 1,500.
+Puma Spirit Totem: PvE Damage increased from 3% to 10%. P. Skill Power increased from 3% to 10%.
+Rabbit Spirit Totem: PvE Damage increased from 5% to 10%.
 Vanguard Rider
 
 BP Regeneration increased.
@@ -301,7 +317,6 @@ Guard Crush: Skill range increased from 40 to 300. Skill power increased by 35%.
 Symphony: Skill power doubled. Reuse time decreased from 20s to 15s.
 Song of Wind: Now requires an Enhanced Book to be learned.
 Song of Hunter: Now requires a Superior Book to be learned.
-Song of Wind Legato: removed double hit
 Song of Hunter Legato: reuse time increased from 8s to 12s
 New skill: Rush.
 Spectral Dancer
@@ -310,7 +325,6 @@ Guard Crush: Skill range increased from 40 to 300. Skill power increased by 35%.
 Poison Blade: Skill power doubled. The skill can now critically hit.
 Dance of Fury: Now requires an Enhanced Book to be learned.
 Dance of Fire: Now requires a Superior Book to be learned.
-Dance of Fury Legato: removed double hit
 Dance of Fire Legato: reuse time increased from 8s to 12s
 New skill: Rush.
 Hierophant

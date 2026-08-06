@@ -106,11 +106,19 @@ function skillAppears(skill: string, chapterTwoText: string) {
   return [complete,...candidates,...aliasesForSkill].some(candidate => chapterTwoText.includes(candidate));
 }
 
+const revertedChapterOneChanges = new Set([
+  'Sword Muse:Song of Wind Legato',
+  'Spectral Dancer:Dance of Fury Legato'
+]);
+
 export function compareChapters(chapterOne: BalanceClass<ChapterOneChange>[], chapterTwo: BalanceClass<ChapterTwoChange>[]) {
   const oldByClass = new Map(chapterOne.map(group => [group.name,group.changes]));
   return chapterTwo.map(group => {
     const currentText = compact(group.changes.map(change => change.text).join(' '));
-    const removed = (oldByClass.get(group.name) || []).filter(change => !skillAppears(change.skill,currentText));
+    const removed = (oldByClass.get(group.name) || []).filter(change =>
+      !revertedChapterOneChanges.has(`${group.name}:${change.skill}`) &&
+      !skillAppears(change.skill,currentText)
+    );
     return {...group,removed};
   });
 }
