@@ -15,6 +15,7 @@ Determination: Skill level 2 is now learned at character level 85. Skill level 1
 Adamant Will: P. Skill Damage bonus replaced by P. Skill Damage Bonus in PvE.
 Fundamental Teaching: P. Atk. decreased from 2,000 to 1,000.
 Intimidating Giant Lv. 3: P. Atk. decreased from 25% to 20%.
+Double Flash: Triple Strike removed.
 Divine Templar
 
 Privilege: Skill Evasion bonus set to 5% / 10% / 15%.
@@ -80,6 +81,9 @@ Soulhound
 Soulhound's Shield: Cancels 70% of received damage. For the remaining 30%, MP is consumed instead of HP. The shield is removed when MP reaches 0. While active: +200 M. Atk, -4% skill cooldown, +400% M. Skill MP Consumption. When the effect expires, restores 30% of Max MP. Additionally, received PvP damage -30% for 3 seconds.
 Leopold: Spirit Ore cost reduced from 50 to 10.
 Arcane Shield can now be learned at level 76.
+Soul Strike: Cooldown for an additional attack increased from 5s to 15s.
+Shining Transformation: Soulhound: Power of Transformation attack decreased from 250 to 150.
+Shadow Transformation: Soulhound: Power of Transformation attack decreased from 250 to 150.
 Sagittarius
 
 Double Shot: Reuse time decreased from 1.5s to 1s.
@@ -171,6 +175,8 @@ Vortex, Fatal Strike and Armor Crush now perform an additional attack with 100% 
 Mechanical Earth Tremor: Attacks 2 times.
 Mechanical Hammer Rumble: Attacks 2 times.
 Mechanical Earthquake: Attacks 2 times.
+Critical Creation: P. Skill Critical Rate +5%/10%/12%.
+Master of Creation: P. Skill Critical Damage +20% and PvE Damage +20%.
 Blacksmith Rush: From skill level 2, attacks up to 5 targets.
  
 Fortune Seeker
@@ -193,6 +199,7 @@ PvE Damage increased to 10%/15%/20%.
 Blessed Crushing Leap: Attacks 2 times.
 Blessed Earthquake: Attacks 2 times.
 Adena Stun: Now an active buff (20-minute duration, 20-second cooldown). Increases P. Atk by 750, P. Atk by 15% and P. Skill Critical Damage by 10%. When using Crushing Leap, Blessed Crushing Leap, Vortex or Fatal Strike, performs an additional hit. The additional hit has a 30% chance to Knock Down the target. Knock Down cooldown: 15 seconds.
+Collecting Mastery: P. Skill Critical Rate +10%/+12%, P. Skill Critical Damage +10%/+20% and PvE Damage +10%/+20%.
  
 Dreadnought
 
@@ -212,6 +219,7 @@ Power Crash: Skill Power increased by 50%.
 Amazing Spike Thrust Mastery:
 Lv. 2: P. Atk +1000, P. Atk +15%, P. Skill Critical Damage +10%. Lv. 2 is now learned at character level 80
 Lv. 3: P. Atk +1500, P. Atk +20%, P. Skill Critical Damage +15%. Lv. 3 at character level 84.
+Thrill Fight: At skill Lv. 3, increases P. Skill Critical Damage by 20% and PvE Damage by 20%.
 Duelist
 
 Blade Strike: Range increased from 40 to 600.
@@ -237,8 +245,9 @@ Grand Khavatari
 Hurricane Assault: Skill range increased to 400.
 Double Hurricane Assault: Skill range increased to 400.
 Khavatari Spirit: P. Atk. increased from 500 to 1,500.
-Puma Spirit Totem: PvE Damage increased from 3% to 10%. P. Skill Power increased from 3% to 10%.
+Puma Spirit Totem: PvE Damage increased from 3% to 5%. P. Skill Power increased from 3% to 5%.
 Rabbit Spirit Totem: PvE Damage increased from 5% to 10%.
+Zealot: The skill now has only 2 levels. Level 2 does not improve its stats, but decreases reuse time from 3 minutes to 20s and increases duration from 1 minute to 20 minutes. Level 1 is learned at character level 58 and level 2 at character level 74.
 Vanguard Rider
 
 BP Regeneration increased.
@@ -319,6 +328,7 @@ Song of Wind: Now requires an Enhanced Book to be learned.
 Song of Hunter: Now requires a Superior Book to be learned.
 Song of Hunter Legato: reuse time increased from 8s to 12s
 New skill: Rush.
+Music Mastery: P. Skill Critical Rate bonus removed.
 Spectral Dancer
 
 Guard Crush: Skill range increased from 40 to 300. Skill power increased by 35%.
@@ -327,6 +337,7 @@ Dance of Fury: Now requires an Enhanced Book to be learned.
 Dance of Fire: Now requires a Superior Book to be learned.
 Dance of Fire Legato: reuse time increased from 8s to 12s
 New skill: Rush.
+Dance Mastery: P. Skill Critical Rate bonus removed.
 Hierophant
 
 Fatal Strike: Skill power increased by 50%. Target Defense Ignore increased from 5% to 10%.
@@ -411,7 +422,7 @@ Servitors can no longer be targeted or damaged.
 Summons can now be automatically resummoned after dying.
 Powerful Servitor Share: Now transfers P./M. Critical Rate, Critical Damage, P./M. Skill Critical Damage, weapon attack and resistance bonuses, - Skill Power bonuses, PvP/PvE bonuses, and AoE damage and resistance bonuses.
 Cat Emperor: Added Cat's Prominence, a new single-target magical skill with a 1s cooldown.
-Summon Cubic of Secrets: Increases M. Atk by 500/1000/2000/3000, M. Atk by 10%/15%/20%/30% and M. Skill Critical Damage by 5%/10%/15%/20%. Enhances:
+Summon Cubic of Secrets: Increases M. Atk by 500/1000/2000/3000, M. Atk by 10%/15%/20%/30%, M. Skill Critical Damage by 5%/10%/15%/20% and PvE Damage by 15%/25%/30%/35%. Enhances:
 Ethereal Strike → Tremendous Ethreal Strike (Hit enemy 2 times).
 Ray of Light → Tremendous Ray of Light (Hit enemy 2 times).
 Queen's Blessing (Feline Queen): Increases PvP Defense by 1% per skill level.
@@ -429,7 +440,7 @@ Servitors can no longer be targeted or damaged.
 Summons can now be automatically resummoned after dying.
 Powerful Servitor Share: Now transfers P./M. Critical Rate, Critical Damage, P./M. Skill Critical Damage, weapon attack and resistance bonuses, - Skill Power bonuses, PvP/PvE bonuses, and AoE damage and resistance bonuses.
 Lord Raise: Added Lord's Hurricane, a new single-target magical skill with a 1s cooldown.
-Summon Cubic of Secrets: Increases M. Atk by 500/1000/2000/3000, M. Atk by 10%/15%/20%/30% and M. Skill Critical Damage by 5%/10%/15%/20%. Enhances:
+Summon Cubic of Secrets: Increases M. Atk by 500/1000/2000/3000, M. Atk by 10%/15%/20%/30%, M. Skill Critical Damage by 5%/10%/15%/20% and PvE Damage by 15%/25%/30%/35%. Enhances:
 Ethereal Strike → Tremendous Ethreal Strike (Hit enemy 2 times).
 Ray of Light → Tremendous Ray of Light (Hit enemy 2 times).
 Shadow's Curse (Nightshade): Removed.

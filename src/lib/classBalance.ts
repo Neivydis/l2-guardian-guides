@@ -3,7 +3,7 @@ export type ChapterTwoChange = { text: string };
 export type BalanceClass<T> = { name: string; slug: string; changes: T[] };
 
 export const classOrder = [
-  'Warg','Blood Rose','Samurai','Divine Templar','Elemental Weaver','Assassin','Storm Blaster','Death Knight','Doombringer','Soulhound',
+  'General Changes','Warg','Blood Rose','Samurai','Divine Templar','Elemental Weaver','Assassin','Storm Blaster','Death Knight','Doombringer','Soulhound',
   'Sagittarius','Moonlight Sentinel','Ghost Sentinel','Trickster','Adventurer','Wind Rider','Ghost Hunter','Maestro','Fortune Seeker',
   'Dreadnought','Duelist','Titan','Grand Khavatari','Vanguard Rider','Dominator','Doomcryer','Hell Knight','Phoenix Knight',
   "Eva's Templar",'Shillien Templar','Sword Muse','Spectral Dancer','Hierophant',"Eva's Saint",'Shillien Saint','Cardinal',

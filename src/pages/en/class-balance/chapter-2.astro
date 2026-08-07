@@ -4,7 +4,15 @@ import chapterOneRaw from '../../../data/class-balance-chapter-1.txt?raw';
 import chapterTwoSource from '../../../data/class-balance-chapter-2.txt?raw';
 import { compareChapters, explicitRemovalType, parseChapterOne, parseChapterTwo, splitCurrentChange } from '../../../lib/classBalance';
 import '../../../styles/class-balance.css';
-const chapterTwoRaw=`Warg\nDirect Strike / Double Claw Strike: Reuse time increased from 0.5s to 1s.\n${chapterTwoSource}`;
+const chapterTwoRaw=`General Changes
+Magic Critical Rate: Cap set to 70%.
+Blow-type Skills: Land chance no longer has a cap. The previous cap was 80%.
+Knockdown Protection: After a Knockdown effect lands, the target becomes immune to additional Knockdown effects for 7 seconds. This state has a visual effect.
+Warg
+Direct Strike / Double Claw Strike: Reuse time increased from 0.5s to 1s.
+Awful Disarm: Second hit removed.
+Imminent Piercing: Skill power halved.
+${chapterTwoSource}`;
 const classes=compareChapters(parseChapterOne(chapterOneRaw),parseChapterTwo(chapterTwoRaw));
 const navigationClasses=[...classes].sort((a,b)=>a.name.localeCompare(b.name));
 ---
