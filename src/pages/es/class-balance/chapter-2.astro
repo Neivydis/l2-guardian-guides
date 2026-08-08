@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import chapterOneRaw from '../../../data/class-balance-chapter-1.txt?raw';
+import chapterTwoSource from '../../../data/class-balance-chapter-2.txt?raw';
+import { compareChapters, explicitRemovalType, parseChapterOne, parseChapterTwo, splitCurrentChange } from '../../../lib/classBalance';
+import '../../../styles/class-balance.css';
+const chapterTwoRaw=`General Changes
+Magic Critical Rate: Cap set to 70%.
+Blow-type Skills: Land chance no longer has a cap. The previous cap was 80%.
+Knockdown Protection: After a Knockdown effect lands, the target becomes immune to additional Knockdown effects for 7 seconds. This state has a visual effect.
+Warg
+Direct Strike / Double Claw Strike: Reuse time increased from 0.5s to 1s.
+Awful Disarm: Second hit removed.
+Imminent Piercing: Skill power halved.
+${chapterTwoSource}`;
+const classes=compareChapters(parseChapterOne(chapterOneRaw),parseChapterTwo(chapterTwoRaw));
+const navigationClasses=[...classes].sort((a,b)=>a.name.localeCompare(b.name));
+---
+<SiteLayout title="Balance de clases Chapter 2 | L2 Guardian Guides" lang="es">
+  <main class="balance-main"><a class="balance-back" href="/es/class-balance/">← Todos los capítulos</a><section class="balance-hero"><div class="balance-eyebrow">Balance actual</div><h1>Chapter 2</h1><p>Ajustes actuales de Chapter 2. Las entradas rojas identifican cambios de Chapter 1 que ya no están incluidos para esa clase en Chapter 2.</p></section><nav class="balance-toolbar" aria-label="Clases"><div class="class-jumps">{navigationClasses.map(group=><a href={`#${group.slug}`}>{group.name}</a>)}</div></nav><div class="balance-classes">{classes.map(group=><section class="balance-class" id={group.slug}><h2>{group.name}</h2><ul class="change-list">{group.changes.map(change=>{const parts=splitCurrentChange(change.text,group.name);const removal=explicitRemovalType(parts.description,parts.title);return <li class:list={['change-item',{nested:parts.nested,'explicit-removal':Boolean(removal),'removal-skill':removal==='skill'}]}>{parts.title&&<strong>{parts.title}:</strong>} {removal&&<span class:list={['removal-badge',removal]}>{removal==='skill'?'Habilidad eliminada':'Efecto eliminado'}</span>} {parts.description}</li>})}</ul>{group.removed.length>0&&<><h3 class="removed-heading">Eliminado desde Chapter 1 <span>No está en Chapter 2</span></h3><ul class="change-list">{group.removed.map(change=><li class="change-item removed"><strong>{change.skill}:</strong> {change.description}<span class="removed-note">Eliminado en Chapter 2</span></li>)}</ul></>}</section>)}</div></main>
+</SiteLayout>

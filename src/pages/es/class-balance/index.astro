@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import chapterOneRaw from '../../../data/class-balance-chapter-1.txt?raw';
+import chapterTwoSource from '../../../data/class-balance-chapter-2.txt?raw';
+import { parseChapterOne, parseChapterTwo } from '../../../lib/classBalance';
+import '../../../styles/class-balance.css';
+const chapterOneClasses=parseChapterOne(chapterOneRaw).length;
+const chapterTwoClasses=parseChapterTwo(`General Changes\nMagic Critical Rate: Cap set to 70%.\nWarg\nDirect Strike / Double Claw Strike: Reuse time increased from 0.5s to 1s.\n${chapterTwoSource}`).filter(group=>group.name!=='General Changes').length;
+---
+<SiteLayout title="Balance de clases | L2 Guardian Guides" lang="es">
+  <main class="balance-main"><a class="balance-back" href="/es/">← Volver al inicio</a><section class="balance-hero"><div class="balance-eyebrow">Servidor Guardian</div><h1>Balance de clases</h1><p>Consulta todos los cambios de clases de cada capítulo de Guardian. Los capítulos se conservan por separado para poder comparar el balance actual con versiones anteriores.</p></section><div class="chapter-grid"><a class="chapter-card" href="/es/class-balance/chapter-1/"><div class="chapter-number">Chapter 1</div><h2>Balance inicial</h2><p>La configuración completa de balance utilizada durante el primer capítulo de Guardian.</p><div class="chapter-meta"><span>{chapterOneClasses} clases</span><span>Histórico</span></div></a><a class="chapter-card" href="/es/class-balance/chapter-2/"><div class="chapter-number">Chapter 2</div><h2>Balance actual</h2><p>Cambios de Chapter 2 con los ajustes que ya no están presentes desde Chapter 1 identificados en rojo.</p><div class="chapter-meta"><span>{chapterTwoClasses} clases</span><span>Actual</span></div></a></div></main>
+</SiteLayout>

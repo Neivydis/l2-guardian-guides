@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import chapterOneRaw from '../../../data/class-balance-chapter-1.txt?raw';
+import { parseChapterOne } from '../../../lib/classBalance';
+import '../../../styles/class-balance.css';
+const classes=parseChapterOne(chapterOneRaw);
+const navigationClasses=[...classes].sort((a,b)=>a.name.localeCompare(b.name));
+---
+<SiteLayout title="Balance de clases Chapter 1 | L2 Guardian Guides" lang="es">
+  <main class="balance-main"><a class="balance-back" href="/es/class-balance/">← Todos los capítulos</a><section class="balance-hero"><div class="balance-eyebrow">Archivo del balance de clases</div><h1>Chapter 1</h1><p>Balance completo utilizado durante Guardian Chapter 1, conservado como referencia histórica para los capítulos posteriores.</p></section><nav class="balance-toolbar" aria-label="Clases"><div class="class-jumps">{navigationClasses.map(group=><a href={`#${group.slug}`}>{group.name}</a>)}</div></nav><div class="balance-classes">{classes.map(group=><section class="balance-class" id={group.slug}><h2>{group.name}</h2><ul class="change-list">{group.changes.map(change=><li class="change-item"><strong>{change.skill}:</strong> {change.description}</li>)}</ul></section>)}</div></main>
+</SiteLayout>
